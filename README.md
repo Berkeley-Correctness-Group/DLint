@@ -101,7 +101,7 @@ Please do not interact with the DLint-started browser, DLint will automatically 
 
 Apply DLint to a single JavaScript file:
 ```
-python scripts/dlint.py tests/dlint/buggy_CheckNaN1
+python scripts/dlint.py tests/dlint/buggy_CheckNaN
 ```
 Warnings are printed to the console and also written to ```jalangi_tmp/analysisResults.json```.
 
@@ -127,11 +127,6 @@ python -m SimpleHTTPServer
 Run DLint for all **Octane** benchmarks:
 ```
 ./scripts/dlint_octane.sh
-```
-
-Run DLint for several **web applications**:
-```
-./scripts/dlint_webapps.sh
 ```
 
 Run DLint on all web sites listed in ```tests/dlint/urls.txt```:
