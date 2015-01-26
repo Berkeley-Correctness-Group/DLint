@@ -1,0 +1,254 @@
+[
+  {
+    "analysis": "CheckNaN",
+    "iid": "706",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:30)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:30) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: * | right:0.816496580927726 --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "506",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:109:14)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:109:14) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " unary opearnd: undefined | op: - --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "522",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:111:14)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:111:14) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " unary opearnd: undefined | op: - --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "658",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:15)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:15) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: * | right:-0.7071067811865475 --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "666",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:30)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:30) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: * | right:0.408248290463863 --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "674",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:15)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:15) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: + | right:NaN --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "682",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:45)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:45) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: * | right:0.5773502691896257 --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "690",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:15)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:117:15) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: + | right:NaN --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "698",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:15)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:15) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: * | right:0 --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "514",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:110:14)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:110:14) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " unary opearnd: undefined | op: - --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "714",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:15)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:15) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: + | right:NaN --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "722",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:45)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:45) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: * | right:-0.5773502691896257 --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "730",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:15)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:118:15) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: + | right:NaN --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "738",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:16)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:16) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: * | right:-0.7071067811865475 --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "746",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:31)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:31) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: * | right:-0.408248290463863 --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "754",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:16)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:16) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: + | right:NaN --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "762",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:46)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:46) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: * | right:-0.5773502691896257 --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  },
+  {
+    "analysis": "CheckNaN",
+    "iid": "770",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:16)",
+    "details": "Observed NaN at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-raytrace.js:119:16) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": " left: NaN | op: + | right:NaN --> NaN",
+        "count": 1
+      }
+    ],
+    "addInfo": "{\"hasInfo\":false}"
+  }
+]

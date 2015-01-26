@@ -1,0 +1,9 @@
+[
+  {
+    "analysis": "GlobalThis",
+    "iid": "2497",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-cube.js:94:3)",
+    "details": "'this' resolves to the global object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-cube.js:94:3) 5400 time(s).",
+    "count": 5400
+  }
+]

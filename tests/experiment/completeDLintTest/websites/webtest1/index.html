@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Liang Gong (gongliang13@cs.berkeley.edu)">
+    <title>DLint Test Page-1</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+    <!--<script src="script.js"></script>-->
+    <!--
+    Tests if all types of bad code practice are captured when
+    they are included in the external script files.
+	-->
+	<script src="../../../../dlint/buggy_AccessToProto.js"></script>
+	<script src="../../../../dlint/buggy_GlobalThis.js"></script>
+	<script src="../../../../dlint/buggy_ReservedWordReference.js"></script>
+	<script src="../../../../dlint/buggy_AccessToProto2.js"></script>
+	<script src="../../../../dlint/buggy_GlobalThis2.js"></script>
+	<script src="../../../../dlint/buggy_ReservedWordReference2.js"></script>
+	<script src="../../../../dlint/buggy_AddEnumerablePropertyToObject.js"></script>
+	<script src="../../../../dlint/buggy_IllegalUseOfArgumentsVariable.js"></script>
+	<script src="../../../../dlint/buggy_ReservedWordReference3.js"></script>
+	<script src="../../../../dlint/buggy_AddEnumerablePropertyToObject2.js"></script>
+	<script src="../../../../dlint/buggy_IllegalUseOfArgumentsVariable2.js"></script>
+	<script src="../../../../dlint/buggy_SetFieldOfPrimitive.js"></script>
+	<script src="../../../../dlint/buggy_CheckNaN.js"></script>
+	<script src="../../../../dlint/buggy_IllegalUseOfArgumentsVariable3.js"></script>
+	<script src="../../../../dlint/buggy_SetFieldOfPrimitive2.js"></script>
+	<script src="../../../../dlint/buggy_SetFieldOfPrimitive3.js"></script>
+	<script src="../../../../dlint/buggy_SetFieldOfPrimitive4.js"></script>
+	<script src="../../../../dlint/buggy_CompareFunctionWithPrimitives.js"></script>
+	<script src="../../../../dlint/buggy_InconsistentConstructor.js"></script>
+	<script src="../../../../dlint/buggy_ShadowProtoProperty.js"></script>
+	<script src="../../../../dlint/buggy_ConcatUndefinedToString.js"></script>
+	<script src="../../../../dlint/buggy_InconsistentNewCallPrefix.js"></script>
+	<script src="../../../../dlint/buggy_ShadowProtoProperty2.js"></script>
+	<script src="../../../../dlint/buggy_ConstructWrappedPrimitive.js"></script>
+	<script src="../../../../dlint/buggy_InconsistentNewCallPrefix2.js"></script>
+	<!--<script src="../../../../dlint/buggy_SimilarPropertyName.js"></script>-->
+	<script src="../../../../dlint/buggy_ConstructWrappedPrimitive2.js"></script>
+	<script src="../../../../dlint/buggy_InconsistentNewCallPrefix3.js"></script>
+	<!--<script src="../../../../dlint/buggy_SimilarPropertyName2.js"></script>-->
+	<script src="../../../../dlint/buggy_ConstructWrappedPrimitive3.js"></script>
+	<script src="../../../../dlint/buggy_MissRadixArgInParseNum.js"></script>
+	<script src="../../../../dlint/buggy_StyleMisuse.js"></script>
+	<script src="../../../../dlint/buggy_DoubleEvaluation.js"></script>
+	<script src="../../../../dlint/buggy_MissRadixArgInParseNum2.js"></script>
+	<script src="../../../../dlint/buggy_ToStringGivesNonString.js"></script>
+	<script src="../../../../dlint/buggy_DoubleEvaluation2.js"></script>
+	<script src="../../../../dlint/buggy_NoEffectOperation.js"></script>
+	<script src="../../../../dlint/buggy_UncountableSpaceInRegexp.js"></script>
+	<script src="../../../../dlint/buggy_DoubleEvaluation3.js"></script>
+	<script src="../../../../dlint/buggy_NonNumericArrayProperty3.js"></script>
+	<script src="../../../../dlint/buggy_UncountableSpaceInRegexp2.js"></script>
+	<script src="../../../../dlint/buggy_DoubleEvaluation4.js"></script>
+	<script src="../../../../dlint/buggy_NonObjectPrototype.js"></script>
+	<script src="../../../../dlint/buggy_UncountableSpaceInRegexp3.js"></script>
+	<script src="../../../../dlint/buggy_EmptyClassInRegexp.js"></script>
+	<script src="../../../../dlint/buggy_NonObjectPrototype2.js"></script>
+	<script src="../../../../dlint/buggy_UncountableSpaceInRegexp4.js"></script>
+	<script src="../../../../dlint/buggy_EmptyClassInRegexp2.js"></script>
+	<script src="../../../../dlint/buggy_NonObjectPrototype3.js"></script>
+	<script src="../../../../dlint/buggy_UndefinedOffset.js"></script>
+	<script src="../../../../dlint/buggy_ExtraCommaInArrayLiteral.js"></script>
+	<script src="../../../../dlint/buggy_OverFlowUnderFlow.js"></script>
+	<script src="../../../../dlint/buggy_UndefinedOffset2.js"></script>
+	<script src="../../../../dlint/buggy_ExtraCommaInArrayLiteral2.js"></script>
+	<script src="../../../../dlint/buggy_OverFlowUnderFlow1.js"></script>
+	<script src="../../../../dlint/buggy_UndefinedOffset3.js"></script>
+	<script src="../../../../dlint/buggy_ForInArray.js"></script>
+	<script src="../../../../dlint/buggy_OverwriteBuiltinVariable.js"></script>
+	<script src="../../../../dlint/buggy_UndefinedOffset4.js"></script>
+	<script src="../../../../dlint/buggy_FunctionAsObject.js"></script>
+	<script src="../../../../dlint/buggy_OverwrittenPrototype.js"></script>
+	<script src="../../../../dlint/buggy_UseArrObjConstrWithoutArg.js"></script>
+	<script src="../../../../dlint/buggy_FunctionCalledWithMoreArguments.js"></script>
+	<script src="../../../../dlint/buggy_OverwrittenPrototype2.js"></script>
+	<script src="../../../../dlint/buggy_UseArrObjConstrWithoutArg2.js"></script>
+	<script src="../../../../dlint/buggy_FunctionToString.js"></script>
+	<script src="../../../../dlint/buggy_FloatNumberEqualityComparison.js"></script>
+	<script src="../../../../dlint/buggy_FloatNumberEqualityComparison2.js"></script>
+	<script src="../../../../dlint/buggy_FloatNumberEqualityComparison3.js"></script>
+	<script src="../../../../dlint/buggy_FloatNumberEqualityComparison4.js"></script>
+  </head>
+  <body>
+  	<script>
+  		var p = document.createElement('p');
+  		p.innerHTML = 'Test scripts executed';
+  		document.body.appendChild(p);
+  	</script>
+  </body>
+</html>

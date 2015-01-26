@@ -1,0 +1,32 @@
+[
+  {
+    "jshint": {
+      "benchmark": "websites",
+      "filename": "ace.c9.io_#nav=about",
+      "srcFile": "httpajax.googleapis.comajaxlibsjquery1.8.3jquery.min.js",
+      "type": "Missing semicolon.",
+      "scope": "(main)",
+      "code": "W033",
+      "details": "Missing semicolon.",
+      "line": 1,
+      "column": 123
+    },
+    "dlint": {
+      "analysis": "FunctionAsObject",
+      "iid": "49035281",
+      "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi-dlint/instrumentFF_tmp/httpajax.googleapis.comajaxlibsjquery1.8.3jquery.min.js:1:123)",
+      "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi-dlint/instrumentFF_tmp/httpajax.googleapis.comajaxlibsjquery1.8.3jquery.min.js:2:23427) 298 time(s).",
+      "count": 298,
+      "debugInfo": [
+        {
+          "info": "get field from function, offset: guid",
+          "count": 149
+        },
+        {
+          "info": "put field to function, offset: guid",
+          "count": 149
+        }
+      ]
+    }
+  }
+]

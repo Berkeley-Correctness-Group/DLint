@@ -1,0 +1,204 @@
+[
+  {
+    "analysis": "ConstructWrappedPrimitive",
+    "iid": "6185",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:352:22)",
+    "details": "Using a wrapper for a primitive at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:352:22) 20000 time(s).",
+    "count": 20000
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "121",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:19:9)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:19:9) 8000 time(s).",
+    "count": 8000,
+    "debugInfo": [
+      {
+        "info": "get field from function, offset: formatFunctions",
+        "count": 8000
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "185",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:22:16)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:22:16) 8000 time(s).",
+    "count": 8000,
+    "debugInfo": [
+      {
+        "info": "get field from function, offset: formatFunctions",
+        "count": 8000
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "245",
+    "locationString": "245",
+    "details": "A function is used like an object at 245 4000 time(s).",
+    "count": 4000,
+    "debugInfo": [
+      {
+        "info": "get field from function, offset: dayNames",
+        "count": 4000
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "301",
+    "locationString": "301",
+    "details": "A function is used like an object at 301 4000 time(s).",
+    "count": 4000,
+    "debugInfo": [
+      {
+        "info": "get field from function, offset: monthNames",
+        "count": 4000
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "353",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:28:5)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:28:5) 2 time(s).",
+    "count": 2,
+    "debugInfo": [
+      {
+        "info": "get field from function, offset: formatFunctions",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "321",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:27:31)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:27:31) 2 time(s).",
+    "count": 2,
+    "debugInfo": [
+      {
+        "info": "get field from function, offset: formatFunctions",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "89",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:16:1)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:16:1) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": "put field to function, offset: formatFunctions",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "57",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:15:1)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:15:1) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": "put field to function, offset: parseRegexes",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "6473",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:362:1)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:362:1) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": "put field to function, offset: daysInMonth",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "6593",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:363:1)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:363:1) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": "put field to function, offset: monthNames",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "6673",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:376:1)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:376:1) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": "put field to function, offset: dayNames",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "6697",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:384:1)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:384:1) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": "put field to function, offset: y2kYear",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "6817",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:385:1)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:385:1) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": "put field to function, offset: monthNumbers",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "6929",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:398:1)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:398:1) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": "put field to function, offset: patterns",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "analysis": "FunctionAsObject",
+    "iid": "33",
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:14:1)",
+    "details": "A function is used like an object at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/date-format-xparb.js:14:1) 1 time(s).",
+    "count": 1,
+    "debugInfo": [
+      {
+        "info": "put field to function, offset: parseFunctions",
+        "count": 1
+      }
+    ]
+  }
+]
