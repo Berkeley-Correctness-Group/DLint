@@ -83,7 +83,7 @@ export PATH="`pwd`/scripts/path_unix":$PATH
 
 
 **Step3:**
-execute the following command to compile the Java code:
+execute the following commands to compile the Java code:
 ```
 javac -d thirdparty -cp thirdparty/selenium-server-standalone-2.41.0.jar `pwd`/src/java/evaluation/ExperimentRunner.java
 javac -d thirdparty -cp thirdparty/selenium-server-standalone-2.41.0.jar `pwd`/src/java/evaluation/OctaneExperimentRunner.java
@@ -93,8 +93,8 @@ Now you are good to go, have fun with DLint!
 
 ### Usage
 
-Everytime when you open a new cmd window, go to DLint dir first, next alwasy
-remember to set the path:
+Everytime when you open a new cmd window, go to DLint dir first, then (always
+remember to) set the path:
 ```
 export PATH="`pwd`/scripts/path_unix":$PATH
 ```
