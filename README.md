@@ -75,6 +75,7 @@ export PATH="`pwd`/scripts/path_unix":$PATH
   * Install our custom version of Firefox: [Linux (64 bit)](http://mp.binaervarianz.de/jalangi/firefox-jalangi-27.0a1.en-US.linux-x86_64_20140815.tar.bz2), [Mac OS (64 bit)](http://mp.binaervarianz.de/jalangi/firefox-jalangi-27.0a1.en-US.mac64_20140520.dmg)
   * In file, ```src/java/evaluation/ExperimentRunner.java``` and
   ```src/java/evaluation/OctaneExperimentRunner.java```: Make sure the variable ```firefoxBinary``` points to the location where you installed the custom version of Firefox.
+  
   ```java
   // modify the following assignment with the correct value.
   final String firefoxBinary = "/Applications/Nightly.app/Contents/MacOS/firefox-bin";
