@@ -183,7 +183,7 @@ python -m SimpleHTTPServer
 ```
 2. Run the following command on another terminal:
 ```
-export PATH="/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi-dlint/scripts/path_unix":$PATH
+export PATH="`pwd`/scripts/path_unix":$PATH
 ./scripts/dlint_lintTest.sh
 ```
 
