@@ -42,7 +42,7 @@ public class OctaneExperimentRunner {
 	final String firefoxBinary = "/Applications/Nightly.app/Contents/MacOS/firefox-bin";
   
   // location of the jalangiFF Firefox plugin
-	final String jalangiFFxpi = "thirdparty/jalangiFF.xpi";
+	final String jalangiFFxpi = "thirdparty/jalangiff.xpi";
 
 	final String firefoxLogFile = "/tmp/firefox.out";
 	final String javascriptLogFile = "/tmp/firefox_javascript.out";

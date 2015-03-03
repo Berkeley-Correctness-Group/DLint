@@ -51,10 +51,10 @@ public class ExperimentRunner {
 
   // location of Firefox modified for in-browser instrumentation
 	//final String firefoxBinary = "thirdparty/instrumenting_firefox";
-	final String firefoxBinary = "/Applications/Nightly.app/Contents/MacOS/firefox-bin";
+	final String firefoxBinary = "/home/jacksongl/Downloads/firefox/firefox-bin";
   
   // location of the jalangiFF Firefox plugin
-	final String jalangiFFxpi = "thirdparty/jalangiFF.xpi";
+	final String jalangiFFxpi = "thirdparty/jalangiff.xpi";
 
 	final String firefoxLogFile = "/tmp/firefox.out";
 	final String javascriptLogFile = "/tmp/firefox_javascript.out";

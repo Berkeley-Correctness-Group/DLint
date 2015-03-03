@@ -105,7 +105,7 @@ Apply Dlint to a real-world website:
 ```
 For example:
 ```
-./scripts/dlint.sh www.google.com
+./scripts/dlint.sh www.sencha.com
 ```
 Please do not interact with the DLint-started browser, DLint will automatically close the browser after analysis. When it is done, all executed files and analysis result will be dumped in ```websites\<URL>``` directory, in which ```analysis.json``` contains all DLint warnings.
 
