@@ -72,7 +72,7 @@ export PATH="`pwd`/scripts/path_unix":$PATH
 ```
 **Step 2:** 
 
-  * Install our custom version of Firefox: [Linux (64 bit)](http://mp.binaervarianz.de/jalangi/firefox-jalangi-27.0a1.en-US.linux-x86_64_20140815.tar.bz2)[Linux (64 bit) Mirror1](https://www.eecs.berkeley.edu/~gongliang13/files/firefox-jalangi-27.0a1.en-US.linux-x86_64_20140815.tar.bz2), [Mac OS (64 bit)](http://mp.binaervarianz.de/jalangi/firefox-jalangi-27.0a1.en-US.mac64_20140520.dmg)[Mac OS (64 bit) Mirror1](https://www.eecs.berkeley.edu/~gongliang13/files/firefox-jalangi-27.0a1.en-US.mac64_20140520.dmg). More details [here](https://github.com/Berkeley-Correctness-Group/Jalangi-Berkeley#in-browser-instrumentation-instrumentff).
+  * Install our custom version of Firefox: [Linux (64 bit)](http://mp.binaervarianz.de/jalangi/firefox-jalangi-27.0a1.en-US.linux-x86_64_20140815.tar.bz2), [(Mirror-1)](https://www.eecs.berkeley.edu/~gongliang13/files/firefox-jalangi-27.0a1.en-US.linux-x86_64_20140815.tar.bz2), [Mac OS (64 bit)](http://mp.binaervarianz.de/jalangi/firefox-jalangi-27.0a1.en-US.mac64_20140520.dmg), [(Mirror-1)](https://www.eecs.berkeley.edu/~gongliang13/files/firefox-jalangi-27.0a1.en-US.mac64_20140520.dmg). More details [here](https://github.com/Berkeley-Correctness-Group/Jalangi-Berkeley#in-browser-instrumentation-instrumentff).
   * In file, ```src/java/evaluation/ExperimentRunner.java``` and
   ```src/java/evaluation/OctaneExperimentRunner.java```: Make sure the variable ```firefoxBinary``` points to the location where you installed the custom version of Firefox.
   
