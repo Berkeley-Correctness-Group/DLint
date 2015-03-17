@@ -2,6 +2,7 @@
 
 # annex calculator
 
+rm scripts/doNotUseDlint.txt
 rm -rf instrumentFF_tmp
 rm -rf webapps
 mkdir webapps

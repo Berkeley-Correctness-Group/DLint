@@ -16,6 +16,7 @@
 # Author: Michael Pradel (michael@binaervarianz.de)
 
 import os
+import os.path
 import sys
 import tempfile
 import shutil
@@ -44,9 +45,13 @@ excluded = [ ]
 
 sys.path.append('scripts')
 import dlintAnalyses
+# read from a flag file, if exists, load dlint analysis
+# otherwise load nothing
 jalangiAnalysisFiles = [ 
    jalangiBaseDir+"src/js/analyses2/ChainedAnalyses2.js",
 ] + dlintAnalyses.get(jalangiDLintBaseDir+'src/js/analyses/dlint/');
+if os.path.isfile("scripts/doNotUseDlint.txt"):
+   jalangiAnalysisFiles = [];
 
 analysisDotJs = "src/js/analysis2.js"  # for dlint2
 
