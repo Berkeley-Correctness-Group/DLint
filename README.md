@@ -10,11 +10,10 @@ JavaScript is becoming one of the most popular languages, yet it is known for it
 ### Authors
 Liang Gong, Michael Pradel, Manu Sridharan and Koushik Sen
 
-A technical report is available at:
+A technical report is available at (to appear in [ISSTA'15](http://issta2015.cs.uoregon.edu/) soon):
 
 http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf
 
-**News** DLint has been accpeted by ISSTA'15[http://issta2015.cs.uoregon.edu/]. 
 
 ### Before any actions
 
