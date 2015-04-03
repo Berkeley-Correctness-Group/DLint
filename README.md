@@ -14,6 +14,8 @@ A technical report is available at:
 
 http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf
 
+** News ** DLint has been accpeted by ISSTA'15[http://issta2015.cs.uoregon.edu/]. 
+
 ### Before any actions
 
 All following instructions assume that the current working directory is the root direcotry of DLint and that the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory is a sibling directory of DLint (do not worry about it: commands in ```Install``` section will make sure this happens). This project currently supports Mac OS and Linux.
