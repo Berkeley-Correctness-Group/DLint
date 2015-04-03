@@ -14,7 +14,7 @@ A technical report is available at:
 
 http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf
 
-** News ** DLint has been accpeted by ISSTA'15[http://issta2015.cs.uoregon.edu/]. 
+**News** DLint has been accpeted by ISSTA'15[http://issta2015.cs.uoregon.edu/]. 
 
 ### Before any actions
 
