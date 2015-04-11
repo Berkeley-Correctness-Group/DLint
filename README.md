@@ -66,7 +66,7 @@ npm install cli
 npm install stats
 npm install jshint
 npm install doctrine
-npm install yui jsdom
+npm install jsdom@3.1.2
 npm install node-js-beautify
 npm install google-search-scraper
 export PATH="`pwd`/scripts/path_unix":$PATH
