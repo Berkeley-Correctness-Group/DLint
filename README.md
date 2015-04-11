@@ -166,6 +166,7 @@ To add a new analysis:
  2. Add the analysis to ```src/js/analyses/dlint/analyses.txt```.  
  3. Add tests for the analysis (see below).  
 
+**Note:** DLint framework currently adopts [analysis2 API](https://github.com/SRA-SiliconValley/jalangi/blob/master/docs/analysis2.md) in [Jalangi](https://github.com/SRA-SiliconValley/jalangi) (not [Jalangi2](https://github.com/Samsung/jalangi2)). It is primarily because Jalangi2 was not released when DLint was developed. We plan to migrate to Jalangi2 later.
 
 ### Testing
 
