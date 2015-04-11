@@ -32,4 +32,5 @@ EmptyClassInRegexp.js
 UseArrObjConstrWithoutArg.js
 MissRadixArgInParseNum.js
 FloatNumberEqualityComparison.js
+jsBuiltinFunctionChecker/StringFunctionsMisuse.js
 DLintPost.js

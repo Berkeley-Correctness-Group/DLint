@@ -1,9 +1,0 @@
-[
-  {
-    "analysis": "AddEnumerablePropertyToObject",
-    "iid": "1945",
-    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/string-tagcloud.js:99:5)",
-    "details": "Adding an enumerable property to Object.prototype at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/string-tagcloud.js:99:5) 1 time(s).",
-    "count": 1
-  }
-]
