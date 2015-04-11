@@ -90,11 +90,12 @@
             return ret;
         }
 
-        addEntry('STR_INDEX_OF', String.prototype.indexOf,
+        // String.prototype.indexOf
+        addEntry('String.prototype.indexOf', String.prototype.indexOf,
             function(iid, f, base, args, result, isConstructor, isMethod) {
                 if (args.length < 1 || args.length > 2) {
                     iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                    addDebugInfo(iid, 'function String.indexOf should take only one argument. \n Runtime Args: ' + argsToString(args));
+                    addDebugInfo(iid, 'function String.indexOf should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
                 } else {
                     if (args.length === 1) {
                         if (typeof args[0] !== 'string') {
@@ -102,14 +103,48 @@
                             addDebugInfo(iid, 'the first argument of function String.indexOf should be a string value. \n Runtime Args: ' + argsToString(args));
                         }
                     } else if (args.length === 2) {
-                        if (typeof args[0] !== 'string' || typeof args[1] !== 'number') {
+                        if (typeof args[0] !== 'string' || !Utils.isInteger(args[1])) {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                            addDebugInfo(iid, 'the arguments\' type of function String.indexOf should be string (-> number) -> number. \n Runtime Args: ' + argsToString(args));
+                            addDebugInfo(iid, 'the arguments\' type of function String.indexOf should be string (-> int) -> int. \n Runtime Args: ' + argsToString(args));
                         }
                     }
                 }
             }
         );
+
+        // String.prototype.charAt
+        addEntry('String.prototype.charAt', String.prototype.charAt,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.charAt should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (!Utils.isInteger(args[0])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function String.prototype.charAt should be an integer. \n Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
+
+        // String.prototype.charCodeAt
+        // String.prototype.concat
+        // String.prototype.lastIndexOf
+        // String.prototype.localeCompare
+        // String.prototype.match
+        // String.prototype.replace
+        // String.prototype.search
+        // String.prototype.split
+        // String.prototype.substr
+        // String.prototype.substring
+        // String.prototype.toLocaleLowerCase
+        // String.prototype.toLocaleUpperCase
+        // String.prototype.toString
+        // String.prototype.toUpperCase
+        // String.prototype.trim
+        // String.prototype.valueOf
+        // String.prototype.anchor
+        // String.prototype.link
 
         this.invokeFun = function(iid, f, base, args, result, isConstructor, isMethod) {
             checkFunction(f, arguments);

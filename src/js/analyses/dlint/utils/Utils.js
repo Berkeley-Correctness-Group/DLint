@@ -54,6 +54,18 @@
             }
             return false;
         },
+        isInteger: function (num) {
+            if (typeof num === 'number' && !this.ISNAN(num)) {
+                if(num === (num | 0)) return true;
+            }
+            return false;
+        },
+        isFloat: function (num) {
+            if (typeof num === 'number' && !this.ISNAN(num)) {
+                if(num !== (num | 0)) return true;
+            }
+            return false;
+        },
         reorganizeDebugInfo: function(iidToInfo) {
             var ret = {};
             for (var iid in iidToInfo) {
