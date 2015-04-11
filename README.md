@@ -205,6 +205,8 @@ The current version of DLint consists of around 30 checkers. But you can choose 
 checker to use when analyzing a web page.
 To add/remove a checker, add/remove the checker's file name in ```src/js/analyses/dlint/analyses.txt```.
 
+**Note:** Do not put any analysis before ```DLintPre.js``` or after ```DLintPost.js```. If analysis A depends on analysis B, A should be listed after B in the configuration file.
+
 A configuration of ```src/js/analyses/dlint/analyses.txt``` (including all the analyses):
 ```
 DLintPre.js
@@ -241,6 +243,7 @@ EmptyClassInRegexp.js
 UseArrObjConstrWithoutArg.js
 MissRadixArgInParseNum.js
 FloatNumberEqualityComparison.js
+jsBuiltinFunctionChecker/StringFunctionsMisuse.js
 ExeStat.js
 Timer.js
 DLintPost.js

@@ -1,0 +1,10 @@
+tests/dlint/*_jalangi_.js
+jalangi_tmp/*
+instrumentFF_tmp/*
+instrumentFF_tmp_instr.js
+instrumentFF_tmp_orig.js
+websites
+thirdparty/selenium-server-standalone-2.41.0.jar
+thirdparty/evaluation/
+thirdparty/jalangiff.zip
+thirdparty/jalangiff/
