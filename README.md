@@ -251,14 +251,15 @@ DLintPost.js
 
 ### Try DLint on Virtualbox
 
+If you do not have a Mac or Linux OS or a 64bit machine (or if you just want to try DLint without going through those installation steps), one option would be using DLint on a virtual machine.
+
 Download [Virtualbox Software (virtual machine)](https://www.virtualbox.org/) and [this virtualbox image (guest OS: Ubuntu 12.04)](https://berkeley.box.com/s/d4dyb3khxvkc0aj9qqqgl2g2ftki2ss9):
 
-In the guest OS, open and terminal and type the following commands (or double click the bash script in the desktop):
+In the guest OS, open a terminal and type the following commands (or double click the bash script on the desktop):
 
 ```
 cd ~/dlint/DLint
 export PATH="`pwd`/scripts/path_unix":$PATH
 ```
+(root password: ```123```)
 
-Now you can try DLint in the virtual machine.  
-(username: DLint-User, password: 123)
