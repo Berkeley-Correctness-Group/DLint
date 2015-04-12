@@ -128,7 +128,40 @@
         );
 
         // String.prototype.charCodeAt
+        addEntry('String.prototype.charCodeAt', String.prototype.charCodeAt,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.charCodeAt should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (!Utils.isInteger(args[0])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function String.prototype.charCodeAt should be an integer. \n Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
+
         // String.prototype.concat
+        addEntry('String.prototype.concat', String.prototype.concat,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.concat should take at least one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    check_args:
+                    for(var i=0;i<args.length;i++) {
+                        if (typeof args[i] !== 'string') {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the first argument of function String.prototype.concat should be an integer. \n Runtime Args: ' + argsToString(args));
+                            break check_args;
+                        }
+                    }
+                }
+            }
+        );
+
+
         // String.prototype.lastIndexOf
         // String.prototype.localeCompare
         // String.prototype.match
