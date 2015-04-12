@@ -1,3 +1,5 @@
+#!/bin/bash
+
 find . -regex '.*.jar' | xargs rm
 find . -regex '.*.class' | xargs rm
 find . -regex '.*._jalangi_.js' | xargs rm
