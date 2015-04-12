@@ -14,7 +14,6 @@ A technical report is available at (to appear in [ISSTA'15](http://issta2015.cs.
 
 http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf
 
-
 ### Before any actions
 
 All following instructions assume that the current working directory is the root direcotry of DLint and that the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory is a sibling directory of DLint (do not worry about it: commands in ```Install``` section will make sure this happens). This project currently supports Mac OS and Linux.
@@ -249,3 +248,20 @@ ExeStat.js
 Timer.js
 DLintPost.js
 ```
+
+### Try DLint on Virtualbox
+
+Download [Virtualbox Software (virtual machine)](https://www.virtualbox.org/) and [this virtualbox image (guest OS: Ubuntu 12.04)](https://berkeley.box.com/s/d4dyb3khxvkc0aj9qqqgl2g2ftki2ss9):
+
+In the guest OS, open and terminal and type the following commands:
+
+```
+cd ~/dlint/DLint
+export PATH="`pwd`/scripts/path_unix":$PATH
+
+```
+
+Now you can try DLint in the virtual machine.
+
+**Guest OS User Name:** DLint-User  
+**Guest OS Root Password:** 123
