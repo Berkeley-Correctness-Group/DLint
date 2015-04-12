@@ -258,7 +258,6 @@ In the guest OS, open and terminal and type the following commands:
 ```
 cd ~/dlint/DLint
 export PATH="`pwd`/scripts/path_unix":$PATH
-
 ```
 
 Now you can try DLint in the virtual machine.

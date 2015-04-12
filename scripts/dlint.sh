@@ -8,6 +8,7 @@ javac -d thirdparty -cp thirdparty/selenium-server-standalone-2.41.0.jar ./src/j
 bm="http://"$1
   echo "####################################"
   echo ${bm}
+  echo "Please do not interact with the DLint-started browser, DLint will automatically close the browser after analysis."
   bm_short=`echo ${bm} | sed s/http[s]*:\\\\/\\\\///g | sed s/\\\\//\\\\_/g`
   echo ${bm_short}
   mkdir websites/${bm_short}
@@ -22,4 +23,4 @@ bm="http://"$1
   mv instrumentFF_tmp/*_jalangi_sourcemap.json websites/${bm_short}/sourcemaps/
   mkdir websites/${bm_short}/src
   mv instrumentFF_tmp/*.js websites/${bm_short}/src/
-
+  echo "All executed files and analysis result will be dumped in websites\<URL> directory, in which analysis.json contains all DLint warnings."
