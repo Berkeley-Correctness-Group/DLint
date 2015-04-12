@@ -161,9 +161,89 @@
             }
         );
 
-
         // String.prototype.lastIndexOf
-        // String.prototype.localeCompare
+        addEntry('String.prototype.lastIndexOf', String.prototype.lastIndexOf,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.lastIndexOf should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (args.length === 1) {
+                        if (typeof args[0] !== 'string') {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the first argument of function String.prototype.lastIndexOf should be a string value. \n Runtime Args: ' + argsToString(args));
+                        }
+                    } else if (args.length === 2) {
+                        if (typeof args[0] !== 'string' || !Utils.isInteger(args[1])) {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the arguments\' type of function String.prototype.lastIndexOf should be string (-> int) -> int. \n Runtime Args: ' + argsToString(args));
+                        }
+                    }
+                }
+            }
+        );
+        
+        // not all environment supports this function
+        if(String.prototype.localeCompare) {
+            // String.prototype.localeCompare
+            addEntry('String.prototype.localeCompare', String.prototype.localeCompare,
+                function(iid, f, base, args, result, isConstructor, isMethod) {
+                    if (args.length < 1 || args.length > 3) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'function String.prototype.localeCompare should take only 1~3 arguments. \n Runtime Args: ' + argsToString(args));
+                    } else {
+                        if (args.length === 1) {
+                            if (typeof args[0] !== 'string') {
+                                iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                addDebugInfo(iid, 'the first argument of function String.prototype.localeCompare should be a string value. \n Runtime Args: ' + argsToString(args));
+                            }
+                        } else if (args.length === 2) {
+                            if (typeof args[0] !== 'string' || typeof args[1] !== 'string') {
+                                iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                addDebugInfo(iid, 'the arguments\' type of function String.prototype.localeCompare should be string ((-> string) -> object) -> int. \n Runtime Args: ' + argsToString(args));
+                            } else if(args[1] !== 'co' && args[1] !== 'kn' && args[2] !== 'kf') {
+                                iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                addDebugInfo(iid, 'the second argument of function String.prototype.localeCompare should be a locale string of value "co" or "kn" or "kf" \n Runtime Args: ' + argsToString(args));
+                            }
+                        } else if (args.length === 3) {
+                            if (typeof args[0] !== 'string' || typeof args[1] !== 'string') {
+                                iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                addDebugInfo(iid, 'the arguments\' type of function String.prototype.localeCompare should be string ((-> string) -> object) -> int. \n Runtime Args: ' + argsToString(args));
+                            } else if(args[1] !== 'co' || args[1] !== 'kn' || args[2] !== 'kf') {
+                                iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                addDebugInfo(iid, 'the second argument of function String.prototype.localeCompare should be a locale string of value "co" or "kn" or "kf". \n Runtime Args: ' + argsToString(args));
+                            } else if (typeof args[2] !== 'object'){
+                                iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                addDebugInfo(iid, 'the third argument of function String.prototype.localeCompare should be a configuration object. \n Runtime Args: ' + argsToString(args));
+                            } else {
+                                var config_obj = args[2];
+                                if(config_obj.localeMatcher && (config_obj.localeMatcher !== 'lookup') && (config_obj.localeMatcher !== 'best fit')) {
+                                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                    addDebugInfo(iid, 'the third argument of function String.prototype.localeCompare should be a configuration object. The localeMatcher property of that object should be of value "lookup" or "best fit". \n Runtime property value: ' + config_obj.localeMatcher);
+                                } else if(config_obj.usage && (config_obj.usage !== 'sort') && (config_obj.usage !== 'search')) {
+                                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                    addDebugInfo(iid, 'the third argument of function String.prototype.localeCompare should be a configuration object. The usage property of that object should be of value "sort" or "search". \n Runtime property value: ' + config_obj.usage);
+                                } else if(config_obj.sensitivity && (config_obj.sensitivity !== 'base') && (config_obj.sensitivity !== 'accent') && (config_obj.sensitivity !== 'case') && (config_obj.sensitivity !== 'variant')) {
+                                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                    addDebugInfo(iid, 'the third argument of function String.prototype.localeCompare should be a configuration object. The sensitivity property of that object should be of value "base" or "accent" or "case" or "variant". \n Runtime property value: ' + config_obj.sensitivity);
+                                } else if(config_obj.ignorePunctuation && (typeof config_obj.ignorePunctuation !== 'boolean')) {
+                                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                    addDebugInfo(iid, 'the third argument of function String.prototype.localeCompare should be a configuration object. The ignorePunctuation property of that object should be of boolean value true or false. \n Runtime property value type: ' + (typeof config_obj.ignorePunctuation));
+                                } else if(config_obj.numeric && (typeof config_obj.numeric !== 'boolean')) {
+                                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                    addDebugInfo(iid, 'the third argument of function String.prototype.localeCompare should be a configuration object. The numeric property of that object should be of boolean value true or false. \n Runtime property value type: ' + (typeof config_obj.numeric));
+                                } else if(config_obj.caseFirst && (config_obj.caseFirst !== 'upper') && (config_obj.caseFirst !== 'lower') && (config_obj.caseFirst !== 'false')) {
+                                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                                    addDebugInfo(iid, 'the third argument of function String.prototype.localeCompare should be a configuration object. The caseFirst property of that object should be of value "upper" or "lower" or "false". \n Runtime property value: ' + config_obj.caseFirst);
+                                } 
+                            }
+                        }
+                    }
+                }
+            );
+        }
+        
+
         // String.prototype.match
         // String.prototype.replace
         // String.prototype.search
