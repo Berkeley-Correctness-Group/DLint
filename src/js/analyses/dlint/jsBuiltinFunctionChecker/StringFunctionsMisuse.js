@@ -243,8 +243,22 @@
             );
         }
         
-
+        var REGEXP = RegExp;
         // String.prototype.match
+        addEntry('String.prototype.match', String.prototype.match,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.match should take only one. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (!(args[0] instanceof REGEXP)) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'The first argument of function String.prototype.match should be a RegExp instance. \n Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
+
         // String.prototype.replace
         // String.prototype.search
         // String.prototype.split

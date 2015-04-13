@@ -48,6 +48,8 @@
       (file.indexOf("buggy_") === 0 || file.indexOf("okay_") === 0));
   });
   var verbose = false;
+  if(process.argv[2] === 'verbose') 
+    verbose = true;
   var testsToDo = testsToAnalyze.length;
   console.log("Tests to run: " + testsToDo);
   while (testsToAnalyze.length > 0) {
