@@ -260,6 +260,26 @@
         );
 
         // String.prototype.replace
+        // str.replace(regexp|substr, newSubStr|function[, flags])
+        addEntry('String.prototype.replace', String.prototype.replace,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 2 || args.length > 3) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.replace should take 2~3 arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length === 2) {
+                    if (typeof args[0] !== 'string' && !(args[0] instanceof REGEXP)) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function String.prototype.replace should be either a string value or an instanceof RegExp. \n Runtime Args: ' + argsToString(args));
+                    } else if (typeof args[1] !== 'string' && typeof args[1] !== 'function') {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the second argument of function String.prototype.replace should be either a string value or a function. \n Runtime Args: ' + argsToString(args));
+                    }
+                } else if (args.length === 3) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the third argument of function String.prototype.replace is deprecated as it is not supported by V8 (used by Node.js and Chrome). \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
         // String.prototype.search
         // String.prototype.split
         // String.prototype.substr
