@@ -174,9 +174,9 @@ Each analysis should have two kinds of tests:
   * Example programs that should trigger a warning. For node.js tests, add such programs to ```tests/dlint``` and name the file so that it starts with ```buggy_TheAnalysisName```, For browser tests, add such programs to ```tests/html/dlint``` in a directory that starts with ```buggy_TheAnalysisName```.  
   * Example programs that should **not** trigger a warning. For node.js tests, add such programs to ```tests/dlint``` and name the file so that it starts with ```okay_TheAnalysisName```. For browser tests, add such programs to ```tests/html/dlint``` in a directory that starts with ```okay_TheAnalysisName```.
 
-To run all node.js tests:
+To run all node.js tests (```verbose``` is optional):
 ```
-node tests/dlint/runAllTests.js
+node tests/dlint/runAllTests.js [verbose]
 ```
 
 To run all browser tests (requires the setup described above):
