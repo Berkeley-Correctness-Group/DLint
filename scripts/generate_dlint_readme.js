@@ -12,7 +12,7 @@
     var doctrine = require('doctrine');
 
     var analysesDir = "src/js/analyses/dlint/";
-    var excludedFiles = ["utils", "analyses.txt", "DLintPre.js", "DLintPost.js", "ExeStat.js", "Timer.js"];
+    var excludedFiles = ["utils", "analyses.txt", "DLintPre.js", "DLintPost.js", "ExeStat.js", "Timer.js", "files", "jsBuiltinFunctionChecker"];
 
     var readMeMDFile = "README_DLint_Checkers.md";
     var latexFilePrefix = "checkers_";
@@ -67,6 +67,7 @@
     }
 
     function parseCheckerFile(fileName) {
+        console.log(analysesDir + fileName);
         var code = fs.readFileSync(analysesDir + fileName, "utf8");
         var checkerDoc = new CheckerDoc(fileName.replace(/\.js$/, ""));
         var content;

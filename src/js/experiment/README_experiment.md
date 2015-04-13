@@ -1,3 +1,205 @@
+
+This document records information and instructions to run experiments for Dlint.
+Git markdown online editor: http://jbt.github.io/markdown-editor/
+
+Every Time after Reboot the system
+--------------------------
+Set environment variable:
+```
+export PATH="`pwd`/scripts/path_unix":$PATH
+```
+Start server (open another terminal with working directory under root of dlint project)
+```
+python -m SimpleHTTPServer
+```
+Start Joomla:  
+```
+/Applications/joomla-3.3.6-0/ctlscript.sh start
+```
+
+Run All DLint Analysis
+--------------------------
+```
+./scripts/dlint_websites.sh
+node src/js/experiment/exp-analysis.js
+```
+
+Run JSHint Analysis
+--------------------------
+```
+node src/js/experiment/runExp.js
+```
+Due to limited memory (8G) of our current machine,
+JSHint results are stored separatedly into each Dlint's 
+raw dataset sub-directory (corresponding to each benchmark).
+
+Collect Statistics of JSHint Warnings
+--------------------------
+```
+node src/js/experiment/JSHintStatistics.js
+```
+Manully organized result is in ```exp/JSHint-statistics.xlsx```
+
+Collect Statistics of DLint Warnings
+--------------------------
+```
+node src/js/experiment/DLintStatistics.js
+```
+Manully organized result is in ```exp/DLint-statistics.xlsx```
+
+Analyzing Warning Matching Statistics for Each Warning Type
+--------------------------
+```
+node src/js/experiment/Experiment1.js
+node src/js/experiment/dataAnalysis/WarningTypeStatistics.js
+```
+Matching statistics will be stored in ```exp/JSHint-DLint-statistics.csv```
+
+Collect Source File Statistics
+--------------------------
+```
+node src/js/experiment/dataAnalysis/SourceFileStatistics.js
+```
+JavaScript source file statistics will be stored in ```exp/Source-statistics.csv```
+
+Analyzing Warnings Matching Statistics for Each Site:
+--------------------------
+```
+node src/js/experiment/Experiment1.js
+node src/js/experiment/dataAnalysis/WarningPerSiteStatistics.js
+```
+Matching statistics will be stored in ```exp/Warning-statistics-per-site.csv```
+
+
+Analyzing Warnings Matching Statistics for Each Site (only for matched warnings):
+--------------------------
+```
+node src/js/experiment/Experiment1.js
+node src/js/experiment/dataAnalysis/MatchedWarningPerSiteStatistics.js
+```
+Matching statistics will be stored in ```exp/Matched-Warning-statistics-per-site.csv```
+and ```exp/Matched-analysis.json```
+
+Analyzing Warnings Matching Statistics for Each Site and Each Analysis Type:
+--------------------------
+```
+node src/js/experiment/Experiment1.js
+node src/js/experiment/dataAnalysis/WarningPerTypePerSiteStatistics.js
+```
+Matching statistics will be stored in ```exp/Warning-statistics-per-analysis-per-site.csv```
+
+Analyzing Mismatch Reasons:
+--------------------------
+```
+node src/js/experiment/dataAnalysis/MismatchedReason.js
+```
+Result will be stored in ```exp/Warning-Mismatched.csv```
+
+Collect Runtime Statistics:
+--------------------------
+```
+node src/js/experiment/dataAnalysis/RuntimeSourceStatistics.js
+```
+Result will be stored in ```exp/Runtime-statistics.csv```
+
+Collect Timing Statistics:
+--------------------------
+```
+node src/js/experiment/dataAnalysis/TimeStatistics.js
+```
+Result will be stored in ```exp/Time-statistics.csv```
+
+Analyze JShint warning to static source information:
+--------------------------
+```
+node src/js/experiment/dataAnalysis/JSHint2SourceStatistics.js
+```
+Result will be stored in ```exp/JSHint-Source-statistics.csv```
+
+
+
+Count the souce code in DLint
+--------------------------
+The following command counts JavaScript code:
+```
+find . -regex '.*\.js' -a ! -name '*_jalangi_*.js' -a ! -path '*octane*.js' -a ! -path '*sunspider*.js' -a ! -path '*tizen_firefox*' -a ! -path '*sunspider*' -a ! -path '*octane*' -a ! -path '*jslint/JSLint*' -a ! -path '*jquery_test*' -a ! -path '*websites_stored_code*' ! -path '*webLintTest*' | xargs wc -l
+``` 
+result: 28694 total
+
+The following command counts Java code:
+```
+find . -regex '.*\.java' | xargs wc -l
+``` 
+result: 814 total
+
+The following command counts bash code:
+```
+find . -regex '.*\.sh' | xargs wc -l
+``` 
+result: 100 total
+
+Generate documentation of dlint checkers
+----------------------------------------
+
+To generate a file that summarizes all dlint checkers, run the following from the jalangi-dlint directory:
+```
+node scripts/generate_dlint_readme.js
+```
+It creates ```README_DLint_Checkers.md``` and ```.tex``` files (for the paper) in the DLint project root directory.
+
+
+Labeling Ground Truth
+--------------------
+
+After running on subject programs, dlint reports warnings. To automatically calculate statistics (e.g, false positive rate, false negative rate etc.). The experimental framework provides a labeling system for us to label every warning reported once for all. In ```src/js/experiment``` directory:
+
+ * ```exp-analysis.js``` is the labeling tool.
+ * ```ground-truth.json``` contains all the labels for each warning reported.
+
+To collect warnings for Sunspider for example, first run dlint for sunspider:
+```
+./scripts/dlint_sunspider.sh
+```
+This will generate all warnings in different sub-directories. Next run
+```
+node src/js/experiment/exp-analysis.js
+```
+This will load labels from ```ground-truth.json``` and all warnings, analyse the result and report all statistics. This will extend ```ground-truth.json``` by adding new warnings to be labeled.
+
+To label warnings, first open ```ground-truth.json```, you will see many warnings (labeled or unlabeled), for instance:  
+
+```
+{  
+    "benchmark": "sunspider",  
+    "filename": "3d-cube.js",  
+    "iid": "12657",  
+    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-cube.js:314:23)",  
+    "type": "NonNumericArrayProperty",  
+    "details": "Accessing a non-numeric array property at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-cube.js:314:23) 5404 time(s).",  
+    "label": "[TBD]",  
+    "who": "[your name]",
+    "Comment" : "[comment, or reason why it is not a bug]"  
+  }, ...  
+``` 
+
+Inspect the source code according to ```benchmark```, ```filename```, ```locationString```,and```details```, if it is a bug, fill ```label``` with ```bug```, if not a bug, fill ```clean```, otherwise ```unknown```. Also fill in your name in ```who``` and comments, justification for the label. These information could help further refine the dlint dynamic analysis. 
+
+Finally it is OK not to label all warnings. The system can tolerate if some labels are left with ```[TBD]```.
+
+If ```ground-truth.json``` contains too many unlabeled warnings, use the following command to remove those unlabeled warnings:  
+```
+node src/js/experiment/prune-truth.js
+```
+
+Summarize DLint's warnings as a huge table into CSVs:
+```
+node src/js/experiment/warning-stat.js
+```
+
+
+Websites Checked So Far
+--------------------------
+```
 http://www.tacklewarehouse.com/Fat_Sack_Tackle_Company_Fizzle_Jig/descpage-FSTCFJ.html
 https://niagarafallshilton.com/ratesCalendar/
 http://seattletimes.com/html/localpages/2018327065_seattle-liquor-price-changes.html?cmpid=2628
@@ -147,6 +349,11 @@ http://www.bloomberg.com/quote/AFIMOFC:FP
 https://www.ccnex.com/trade/MCL/quick
 http://www.uconnhuskies.com/sports/m-baskbl/recaps/112113aaa.html
 http://hazentech.com/about-us-facts
+```
+
+Websites from google top search results of random words and facebook trending terms:
+
+```
 http://dictionary.reference.com/browse/un+ingestive
 http://www.thefreedictionary.com/parodic
 http://en.wikipedia.org/wiki/Armrest
@@ -215,7 +422,36 @@ https://www.facebook.com/PixarInsideOut
 http://www.baseball-reference.com/players/k/kempma01.shtml
 http://www.bbc.co.uk/programmes/b006t1q9
 http://www.buzzfeed.com/matthewzeitlin/scott-rudin-on-obama-i-bet-he-likes-kevin-hart
+```
+Analysis Data
+----------------------
+All experimental data is uploaded to Berkeley Box, which are availabe at the following link (only members of this project have access to the content in the following link):  
+https://berkeley.app.box.com/files/0/f/2700044051/websites
+
+Experiment Script
+----------------------
+Run the following script to collect all dataset:
+```
+./scripts/dlint_websites.sh
+node exp/exp-analysis.js
+mv websites ~/Box\ Sync/
+node src/js/experiment/runExp.js
+node src/js/experiment/JSHintStatistics.js
+node src/js/experiment/DLintStatistics.js
+node src/js/experiment/Experiment1.js
+node src/js/experiment/AnalyseMatchingStatistics.js
+```
+
+
+Ranked Websites
+----------------------
+Data from: Alexa.com
+and: https://www.quantcast.com/top-sites/US
+
+Top 10 websites:
+```
 http://www.google.com
+https://www.facebook.com/
 https://www.youtube.com/
 https://www.yahoo.com/
 http://www.baidu.com/
@@ -224,6 +460,10 @@ http://www.wikipedia.org/
 http://www.taobao.com/
 https://twitter.com/
 http://www.qq.com/
+```
+
+Top 45-55 websites:
+```
 http://home.ijreview.com/
 http://www.drugs.com/
 https://vimeo.com/
@@ -234,6 +474,11 @@ http://www.legacy.com/ns/
 http://www.target.com/
 http://www.ups.com/?Site=Corporate&cookie=us_en_home&inputImgTag=&setCookie=yes
 https://www.wellsfargo.com/
+```
+
+
+Top 100-110 websites:
+```
 http://www.tudou.com/
 http://www.china.com/
 http://Indiatimes.com
@@ -244,6 +489,10 @@ http://Github.com
 http://Dailymail.co.uk
 http://Buzzfeed.com
 http://Filmon.com
+```
+
+Top 490-500
+```
 http://Ucoz.ru
 http://Chip.de
 http://Ink361.com
@@ -254,6 +503,10 @@ http://www.aliexpress.com/
 http://Cloudfront.net
 http://Livedoor.biz
 http://bttrack.com
+```
+
+Top 1000-1010
+```
 http://latinpost.com
 http://recruitics.com
 http://northerntool.com
@@ -265,6 +518,10 @@ http://purplemath.com
 http://ifbyphone.com
 http://squaretrade.com
 http://www.cafepress.com/
+```
+
+Top 5000-5010
+```
 https://us.axa.com/home.html
 http://shanghaiist.com/
 http://siouxcityjournal.com/
@@ -275,6 +532,10 @@ http://www.newportnaturalhealth.com/
 http://www.guidingtech.com/
 http://www.simpletruths.com/
 http://torchmusic.fm/
+```
+
+Top 10000-10010
+```
 http://jessicalondon.com
 http://dogfart.co
 http://cdn-hotels.com
@@ -286,6 +547,10 @@ http://mercedsunstar.com
 http://salemnews.com
 http://www.givemesport.com
 http://www.mdlinx.com
+```
+
+Top 50000-50010
+```
 http://mexico.cnn.com/
 http://cityads.ru/
 http://www.cmbinfo.com/
@@ -298,6 +563,11 @@ http://www.claimsjournal.com/
 http://cleansecaps.com/
 http://christmastruce.co.uk/
 http://www.christmaswow.com/
+
+```
+
+Top 100000-100010
+```
 http://ranaryan.com
 http://britishmedicaljobs.com
 http://brokenboxr.com
@@ -308,3 +578,4 @@ http://lazyoaf.com
 http://rapcoindustries.com
 http://rapp.com
 http://briovarx.com
+```

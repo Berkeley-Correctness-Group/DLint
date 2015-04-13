@@ -18,9 +18,11 @@ do
   echo $((`date +%s`*1000+`date +%-N`/1000000)) >> websites/${bm_short}/time.txt
   sleep 3
   mv /tmp/analysisResults.json websites/${bm_short}/analysisResults.json
-  mkdir websites/${bm_short}/sourcemaps
-  mv instrumentFF_tmp/*_jalangi_sourcemap.json websites/${bm_short}/sourcemaps/
+  # mkdir websites/${bm_short}/sourcemaps
+  # mv instrumentFF_tmp/*_jalangi_sourcemap.json websites/${bm_short}/sourcemaps/
   mkdir websites/${bm_short}/src
   mv instrumentFF_tmp/*.js websites/${bm_short}/src/
+  rm -rf websites/${bm_short}/src/*_jalangi_.js
+  rm -rf instrumentFF_tmp/*
 done
 
