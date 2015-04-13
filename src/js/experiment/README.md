@@ -8,21 +8,15 @@ Set environment variable:
 ```
 export PATH="`pwd`/scripts/path_unix":$PATH
 ```
-Start server (open another terminal with working directory under root of dlint project)
-```
-python -m SimpleHTTPServer
-```
-Start Joomla:  
-```
-/Applications/joomla-3.3.6-0/ctlscript.sh start
-```
 
-Run All DLint Analysis
---------------------------
+Run DLint Analysis on Websites
+-------------------------------
 ```
 ./scripts/dlint_websites.sh
 node src/js/experiment/exp-analysis.js
 ```
+
+Websites urls are listed in ```tests/dlint/urls.txt```.
 
 Run JSHint Analysis
 --------------------------
