@@ -280,8 +280,48 @@
                 }
             }
         );
+
+
         // String.prototype.search
+        // str.search(regexp)
+        addEntry('String.prototype.search', String.prototype.search,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.search should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (!(args[0] instanceof REGEXP)) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the argument of function String.prototype.search should be an instanceof RegExp. \n Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
+
         // String.prototype.split
+        // str.split([separator[, limit]])
+        addEntry('String.prototype.split', String.prototype.split,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.split should take 0~2 arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length === 1) {
+                    if (typeof args[0] !== 'string' && !(args[0] instanceof REGEXP)) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function String.prototype.split should be either a string value or an instanceof RegExp. \n Runtime Args: ' + argsToString(args));
+                    }
+                } else if (args.length === 2) {
+                    if (typeof args[0] !== 'string' && !(args[0] instanceof REGEXP)) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function String.prototype.split should be either a string value or an instanceof RegExp. \n Runtime Args: ' + argsToString(args));
+                    } else if (!Utils.isInteger(args[1])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the second argument of function String.prototype.split should be an integer. \n Runtime Value: ' + args[1] + ' | Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
+
         // String.prototype.substr
         // String.prototype.substring
         // String.prototype.toLocaleLowerCase
