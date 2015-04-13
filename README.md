@@ -249,11 +249,11 @@ Timer.js
 DLintPost.js
 ```
 
-### Try DLint on Virtualbox
+### Try DLint on VirtualBox
 
 If you do not have a Mac or Linux OS or a 64bit machine (or if you just want to try DLint without going through those installation steps), one option would be using DLint on a virtual machine.
 
-Download [Virtualbox Software (virtual machine)](https://www.virtualbox.org/) and [this virtualbox image (1.6GB, guest OS: Ubuntu 12.04)](https://berkeley.box.com/s/10pxzemjthle3xaaxz32xzgdtj54skaz):
+Download [VirtualBox](https://www.VirtualBox.org/) and [DLint VirtualBox image](https://berkeley.box.com/s/10pxzemjthle3xaaxz32xzgdtj54skaz) (1.6GB):
 
 In the guest OS, open a terminal and type the following commands (or double click the bash script on the desktop):
 
@@ -262,7 +262,7 @@ cd ~/dlint/DLint
 export PATH="`pwd`/scripts/path_unix":$PATH
 ```
 Root password: ```123```  
-Guest OS: Linux Ubuntu 64-bit  
+Guest OS: 64-bit Linux Ubuntu 12.04  
 VM Memory: 512M  
 VM Video Memory: 128M  
 Image Size: 4.7 GB  
