@@ -30,6 +30,6 @@
 // Author: Liang Gong (gongliang13@cs.berkeley.edu)
 (function() {
     var str = 'test';
-    // the first argument should be a RegExp object
-    str.match({});
+    // there should be 1~2 arguments
+    str.substring(1, 2, 3);
 })();

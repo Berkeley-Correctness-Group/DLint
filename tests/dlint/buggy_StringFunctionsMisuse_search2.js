@@ -28,7 +28,6 @@
  */
 
 // Author: Liang Gong (gongliang13@cs.berkeley.edu)
-
 (function() {
     var str = 'test';
     // there should not be a second argument

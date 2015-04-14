@@ -95,17 +95,17 @@
             function(iid, f, base, args, result, isConstructor, isMethod) {
                 if (args.length < 1 || args.length > 2) {
                     iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                    addDebugInfo(iid, 'function String.indexOf should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
+                    addDebugInfo(iid, 'function String.prototype.indexOf should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
                 } else {
                     if (args.length === 1) {
                         if (typeof args[0] !== 'string') {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                            addDebugInfo(iid, 'the first argument of function String.indexOf should be a string value. \n Runtime Args: ' + argsToString(args));
+                            addDebugInfo(iid, 'the first argument of function String.prototype.indexOf should be a string value. \n Runtime Args: ' + argsToString(args));
                         }
                     } else if (args.length === 2) {
                         if (typeof args[0] !== 'string' || !Utils.isInteger(args[1])) {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                            addDebugInfo(iid, 'the arguments\' type of function String.indexOf should be string (-> int) -> int. \n Runtime Args: ' + argsToString(args));
+                            addDebugInfo(iid, 'the arguments\' type of function String.prototype.indexOf should be string (-> int) -> int. \n Runtime Args: ' + argsToString(args));
                         }
                     }
                 }
@@ -306,7 +306,7 @@
                     iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                     addDebugInfo(iid, 'function String.prototype.split should take 0~2 arguments. \n Runtime Args: ' + argsToString(args));
                 } else if (args.length === 1) {
-                    if (typeof args[0] !== 'string' && !(args[0] instanceof REGEXP)) {
+                    if (typeof args[0] !== 'undefined' && typeof args[0] !== 'string' && !(args[0] instanceof REGEXP)) {
                         iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                         addDebugInfo(iid, 'the first argument of function String.prototype.split should be either a string value or an instanceof RegExp. \n Runtime Args: ' + argsToString(args));
                     }
@@ -323,7 +323,43 @@
         );
 
         // String.prototype.substr
+        // str.substr(start[, length])
+        addEntry('String.prototype.substr', String.prototype.substr,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.substr should take 1~2 arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (!Utils.isInteger(args[0])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function String.prototype.substr should be an integer \n Runtime Value: ' + args[0] + ' | Runtime Args: ' + argsToString(args));
+                    } else if (typeof args[1] !== 'undefined' && !Utils.isInteger(args[1])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the second argument of function String.prototype.substr should be an integer \n Runtime Value: ' + args[1] + ' | Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
+
         // String.prototype.substring
+        // str.substring(indexA[, indexB])
+        addEntry('String.prototype.substring', String.prototype.substring,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.substring should take 1~2 arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (!Utils.isInteger(args[0])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function String.prototype.substring should be an integer \n Runtime Value: ' + args[0] + ' | Runtime Args: ' + argsToString(args));
+                    } else if (typeof args[1] !== 'undefined' && !Utils.isInteger(args[1])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the second argument of function String.prototype.substring should be an integer \n Runtime Value: ' + args[1] + ' | Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
+
         // String.prototype.toLocaleLowerCase
         // String.prototype.toLocaleUpperCase
         // String.prototype.toString

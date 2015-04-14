@@ -28,9 +28,8 @@
  */
 
 // Author: Liang Gong (gongliang13@cs.berkeley.edu)
-
 (function() {
     var str = 'test';
-    // the second argument should be an integer
-    str.split(',', {});
+    // the first argument should be a string or a regular expression
+    str.split(true, 2);
 })();
