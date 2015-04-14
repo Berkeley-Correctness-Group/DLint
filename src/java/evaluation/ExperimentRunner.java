@@ -150,7 +150,7 @@ public class ExperimentRunner {
 		System.out.println("Done :-)");
 	}
 
-	private String endExecCode = "if (J$ && J$.analysis) J$.analysis.endExecution();";
+	private String endExecCode = "if (J$ && J$.analysis && J$.analysis.endExecution) try{J$.analysis.endExecution();}catch(ex) { alert(ex);}";
 
 	private void runUrl(String url) {
 		System.out.println("Loading "+url);
@@ -159,7 +159,7 @@ public class ExperimentRunner {
 
         // wait a little bit to allow additional js
         // code to be executed
-        System.out.println("Waiting...");
+        /* System.out.println("Waiting...");
         try{
         	Thread.sleep(2000);
         	systematicMouseMove();
@@ -168,7 +168,7 @@ public class ExperimentRunner {
         	ex.printStackTrace();
         } catch (Exception ex) {
         	ex.printStackTrace();
-        }
+        }*/
 
         System.out.println("Ending execution...");
         JavascriptExecutor jse = (JavascriptExecutor)driver;
