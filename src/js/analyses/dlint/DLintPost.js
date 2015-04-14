@@ -27,9 +27,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-// Author: Michael Pradel (michael@binaervarianz.de)
-//         Koushik Sen (ksen@cs.berkeley.edu)
-//         Liang Gong (gongliang13@cs.berkeley.edu)
+// Author: Michael Pradel (michael@binaervarianz.de), Koushik Sen (ksen@cs.berkeley.edu)
 
 (function(sandbox) {
     function DLintPost() {
@@ -37,34 +35,23 @@
         var HOP = Constants.HOP;
 
         this.endExecution = function() {
-            try {
-                var allWarnings = summarizeWarnings();
+            var allWarnings = summarizeWarnings();
 
-                // 1) write warnings to file
-                if (sandbox.Constants.isBrowser) {
-                    console.log("Sending results to jalangiFF");
-                    window.$jalangiFFLogResult(JSON.stringify(allWarnings, 0, 2), true);
-                } else {
-                    var fs = require("fs");
-                    var outFile = process.cwd() + "/analysisResults.json";
-                    console.log("Writing analysis results to " + outFile);
-                    fs.writeFileSync(outFile, JSON.stringify(allWarnings, 0, 2));
-                }
-
-                // 2) print warnings to console
-                allWarnings.forEach(function(w) {
-                    console.log("DLint warning: " + w.details);
-                });
-            } catch (ex) {
-                if (sandbox.Constants.isBrowser) {
-                    window.$jalangiFFLogResult(ex + '', 0, 2), true);
-                } else {
-                    var fs = require("fs");
-                    var outFile = process.cwd() + "/analysisResults.json";
-                    console.log("Writing analysis results to " + outFile);
-                    fs.writeFileSync(outFile, ex + '');
-                }
+            // 1) write warnings to file
+            if (sandbox.Constants.isBrowser) {
+                console.log("Sending results to jalangiFF");
+                window.$jalangiFFLogResult(JSON.stringify(allWarnings, 0, 2), true);
+            } else {
+                var fs = require("fs");
+                var outFile = process.cwd() + "/analysisResults.json";
+                console.log("Writing analysis results to " + outFile);
+                fs.writeFileSync(outFile, JSON.stringify(allWarnings, 0, 2));
             }
+
+            // 2) print warnings to console
+            allWarnings.forEach(function(w) {
+                console.log("DLint warning: " + w.details);
+            });
         };
 
         function summarizeWarnings() {

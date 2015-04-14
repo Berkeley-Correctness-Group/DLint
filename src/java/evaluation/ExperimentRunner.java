@@ -150,7 +150,7 @@ public class ExperimentRunner {
 		System.out.println("Done :-)");
 	}
 
-	private String endExecCode = "if (J$ && J$.analysis && J$.analysis.endExecution) try{J$.analysis.endExecution();}catch(ex) { alert(ex);}";
+	private String endExecCode = "if (J$ && J$.analysis && J$.analysis.endExecution) try{ J$.analysis.endExecution(); } catch(ex) { alert(ex);}";
 
 	private void runUrl(String url) {
 		System.out.println("Loading "+url);
