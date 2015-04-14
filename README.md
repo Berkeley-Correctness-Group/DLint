@@ -253,7 +253,7 @@ DLintPost.js
 
 If you do not have a Mac or Linux OS or a 64bit machine (or if you just want to try DLint without going through those installation steps), one option would be using DLint on a virtual machine.
 
-Download [VirtualBox](https://www.VirtualBox.org/) and [DLint VirtualBox image](https://berkeley.box.com/s/10pxzemjthle3xaaxz32xzgdtj54skaz) (1.6GB):
+Download [VirtualBox](https://www.VirtualBox.org/) and [DLint VirtualBox image](https://berkeley.box.com/s/9gr3cvbo929130loz050svskfrs3ard9) (1.28GB, MD5: ```a760669a378cd6e55fe49ee004e68ac5```)
 
 In the guest OS, open a terminal and type the following commands (or double click the bash script on the desktop):
 
