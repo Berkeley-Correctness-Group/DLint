@@ -77,6 +77,9 @@
 
         // ---- function DB and check API ends ----
 
+        var STRING = String;
+        var REGEXP = RegExp;
+
         function argsToString(args) {
             var ret = '[';
             var i = 0;
@@ -98,12 +101,12 @@
                     addDebugInfo(iid, 'function String.prototype.indexOf should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
                 } else {
                     if (args.length === 1) {
-                        if (typeof args[0] !== 'string') {
+                        if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                             addDebugInfo(iid, 'the first argument of function String.prototype.indexOf should be a string value. \n Runtime Args: ' + argsToString(args));
                         }
                     } else if (args.length === 2) {
-                        if (typeof args[0] !== 'string' || !Utils.isInteger(args[1])) {
+                        if ((typeof args[0] !== 'string' && !(args[0] instanceof STRING)) || !Utils.isInteger(args[1])) {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                             addDebugInfo(iid, 'the arguments\' type of function String.prototype.indexOf should be string (-> int) -> int. \n Runtime Args: ' + argsToString(args));
                         }
@@ -151,7 +154,7 @@
                 } else {
                     check_args:
                     for(var i=0;i<args.length;i++) {
-                        if (typeof args[i] !== 'string') {
+                        if (typeof args[i] !== 'string' && !(args[i] instanceof STRING)) {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                             addDebugInfo(iid, 'the first argument of function String.prototype.concat should be an integer. \n Runtime Args: ' + argsToString(args));
                             break check_args;
@@ -169,12 +172,12 @@
                     addDebugInfo(iid, 'function String.prototype.lastIndexOf should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
                 } else {
                     if (args.length === 1) {
-                        if (typeof args[0] !== 'string') {
+                        if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                             addDebugInfo(iid, 'the first argument of function String.prototype.lastIndexOf should be a string value. \n Runtime Args: ' + argsToString(args));
                         }
                     } else if (args.length === 2) {
-                        if (typeof args[0] !== 'string' || !Utils.isInteger(args[1])) {
+                        if ((typeof args[0] !== 'string' && !(args[0] instanceof STRING)) || !Utils.isInteger(args[1])) {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                             addDebugInfo(iid, 'the arguments\' type of function String.prototype.lastIndexOf should be string (-> int) -> int. \n Runtime Args: ' + argsToString(args));
                         }
@@ -193,12 +196,12 @@
                         addDebugInfo(iid, 'function String.prototype.localeCompare should take only 1~3 arguments. \n Runtime Args: ' + argsToString(args));
                     } else {
                         if (args.length === 1) {
-                            if (typeof args[0] !== 'string') {
+                            if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
                                 iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                                 addDebugInfo(iid, 'the first argument of function String.prototype.localeCompare should be a string value. \n Runtime Args: ' + argsToString(args));
                             }
                         } else if (args.length === 2) {
-                            if (typeof args[0] !== 'string' || typeof args[1] !== 'string') {
+                            if ((typeof args[0] !== 'string' && !(args[0] instanceof STRING)) || (typeof args[1] !== 'string' && !(args[0] instanceof STRING))) {
                                 iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                                 addDebugInfo(iid, 'the arguments\' type of function String.prototype.localeCompare should be string ((-> string) -> object) -> int. \n Runtime Args: ' + argsToString(args));
                             } else if(args[1] !== 'co' && args[1] !== 'kn' && args[2] !== 'kf') {
@@ -206,7 +209,7 @@
                                 addDebugInfo(iid, 'the second argument of function String.prototype.localeCompare should be a locale string of value "co" or "kn" or "kf" \n Runtime Args: ' + argsToString(args));
                             }
                         } else if (args.length === 3) {
-                            if (typeof args[0] !== 'string' || typeof args[1] !== 'string') {
+                            if ((typeof args[0] !== 'string' && !(args[0] instanceof STRING)) || (typeof args[1] !== 'string' && !(args[0] instanceof STRING))) {
                                 iidToCount[iid] = (iidToCount[iid] | 0) + 1;
                                 addDebugInfo(iid, 'the arguments\' type of function String.prototype.localeCompare should be string ((-> string) -> object) -> int. \n Runtime Args: ' + argsToString(args));
                             } else if(args[1] !== 'co' || args[1] !== 'kn' || args[2] !== 'kf') {
@@ -243,7 +246,6 @@
             );
         }
         
-        var REGEXP = RegExp;
         // String.prototype.match
         addEntry('String.prototype.match', String.prototype.match,
             function(iid, f, base, args, result, isConstructor, isMethod) {
@@ -260,7 +262,7 @@
         );
 
         // String.prototype.replace
-        // str.replace(regexp|substr, newSubStr|function[, flags])
+        // Syntax: str.replace(regexp|substr, newSubStr|function[, flags])
         addEntry('String.prototype.replace', String.prototype.replace,
             function(iid, f, base, args, result, isConstructor, isMethod) {
                 if (args.length < 2 || args.length > 3) {
@@ -283,7 +285,7 @@
 
 
         // String.prototype.search
-        // str.search(regexp)
+        // Syntax: str.search(regexp)
         addEntry('String.prototype.search', String.prototype.search,
             function(iid, f, base, args, result, isConstructor, isMethod) {
                 if (args.length !== 1) {
@@ -299,7 +301,7 @@
         );
 
         // String.prototype.split
-        // str.split([separator[, limit]])
+        // Syntax: str.split([separator[, limit]])
         addEntry('String.prototype.split', String.prototype.split,
             function(iid, f, base, args, result, isConstructor, isMethod) {
                 if (args.length > 2) {
@@ -323,7 +325,7 @@
         );
 
         // String.prototype.substr
-        // str.substr(start[, length])
+        // Syntax: str.substr(start[, length])
         addEntry('String.prototype.substr', String.prototype.substr,
             function(iid, f, base, args, result, isConstructor, isMethod) {
                 if (args.length < 1 || args.length > 2) {
@@ -361,13 +363,113 @@
         );
 
         // String.prototype.toLocaleLowerCase
+        // Syntax: str.toLocaleLowerCase()
+        addEntry('String.prototype.toLocaleLowerCase', String.prototype.toLocaleLowerCase,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.toLocaleLowerCase should not be given any arguments. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // String.prototype.toLocaleUpperCase
-        // String.prototype.toString
+        // Syntax: str.toLocaleUpperCase()
+        addEntry('String.prototype.toLocaleUpperCase', String.prototype.toLocaleUpperCase,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.toLocaleUpperCase should not be given any arguments. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // String.prototype.toLowerCase
+        // Syntax: str.toLowerCase()
+        addEntry('String.prototype.toLowerCase', String.prototype.toLowerCase,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.toLowerCase should not be given any arguments. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // String.prototype.toUpperCase
+        // Syntax: str.toUpperCase()
+        addEntry('String.prototype.toUpperCase', String.prototype.toUpperCase,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.toUpperCase should not be given any arguments. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // String.prototype.toString
+        // str.toString()
+        addEntry('String.prototype.toString', String.prototype.toString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.toString should not be given any arguments. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // String.prototype.trim
+        // Syntax: str.trim()
+        addEntry('String.prototype.trim', String.prototype.trim,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.trim should not be given any arguments. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // String.prototype.valueOf
+        // Syntax: str.valueOf()
+        addEntry('String.prototype.valueOf', String.prototype.valueOf,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.valueOf should not be given any arguments. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // String.prototype.anchor
+        // str.anchor(name)
+        addEntry('String.prototype.anchor', String.prototype.anchor,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.anchor should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if((typeof args[0] !== 'string') && !(args[0] instanceof STRING)) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function String.prototype.anchor should be a string \n Runtime Value: ' + args[0] + ' | Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
+
         // String.prototype.link
+        // str.link(url)
+        addEntry('String.prototype.link', String.prototype.link,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function String.prototype.link should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if((typeof args[0] !== 'string') && !(args[0] instanceof STRING)) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function String.prototype.link should be a string \n Runtime Value: ' + args[0] + ' | Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
 
         this.invokeFun = function(iid, f, base, args, result, isConstructor, isMethod) {
             checkFunction(f, arguments);
