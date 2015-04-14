@@ -93,7 +93,7 @@
             return ret;
         }
 
-        // String.prototype.indexOf
+        // RegExp
         // Syntax:
         // /pattern/flags
         // new RegExp(pattern[, flags])
@@ -121,7 +121,22 @@
                             }
                         }
                     }
+                }
+            }
+        );
 
+        // RegExp.prototype.test
+        // Syntax: regexObj.test(str)
+        addEntry('RegExp.prototype.test', RegExp.prototype.test,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function RegExp.prototype.test should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function RegExp should be either a string value. \n Runtime Args: ' + argsToString(args));
+                    } 
                 }
             }
         );
