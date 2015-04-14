@@ -79,6 +79,7 @@
 
         var STRING = String;
         var REGEXP = RegExp;
+        var ARRAY = Array;
 
         function argsToString(args) {
             var ret = '[';
@@ -93,69 +94,92 @@
             return ret;
         }
 
-        // RegExp
-        // Syntax:
-        // /pattern/flags
-        // new RegExp(pattern[, flags])
-        addEntry('RegExp', REGEXP,
+        // The following functions are robust enough
+        // in js engine and therefore runtime checks
+        // seems unnecessary:
+        // Array
+        // Array.prototype.isArray
+        // Array.prototype.concat
+
+        // Array.prototype.every
+        // Syntax: arr.every(callback[, thisArg])
+        addEntry('Array.prototype.every', Array.prototype.every,
             function(iid, f, base, args, result, isConstructor, isMethod) {
                 if (args.length < 1 || args.length > 2) {
                     iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                    addDebugInfo(iid, 'function RegExp should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
+                    addDebugInfo(iid, 'function Array.prototype.every should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
                 } else {
-                    if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
+                    if (typeof args[0] !== 'function') {
                         iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                        addDebugInfo(iid, 'the first argument of function RegExp should be either a string value. \n Runtime Args: ' + argsToString(args));
-                    } else if (args.length === 2){
-                        if(typeof args[1] !== 'string' && !(args[1] instanceof STRING)) {
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.every should be a function. \n Runtime Args: ' + argsToString(args));
+                    } else if (args.length === 2) {
+                        if(typeof args[1] !== 'object' && typeof args[1] !== 'function') {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                            addDebugInfo(iid, 'the second argument of function RegExp should be a string. \n Runtime Args: ' + argsToString(args));
-                        } else {
-                            check_flags:
-                            for(var i=0;i<args[1].length;i++) {
-                                if(args[1][i] !== 'g' && args[1][i] !== 'i' && args[1][i] !== 'm') {
-                                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                                    addDebugInfo(iid, 'the second argument (flags) of function RegExp contain only \'g\',\'i\', or \'m\'. \n Runtime Args: ' + argsToString(args));
-                                    break check_flags;
-                                }
-                            }
+                            addDebugInfo(iid, 'the second argument of function Array.prototype.every should be an object. \n Runtime Args: ' + argsToString(args));
                         }
                     }
                 }
             }
         );
 
-        // RegExp.prototype.test
-        // Syntax: regexObj.test(str)
-        addEntry('RegExp.prototype.test', RegExp.prototype.test,
-            function(iid, f, base, args, result, isConstructor, isMethod) {
-                if (args.length !== 1) {
-                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                    addDebugInfo(iid, 'function RegExp.prototype.test should take only one argument. \n Runtime Args: ' + argsToString(args));
-                } else {
-                    if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
-                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                        addDebugInfo(iid, 'the first argument of function RegExp should be either a string value. \n Runtime Args: ' + argsToString(args));
-                    } 
-                }
-            }
-        );
+        // Array.prototype.filter
+        // Syntax: arr.filter(callback[, thisArg])
 
-        // RegExp.prototype.exec
-        // Syntax: regexObj.exec(str)
-        addEntry('RegExp.prototype.exec', RegExp.prototype.exec,
-            function(iid, f, base, args, result, isConstructor, isMethod) {
-                if (args.length !== 1) {
-                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                    addDebugInfo(iid, 'function RegExp.prototype.exec should take only one argument. \n Runtime Args: ' + argsToString(args));
-                } else {
-                    if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
-                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                        addDebugInfo(iid, 'the first argument of function RegExp should be either a string value. \n Runtime Args: ' + argsToString(args));
-                    } 
-                }
-            }
-        );
+        // Array.prototype.forEach
+        // Syntax: arr.forEach(callback[, thisArg])
+
+        // Array.prototype.indexOf
+        // Syntax: arr.indexOf(searchElement[, fromIndex = 0])
+
+        // Array.prototype.join
+        // Syntax: str = arr.join([separator = ','])
+
+        // Array.prototype.lastIndexOf
+        // Syntax: arr.lastIndexOf(searchElement[, fromIndex = arr.length])
+
+        // Array.prototype.map
+        // Syntax: arr.map(callback[, thisArg])
+    
+        // Array.prototype.pop
+        // Syntax: arr.pop()
+
+        // Array.prototype.push
+        // Syntax: arr.push(element1, ..., elementN)
+
+        // Array.prototype.reduce
+        // Syntax: arr.reduce(callback[, initialValue])
+
+        // Array.prototype.reduceRight
+        // Syntax: arr.reduceRight(callback[, initialValue])
+
+        // Array.prototype.reverse
+        // Syntax: arr.reverse()
+
+        // Array.prototype.shift
+        // Syntax: arr.shift()
+
+        // Array.prototype.slice
+        // Syntax: arr.slice([begin[, end]])
+
+        // Array.prototype.some
+        // Syntax: arr.some(callback[, thisArg])
+
+        // Array.prototype.sort
+        // Syntax: arr.sort([compareFunction])
+
+        // Array.prototype.splice
+        // Syntax: array.splice(start, deleteCount[, item1[, item2[, ...]]])
+
+        // Array.prototype.toLocaleString
+        // Syntax: arr.toLocaleString();
+
+        // Array.prototype.toString
+        // Syntax: arr.toString()
+
+        // Array.prototype.unshift
+        // Syntax: arr.unshift([element1[, ...[, elementN]]])
+
+        
 
         this.invokeFun = function(iid, f, base, args, result, isConstructor, isMethod) {
             checkFunction(f, arguments);
@@ -165,8 +189,8 @@
             iidToInfo = Utils.reorganizeDebugInfo(iidToInfo);
             var warnings = Object.keys(iidToCount).map(function(iid) {
                 var location = iidToLocation(iid);
-                var ret = new DLintWarning("RegExpFunctionsMisuse", iid, location,
-                    "Incorrect use of RegExp built-in funcitons at " +
+                var ret = new DLintWarning("ArrayFunctionsMisuse", iid, location,
+                    "Incorrect use of Array built-in funcitons at " +
                     location + " " + iidToCount[iid] + " time(s).", iidToCount[iid]);
                 ret.debugInfo = iidToInfo[iid];
                 ret.addInfo = JSON.stringify(additionalInfo);
