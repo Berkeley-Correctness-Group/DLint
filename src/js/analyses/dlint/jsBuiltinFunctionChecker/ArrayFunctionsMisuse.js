@@ -124,9 +124,87 @@
 
         // Array.prototype.filter
         // Syntax: arr.filter(callback[, thisArg])
+        addEntry('Array.prototype.filter', Array.prototype.filter,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.filter should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (typeof args[0] !== 'function') {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.filter should be a function. \n Runtime Args: ' + argsToString(args));
+                    } else if (args.length === 2) {
+                        if(typeof args[1] !== 'object' && typeof args[1] !== 'function') {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the second argument of function Array.prototype.filter should be an object. \n Runtime Args: ' + argsToString(args));
+                        }
+                    }
+                }
+            }
+        );
 
         // Array.prototype.forEach
         // Syntax: arr.forEach(callback[, thisArg])
+        addEntry('Array.prototype.forEach', Array.prototype.forEach,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.forEach should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (typeof args[0] !== 'function') {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.forEach should be a function. \n Runtime Args: ' + argsToString(args));
+                    } else if (args.length === 2) {
+                        if(typeof args[1] !== 'object' && typeof args[1] !== 'function') {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the second argument of function Array.prototype.forEach should be an object. \n Runtime Args: ' + argsToString(args));
+                        }
+                    }
+                }
+            }
+        );
+
+        // Array.prototype.some
+        // Syntax: arr.some(callback[, thisArg])
+        addEntry('Array.prototype.some', Array.prototype.some,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.some should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (typeof args[0] !== 'function') {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.some should be a function. \n Runtime Args: ' + argsToString(args));
+                    } else if (args.length === 2) {
+                        if(typeof args[1] !== 'object' && typeof args[1] !== 'function') {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the second argument of function Array.prototype.some should be an object. \n Runtime Args: ' + argsToString(args));
+                        }
+                    }
+                }
+            }
+        );
+
+        // Array.prototype.map
+        // Syntax: arr.map(callback[, thisArg])
+        addEntry('Array.prototype.map', Array.prototype.map,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.map should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (typeof args[0] !== 'function') {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.map should be a function. \n Runtime Args: ' + argsToString(args));
+                    } else if (args.length === 2) {
+                        if(typeof args[1] !== 'object' && typeof args[1] !== 'function') {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the second argument of function Array.prototype.map should be an object. \n Runtime Args: ' + argsToString(args));
+                        }
+                    }
+                }
+            }
+        );
 
         // Array.prototype.indexOf
         // Syntax: arr.indexOf(searchElement[, fromIndex = 0])
@@ -136,9 +214,6 @@
 
         // Array.prototype.lastIndexOf
         // Syntax: arr.lastIndexOf(searchElement[, fromIndex = arr.length])
-
-        // Array.prototype.map
-        // Syntax: arr.map(callback[, thisArg])
     
         // Array.prototype.pop
         // Syntax: arr.pop()
@@ -160,9 +235,6 @@
 
         // Array.prototype.slice
         // Syntax: arr.slice([begin[, end]])
-
-        // Array.prototype.some
-        // Syntax: arr.some(callback[, thisArg])
 
         // Array.prototype.sort
         // Syntax: arr.sort([compareFunction])

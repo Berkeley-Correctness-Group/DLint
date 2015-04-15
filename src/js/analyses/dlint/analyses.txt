@@ -33,6 +33,8 @@ UseArrObjConstrWithoutArg.js
 MissRadixArgInParseNum.js
 FloatNumberEqualityComparison.js
 jsBuiltinFunctionChecker/StringFunctionsMisuse.js
+jsBuiltinFunctionChecker/RegExpFunctionsMisuse.js
+jsBuiltinFunctionChecker/ArrayFunctionsMisuse.js
 ExeStat.js
 Timer.js
 DLintPost.js
