@@ -208,18 +208,63 @@
 
         // Array.prototype.indexOf
         // Syntax: arr.indexOf(searchElement[, fromIndex = 0])
-
-        // Array.prototype.join
-        // Syntax: str = arr.join([separator = ','])
+        addEntry('Array.prototype.map', Array.prototype.map,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.map should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (typeof args[0] !== 'function') {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.map should be a function. \n Runtime Args: ' + argsToString(args));
+                    } else if (args.length === 2) {
+                        if(typeof args[1] !== 'object' && typeof args[1] !== 'function') {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the second argument of function Array.prototype.map should be an object. \n Runtime Args: ' + argsToString(args));
+                        }
+                    }
+                }
+            }
+        );
 
         // Array.prototype.lastIndexOf
         // Syntax: arr.lastIndexOf(searchElement[, fromIndex = arr.length])
-    
-        // Array.prototype.pop
-        // Syntax: arr.pop()
+        addEntry('Array.prototype.map', Array.prototype.map,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.map should take only one or two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (typeof args[0] !== 'function') {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.map should be a function. \n Runtime Args: ' + argsToString(args));
+                    } else if (args.length === 2) {
+                        if(typeof args[1] !== 'object' && typeof args[1] !== 'function') {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the second argument of function Array.prototype.map should be an object. \n Runtime Args: ' + argsToString(args));
+                        }
+                    }
+                }
+            }
+        );
 
-        // Array.prototype.push
-        // Syntax: arr.push(element1, ..., elementN)
+        // Array.prototype.join
+        // Syntax: str = arr.join([separator = ','])
+        addEntry('Array.prototype.join', Array.prototype.join,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length > 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.join should take at most one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (args.length === 1) {
+                        if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the first argument of function Array.prototype.join should be a string. \n Runtime Args: ' + argsToString(args));
+                        }
+                    }
+                }
+            }
+        );
 
         // Array.prototype.reduce
         // Syntax: arr.reduce(callback[, initialValue])
@@ -231,7 +276,19 @@
         // Syntax: arr.reverse()
 
         // Array.prototype.shift
-        // Syntax: arr.shift()
+        // Syntax: arr.shift()        
+
+        // Array.prototype.pop
+        // Syntax: arr.pop()
+
+        // Array.prototype.toLocaleString
+        // Syntax: arr.toLocaleString();
+
+        // Array.prototype.toString
+        // Syntax: arr.toString()
+
+        // Array.prototype.push
+        // Syntax: arr.push(element1, ..., elementN)
 
         // Array.prototype.slice
         // Syntax: arr.slice([begin[, end]])
@@ -242,16 +299,8 @@
         // Array.prototype.splice
         // Syntax: array.splice(start, deleteCount[, item1[, item2[, ...]]])
 
-        // Array.prototype.toLocaleString
-        // Syntax: arr.toLocaleString();
-
-        // Array.prototype.toString
-        // Syntax: arr.toString()
-
         // Array.prototype.unshift
         // Syntax: arr.unshift([element1[, ...[, elementN]]])
-
-        
 
         this.invokeFun = function(iid, f, base, args, result, isConstructor, isMethod) {
             checkFunction(f, arguments);

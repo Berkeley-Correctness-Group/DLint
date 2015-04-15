@@ -105,7 +105,7 @@
                 } else {
                     if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
                         iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                        addDebugInfo(iid, 'the first argument of function RegExp should be either a string value. \n Runtime Args: ' + argsToString(args));
+                        addDebugInfo(iid, 'the first argument of function RegExp should be a string value. \n Runtime Args: ' + argsToString(args));
                     } else if (args.length === 2){
                         if(typeof args[1] !== 'string' && !(args[1] instanceof STRING)) {
                             iidToCount[iid] = (iidToCount[iid] | 0) + 1;
@@ -135,7 +135,7 @@
                 } else {
                     if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
                         iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                        addDebugInfo(iid, 'the first argument of function RegExp should be either a string value. \n Runtime Args: ' + argsToString(args));
+                        addDebugInfo(iid, 'the first argument of function RegExp should be a string value. \n Runtime Args: ' + argsToString(args));
                     } 
                 }
             }
@@ -151,7 +151,7 @@
                 } else {
                     if (typeof args[0] !== 'string' && !(args[0] instanceof STRING)) {
                         iidToCount[iid] = (iidToCount[iid] | 0) + 1;
-                        addDebugInfo(iid, 'the first argument of function RegExp should be either a string value. \n Runtime Args: ' + argsToString(args));
+                        addDebugInfo(iid, 'the first argument of function RegExp should be a string value. \n Runtime Args: ' + argsToString(args));
                     } 
                 }
             }
