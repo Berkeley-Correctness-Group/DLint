@@ -268,6 +268,21 @@
 
         // Array.prototype.reduce
         // Syntax: arr.reduce(callback[, initialValue])
+        addEntry('Array.prototype.reduce', Array.prototype.reduce,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.reduce should take at most two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (args.length === 1) {
+                        if (typeof args[0] !== 'function') {
+                            iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                            addDebugInfo(iid, 'the first argument of function Array.prototype.reduce should be a function. \n Runtime Args: ' + argsToString(args));
+                        }
+                    }
+                }
+            }
+        );
 
         // Array.prototype.reduceRight
         // Syntax: arr.reduceRight(callback[, initialValue])
