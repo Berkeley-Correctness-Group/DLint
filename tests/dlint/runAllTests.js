@@ -30,7 +30,6 @@
 // Author: Michael Pradel (michael@binaervarianz.de), Liang Gong (gongliang13@cs.berkeley.edu)
 
 (function() {
-
   var fs = require('fs');
   var child_process = require('child_process');
   var testDir = "./tests/dlint/";

@@ -246,6 +246,7 @@ FloatNumberEqualityComparison.js
 jsBuiltinFunctionChecker/StringFunctionsMisuse.js
 jsBuiltinFunctionChecker/RegExpFunctionsMisuse.js
 jsBuiltinFunctionChecker/ArrayFunctionsMisuse.js
+jsBuiltinFunctionChecker/DateFunctionsMisuse.js
 ExeStat.js
 Timer.js
 DLintPost.js
