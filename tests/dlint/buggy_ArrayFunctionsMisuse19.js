@@ -30,6 +30,6 @@
 // Author: Liang Gong (gongliang13@cs.berkeley.edu)
 (function() {
     var numbers = [1, 4, 9];
-    // the first argument should be at most two arguments
-    numbers.reduceRight(function() {}, 1, true);
+    // the first argument should be a string
+    numbers.toString({});
 })();

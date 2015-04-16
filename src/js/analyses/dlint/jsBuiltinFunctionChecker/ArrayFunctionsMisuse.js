@@ -304,33 +304,90 @@
 
         // Array.prototype.reverse
         // Syntax: arr.reverse()
+        addEntry('Array.prototype.reverse', Array.prototype.reverse,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.reverse should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
 
         // Array.prototype.shift
-        // Syntax: arr.shift()        
+        // Syntax: arr.shift()
+        addEntry('Array.prototype.shift', Array.prototype.shift,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.shift should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
 
         // Array.prototype.pop
         // Syntax: arr.pop()
+        addEntry('Array.prototype.pop', Array.prototype.pop,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.pop should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
 
         // Array.prototype.toLocaleString
         // Syntax: arr.toLocaleString();
+        addEntry('Array.prototype.toLocaleString', Array.prototype.toLocaleString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.toLocaleString should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
 
         // Array.prototype.toString
         // Syntax: arr.toString()
+        addEntry('Array.prototype.toString', Array.prototype.toString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.toString should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
 
         // Array.prototype.push
         // Syntax: arr.push(element1, ..., elementN)
+        addEntry('Array.prototype.push', Array.prototype.push,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length === 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.push should take at least one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Array.prototype.unshift
+        // Syntax: arr.unshift([element1[, ...[, elementN]]])
+        addEntry('Array.prototype.unshift', Array.prototype.unshift,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length === 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.unshift should take at least one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Array.prototype.splice
+        // Syntax: array.splice(start, deleteCount[, item1[, item2[, ...]]])
 
         // Array.prototype.slice
         // Syntax: arr.slice([begin[, end]])
 
         // Array.prototype.sort
         // Syntax: arr.sort([compareFunction])
-
-        // Array.prototype.splice
-        // Syntax: array.splice(start, deleteCount[, item1[, item2[, ...]]])
-
-        // Array.prototype.unshift
-        // Syntax: arr.unshift([element1[, ...[, elementN]]])
+        
 
         this.invokeFun = function(iid, f, base, args, result, isConstructor, isMethod) {
             checkFunction(f, arguments);
