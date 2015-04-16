@@ -381,13 +381,57 @@
 
         // Array.prototype.splice
         // Syntax: array.splice(start, deleteCount[, item1[, item2[, ...]]])
+        addEntry('Array.prototype.splice', Array.prototype.splice,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.splice should take at least two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if(!Utils.isInteger(args[0])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.splice should be an integer. \n Runtime value: ' + args[0] + ' | Runtime Args: ' + argsToString(args));
+                    } else if(!Utils.isInteger(args[1])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the second argument of function Array.prototype.splice should be an integer. \n Runtime value: ' + args[0] + ' | Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
 
         // Array.prototype.slice
         // Syntax: arr.slice([begin[, end]])
+        addEntry('Array.prototype.slice', Array.prototype.slice,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.slice should take at most two arguments. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if(args.length >= 1 && !Utils.isInteger(args[0])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.slice should be an integer. \n Runtime value: ' + args[0] + ' | Runtime Args: ' + argsToString(args));
+                    } else if(args.length === 2 && !Utils.isInteger(args[1])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the second argument of function Array.prototype.slice should be an integer. \n Runtime value: ' + args[0] + ' | Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
 
         // Array.prototype.sort
         // Syntax: arr.sort([compareFunction])
-        
+        addEntry('Array.prototype.sort', Array.prototype.sort,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length > 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Array.prototype.sort should take at most one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if (args.length === 1 && typeof args[0] !== 'function') {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Array.prototype.sort should be a function \n Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
 
         this.invokeFun = function(iid, f, base, args, result, isConstructor, isMethod) {
             checkFunction(f, arguments);
