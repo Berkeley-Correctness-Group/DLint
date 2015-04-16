@@ -48,8 +48,11 @@
       (file.indexOf("buggy_") === 0 || file.indexOf("okay_") === 0));
   });
   var verbose = false;
-  if(process.argv[2] === 'verbose') 
+  var isDebug = false;
+  if (process.argv[2] === 'verbose') // print all output
     verbose = true;
+  if (process.argv[2] === 'debug') // only print test case output if there is something wrong
+    isDebug = true;
   var testsToDo = testsToAnalyze.length;
   console.log("Tests to run: " + testsToDo);
   while (testsToAnalyze.length > 0) {
@@ -101,8 +104,6 @@
         if (verbose)
           console.log('\r\n\r\n' + cmd);
         if (!error) {
-          if (verbose)
-            console.log(stdout);
           //console.log(stdout);
           var hasWarning = false;
           var count = (stdout.match(new RegExp("DLint warning", "g")) || []).length;
@@ -110,20 +111,28 @@
           // console.log(stdout);
           // "executedLines" is part of the output of ExeStat.js
           // which is an analysis dumps information, not for reporting warnings
-          if(stdout.indexOf('"executedLines":') >= 0) {
+          if (stdout.indexOf('"executedLines":') >= 0) {
             count--;
           }
           // "startTime" and "endTime" are part of the output of Timer.js
           // which is an analysis dumps information, not for reporting warnings
-          if(stdout.indexOf('"startTime":') >= 0 || stdout.indexOf('"endTime":') >= 0) {
+          if (stdout.indexOf('"startTime":') >= 0 || stdout.indexOf('"endTime":') >= 0) {
             count--;
           }
-          if(count >= 1) {
+          if (count >= 1) {
             hasWarning = true;
             // else only one or no warning
           } else { // else no warning
             hasWarning = false;
           }
+          if (expectWarning !== hasWarning) {
+            if (isDebug === true) {
+              verbose = true;
+              console.log();
+            }
+          }
+          if (verbose)
+            console.log(stdout);
           // console.log(hasWarning);
 
           if (verbose)
@@ -151,6 +160,9 @@
         executedAndAnalyzed++;
         testsToDo--;
         testRunning = false;
+        if (isDebug === true) {
+          verbose = false;
+        }
       });
   }
 
