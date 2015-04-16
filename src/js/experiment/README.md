@@ -1,8 +1,8 @@
-
 This document records information and instructions to run experiments for Dlint.
 Git markdown online editor: http://jbt.github.io/markdown-editor/
 
-Every Time after Reboot the system
+
+Experimental Configuration
 --------------------------
 Set environment variable:
 ```
@@ -17,9 +17,11 @@ node src/js/experiment/exp-analysis.js
 ```
 
 Websites urls are listed in ```tests/dlint/urls.txt```.
+This will generate all raw experimental data in ```website``` directory in the dlint repository.
 
 Run JSHint Analysis
 --------------------------
+This command will collect all JSHint warnings for each website collected under the ```website``` directory.
 ```
 node src/js/experiment/runExp.js
 ```
@@ -29,6 +31,7 @@ raw dataset sub-directory (corresponding to each benchmark).
 
 Collect Statistics of JSHint Warnings
 --------------------------
+This command will collect all JSHint warning distribution information.
 ```
 node src/js/experiment/JSHintStatistics.js
 ```
@@ -36,6 +39,7 @@ Manully organized result is in ```exp/JSHint-statistics.xlsx```
 
 Collect Statistics of DLint Warnings
 --------------------------
+This command will collect all DLint warning distribution information.
 ```
 node src/js/experiment/DLintStatistics.js
 ```
@@ -43,6 +47,7 @@ Manully organized result is in ```exp/DLint-statistics.xlsx```
 
 Analyzing Warning Matching Statistics for Each Warning Type
 --------------------------
+This command collects warning matching information for each warning type (Figure 4 in the paper).
 ```
 node src/js/experiment/Experiment1.js
 node src/js/experiment/dataAnalysis/WarningTypeStatistics.js
@@ -51,6 +56,7 @@ Matching statistics will be stored in ```exp/JSHint-DLint-statistics.csv```
 
 Collect Source File Statistics
 --------------------------
+This command collects those source file statistics listed in the paper.
 ```
 node src/js/experiment/dataAnalysis/SourceFileStatistics.js
 ```
@@ -58,6 +64,7 @@ JavaScript source file statistics will be stored in ```exp/Source-statistics.csv
 
 Analyzing Warnings Matching Statistics for Each Site:
 --------------------------
+This command collects warning matching information for each website (Figure 3a in the paper).
 ```
 node src/js/experiment/Experiment1.js
 node src/js/experiment/dataAnalysis/WarningPerSiteStatistics.js
@@ -67,6 +74,7 @@ Matching statistics will be stored in ```exp/Warning-statistics-per-site.csv```
 
 Analyzing Warnings Matching Statistics for Each Site (only for matched warnings):
 --------------------------
+This command collects warning matching information for each website (Figure 3a, Figure 3b in the paper).
 ```
 node src/js/experiment/Experiment1.js
 node src/js/experiment/dataAnalysis/MatchedWarningPerSiteStatistics.js
@@ -76,21 +84,16 @@ and ```exp/Matched-analysis.json```
 
 Analyzing Warnings Matching Statistics for Each Site and Each Analysis Type:
 --------------------------
+This command collects warning matching information for each website (Figure 3a, Figure 3b in the paper).
 ```
 node src/js/experiment/Experiment1.js
 node src/js/experiment/dataAnalysis/WarningPerTypePerSiteStatistics.js
 ```
 Matching statistics will be stored in ```exp/Warning-statistics-per-analysis-per-site.csv```
 
-Analyzing Mismatch Reasons:
---------------------------
-```
-node src/js/experiment/dataAnalysis/MismatchedReason.js
-```
-Result will be stored in ```exp/Warning-Mismatched.csv```
-
 Collect Runtime Statistics:
 --------------------------
+This command collects coverage statisitcs (Figure 3c in the paper).
 ```
 node src/js/experiment/dataAnalysis/RuntimeSourceStatistics.js
 ```
@@ -98,10 +101,12 @@ Result will be stored in ```exp/Runtime-statistics.csv```
 
 Collect Timing Statistics:
 --------------------------
+This command collects running time of DLint on each website (Figure 3d in the paper).
 ```
 node src/js/experiment/dataAnalysis/TimeStatistics.js
 ```
 Result will be stored in ```exp/Time-statistics.csv```
+
 
 Analyze JShint warning to static source information:
 --------------------------
@@ -111,9 +116,9 @@ node src/js/experiment/dataAnalysis/JSHint2SourceStatistics.js
 Result will be stored in ```exp/JSHint-Source-statistics.csv```
 
 
-
 Count the souce code in DLint
 --------------------------
+These commands collect source code statistics of DLint.
 The following command counts JavaScript code:
 ```
 find . -regex '.*\.js' -a ! -name '*_jalangi_*.js' -a ! -path '*octane*.js' -a ! -path '*sunspider*.js' -a ! -path '*tizen_firefox*' -a ! -path '*sunspider*' -a ! -path '*octane*' -a ! -path '*jslint/JSLint*' -a ! -path '*jquery_test*' -a ! -path '*websites_stored_code*' ! -path '*webLintTest*' | xargs wc -l
@@ -134,61 +139,13 @@ result: 100 total
 
 Generate documentation of dlint checkers
 ----------------------------------------
-
+This commands generate Table 1-5 in the paper. 
 To generate a file that summarizes all dlint checkers, run the following from the jalangi-dlint directory:
 ```
 node scripts/generate_dlint_readme.js
 ```
 It creates ```README_DLint_Checkers.md``` and ```.tex``` files (for the paper) in the DLint project root directory.
 
-
-Labeling Ground Truth
---------------------
-
-After running on subject programs, dlint reports warnings. To automatically calculate statistics (e.g, false positive rate, false negative rate etc.). The experimental framework provides a labeling system for us to label every warning reported once for all. In ```src/js/experiment``` directory:
-
- * ```exp-analysis.js``` is the labeling tool.
- * ```ground-truth.json``` contains all the labels for each warning reported.
-
-To collect warnings for Sunspider for example, first run dlint for sunspider:
-```
-./scripts/dlint_sunspider.sh
-```
-This will generate all warnings in different sub-directories. Next run
-```
-node src/js/experiment/exp-analysis.js
-```
-This will load labels from ```ground-truth.json``` and all warnings, analyse the result and report all statistics. This will extend ```ground-truth.json``` by adding new warnings to be labeled.
-
-To label warnings, first open ```ground-truth.json```, you will see many warnings (labeled or unlabeled), for instance:  
-
-```
-{  
-    "benchmark": "sunspider",  
-    "filename": "3d-cube.js",  
-    "iid": "12657",  
-    "locationString": "(/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-cube.js:314:23)",  
-    "type": "NonNumericArrayProperty",  
-    "details": "Accessing a non-numeric array property at (/Users/jacksongl/macos-workspace/research/jalangi/github_dlint/gitprojects/jalangi/tests/sunspider1/3d-cube.js:314:23) 5404 time(s).",  
-    "label": "[TBD]",  
-    "who": "[your name]",
-    "Comment" : "[comment, or reason why it is not a bug]"  
-  }, ...  
-``` 
-
-Inspect the source code according to ```benchmark```, ```filename```, ```locationString```,and```details```, if it is a bug, fill ```label``` with ```bug```, if not a bug, fill ```clean```, otherwise ```unknown```. Also fill in your name in ```who``` and comments, justification for the label. These information could help further refine the dlint dynamic analysis. 
-
-Finally it is OK not to label all warnings. The system can tolerate if some labels are left with ```[TBD]```.
-
-If ```ground-truth.json``` contains too many unlabeled warnings, use the following command to remove those unlabeled warnings:  
-```
-node src/js/experiment/prune-truth.js
-```
-
-Summarize DLint's warnings as a huge table into CSVs:
-```
-node src/js/experiment/warning-stat.js
-```
 
 
 Websites Checked So Far
