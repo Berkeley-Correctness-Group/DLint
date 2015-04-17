@@ -133,7 +133,7 @@
             }
         );
 
-        // Date.UTC()
+        // Date.UTC
         // Syntax: Date.UTC(year, month[, day[, hour[, minute[, second[, millisecond]]]]])
         addEntry('Date.UTC', Date.UTC,
             function(iid, f, base, args, result, isConstructor, isMethod) {
@@ -153,29 +153,232 @@
             }
         );
 
+        // Date.parse
+        // Syntax: Date.parse(dateString)
+        addEntry('Date.parse', Date.parse,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.parse should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else {
+                    if(!Utils.isString(args[0])) {
+                        iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                        addDebugInfo(iid, 'the first argument of function Date.parse should be a string. \n Runtime Args: ' + argsToString(args));
+                    }
+                }
+            }
+        );
 
-        // Date.now()
+        // Date.now
         // Syntax: var timeInMs = Date.now();
+        addEntry('Date.now', Date.now,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.now should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
 
-        // Date.parse()
-        // Date.prototype.getDate()
-        // Date.prototype.getDay()
-        // Date.prototype.getFullYear()
-        // Date.prototype.getHours()
-        // Date.prototype.getMilliseconds()
-        // Date.prototype.getMinutes()
-        // Date.prototype.getMonth()
-        // Date.prototype.getSeconds()
-        // Date.prototype.getTime()
-        // Date.prototype.getTimezoneOffset()
-        // Date.prototype.getUTCDate()
-        // Date.prototype.getUTCDay()
-        // Date.prototype.getUTCFullYear()
-        // Date.prototype.getUTCHours()
-        // Date.prototype.getUTCMilliseconds()
-        // Date.prototype.getUTCMinutes()
-        // Date.prototype.getUTCMonth()
-        // Date.prototype.getUTCSeconds()
+        // Date.prototype.getDate
+        // Syntax: dateObj.getDate()
+        addEntry('Date.prototype.getDate', Date.prototype.getDate,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getDate should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getDay
+        // Syntax: dateObj.getDay()
+        addEntry('Date.prototype.getDay', Date.prototype.getDay,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getDay should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getFullYear
+        // Syntax: dateObj.getFullYear()
+        addEntry('Date.prototype.getFullYear', Date.prototype.getFullYear,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getFullYear should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getHours
+        // Syntax: dateObj.getHours()
+        addEntry('Date.prototype.getHours', Date.prototype.getHours,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getHours should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getMilliseconds
+        // Syntax: dateObj.getMilliseconds()
+        addEntry('Date.prototype.getMilliseconds', Date.prototype.getMilliseconds,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getMilliseconds should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getMinutes
+        // Syntax: dateObj.getMinutes()
+        addEntry('Date.prototype.getMinutes', Date.prototype.getMinutes,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getMinutes should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getMonth
+        // Syntax: dateObj.getMonth()
+        addEntry('Date.prototype.getMonth', Date.prototype.getMonth,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getMonth should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getSeconds
+        // Syntax: dateObj.getSeconds
+        addEntry('Date.prototype.getSeconds', Date.prototype.getSeconds,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getSeconds should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getTime
+        // Syntax: dateObj.getTime()
+        addEntry('Date.prototype.getTime', Date.prototype.getTime,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getTime should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getTimezoneOffset
+        // Syntax: dateObj.getTimezoneOffset()
+        addEntry('Date.prototype.getTimezoneOffset', Date.prototype.getTimezoneOffset,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getTimezoneOffset should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+
+        // Date.prototype.getUTCDate
+        // Syntax: dateObj.getUTCDate()
+        addEntry('Date.prototype.getUTCDate', Date.prototype.getUTCDate,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getUTCDate should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getUTCDay
+        // Syntax: dateObj.getUTCDay()
+        addEntry('Date.prototype.getUTCDay', Date.prototype.getUTCDay,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getUTCDay should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getUTCFullYear
+        // Syntax: dateObj.getUTCFullYear()
+        addEntry('Date.prototype.getUTCFullYear', Date.prototype.getUTCFullYear,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getUTCFullYear should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getUTCHours
+        // Syntax: dateObj.getUTCHours()
+        addEntry('Date.prototype.getUTCHours', Date.prototype.getUTCHours,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getUTCHours should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getUTCMilliseconds
+        // Syntax: dateObj.getUTCMilliseconds()
+        addEntry('Date.prototype.getUTCMilliseconds', Date.prototype.getUTCMilliseconds,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getUTCMilliseconds should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getUTCMinutes
+        // Syntax: dateObj.getUTCMinutes()
+        addEntry('Date.prototype.getUTCMinutes', Date.prototype.getUTCMinutes,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getUTCMinutes should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getUTCMonth
+        // Syntax: dateObj.getUTCMonth()
+        addEntry('Date.prototype.getUTCMonth', Date.prototype.getUTCMonth,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getUTCMonth should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.getUTCSeconds
+        // Syntax: dateObj.getUTCSeconds()
+        addEntry('Date.prototype.getUTCSeconds', Date.prototype.getUTCSeconds,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.getUTCSeconds should take only one argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Date.prototype.setDate()
         // Date.prototype.setFullYear()
         // Date.prototype.setHours()
@@ -191,6 +394,7 @@
         // Date.prototype.setUTCMinutes()
         // Date.prototype.setUTCMonth()
         // Date.prototype.setUTCSeconds()
+
         // Date.prototype.toDateString()
         // Date.prototype.toISOString()
         // Date.prototype.toJSON()
