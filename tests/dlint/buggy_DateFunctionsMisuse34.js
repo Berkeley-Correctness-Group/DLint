@@ -30,6 +30,6 @@
 // Author: Liang Gong (gongliang13@cs.berkeley.edu)
 (function() {
     var date = new Date();
-    // there should be no arguments
-    console.log(date.getUTCSeconds(1, 2, 3, 0.4));
+    // there should be at most three arguments
+    console.log(date.setFullYear(1997, 7, 1, 2));
 })();

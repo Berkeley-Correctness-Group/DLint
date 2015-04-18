@@ -30,6 +30,6 @@
 // Author: Liang Gong (gongliang13@cs.berkeley.edu)
 (function() {
     var date = new Date();
-    // there should be no arguments
-    console.log(date.getUTCSeconds(1, 2, 3, 0.4));
+    // there should be only one argument
+    console.log(date.setDate(1, 2));
 })();

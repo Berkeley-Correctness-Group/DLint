@@ -4,5 +4,4 @@
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCSeconds
     var today = new Date();
     var seconds = today.getUTCSeconds();
-    
 })();
