@@ -379,7 +379,7 @@
             }
         );
 
-        // Date.prototype.setDate()
+        // Date.prototype.setDate
         // Syntax: dateObj.setDate(dayValue)
         addEntry('Date.prototype.setDate', Date.prototype.setDate,
             function(iid, f, base, args, result, isConstructor, isMethod) {
@@ -393,7 +393,7 @@
             }
         );
 
-        // Date.prototype.setFullYear()
+        // Date.prototype.setFullYear
         // Syntax: dateObj.setFullYear(yearValue[, monthValue[, dayValue]])
         addEntry('Date.prototype.setFullYear', Date.prototype.setFullYear,
             function(iid, f, base, args, result, isConstructor, isMethod) {
@@ -413,7 +413,7 @@
             }
         );
 
-        // Date.prototype.setHours()
+        // Date.prototype.setHours
         // Syntax: dateObj.setHours(hoursValue[, minutesValue[, secondsValue[, msValue]]])
         addEntry('Date.prototype.setHours', Date.prototype.setHours,
             function(iid, f, base, args, result, isConstructor, isMethod) {
@@ -436,7 +436,7 @@
             }
         );
 
-        // Date.prototype.setMilliseconds()
+        // Date.prototype.setMilliseconds
         // Syntax: dateObj.setMilliseconds(millisecondsValue)
         addEntry('Date.prototype.setMilliseconds', Date.prototype.setMilliseconds,
             function(iid, f, base, args, result, isConstructor, isMethod) {
@@ -450,7 +450,7 @@
             }
         );
 
-        // Date.prototype.setMinutes()
+        // Date.prototype.setMinutes
         // Syntax: dateObj.setMinutes(minutesValue[, secondsValue[, msValue]])
         addEntry('Date.prototype.setMinutes', Date.prototype.setMinutes,
             function(iid, f, base, args, result, isConstructor, isMethod) {
@@ -470,7 +470,7 @@
             }
         );
 
-        // Date.prototype.setMonth()
+        // Date.prototype.setMonth
         // Syntax: dateObj.setMonth(monthValue[, dayValue])
         addEntry('Date.prototype.setMonth', Date.prototype.setMonth,
             function(iid, f, base, args, result, isConstructor, isMethod) {
@@ -487,26 +487,289 @@
             }
         );
 
-        // Date.prototype.setSeconds()
-        // Date.prototype.setTime()
-        // Date.prototype.setUTCDate()
-        // Date.prototype.setUTCFullYear()
-        // Date.prototype.setUTCHours()
-        // Date.prototype.setUTCMilliseconds()
-        // Date.prototype.setUTCMinutes()
-        // Date.prototype.setUTCMonth()
-        // Date.prototype.setUTCSeconds()
+        // Date.prototype.setSeconds
+        // Syntax: dateObj.setSeconds(secondsValue[, msValue])
+        addEntry('Date.prototype.setSeconds', Date.prototype.setSeconds,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.setSeconds should take only 1~2 arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (!Utils.isInteger(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Date.prototype.setSeconds should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isInteger(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of Date.prototype.setSeconds should be an integer. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
 
-        // Date.prototype.toDateString()
-        // Date.prototype.toISOString()
-        // Date.prototype.toJSON()
-        // Date.prototype.toLocaleDateString()
-        // Date.prototype.toLocaleString()
-        // Date.prototype.toLocaleTimeString()
-        // Date.prototype.toString()
-        // Date.prototype.toTimeString()
-        // Date.prototype.toUTCString()
+        // Date.prototype.setTime
+        // Syntax: dateObj.setTime(timeValue)
+        addEntry('Date.prototype.setTime', Date.prototype.setTime,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.setTime should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (!Utils.isInteger(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Date.prototype.setTime should be an integer. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.setUTCDate
+        // Syntax: dateObj.setUTCDate(dayValue)
+        addEntry('Date.prototype.setUTCDate', Date.prototype.setUTCDate,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.setUTCDate should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (!Utils.isInteger(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Date.prototype.setUTCDate should be an integer. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.setUTCFullYear
+        // Syntax: dateObj.setUTCFullYear(yearValue[, monthValue[, dayValue]])
+        addEntry('Date.prototype.setUTCFullYear', Date.prototype.setUTCFullYear,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 3) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.setUTCFullYear should take only 1~3 arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (!Utils.isInteger(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Date.prototype.setUTCFullYear should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isInteger(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of Date.prototype.setUTCFullYear should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 3 && !Utils.isInteger(args[2])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the third argument of Date.prototype.setUTCFullYear should be an integer. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.setUTCHours
+        // Syntax: dateObj.setUTCHours(hoursValue[, minutesValue[, secondsValue[, msValue]]])
+        addEntry('Date.prototype.setUTCHours', Date.prototype.setUTCHours,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 4) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.setUTCHours should take only 1~4 arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (!Utils.isInteger(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Date.prototype.setUTCHours should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isInteger(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of Date.prototype.setUTCHours should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 3 && !Utils.isInteger(args[2])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the third argument of Date.prototype.setUTCHours should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 4 && !Utils.isInteger(args[3])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the fourth argument of Date.prototype.setUTCHours should be an integer. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.setUTCMilliseconds
+        // Syntax: dateObj.setUTCMilliseconds(millisecondsValue)
+        addEntry('Date.prototype.setUTCMilliseconds', Date.prototype.setUTCMilliseconds,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.setUTCMilliseconds should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (!Utils.isInteger(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Date.prototype.setUTCMilliseconds should be an integer. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.setUTCMinutes
+        // Syntax: dateObj.setUTCMinutes(minutesValue[, secondsValue[, msValue]])
+        addEntry('Date.prototype.setUTCMinutes', Date.prototype.setUTCMinutes,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 3) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.setUTCMinutes should take only 1~3 arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (!Utils.isInteger(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Date.prototype.setUTCMinutes should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isInteger(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of Date.prototype.setUTCMinutes should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 3 && !Utils.isInteger(args[2])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the third argument of Date.prototype.setUTCMinutes should be an integer. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.setUTCMonth
+        // dateObj.setUTCMonth(monthValue[, dayValue])
+        addEntry('Date.prototype.setUTCMonth', Date.prototype.setUTCMonth,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.setUTCMonth should take only 1~2 arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (!Utils.isInteger(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Date.prototype.setUTCMonth should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isInteger(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of Date.prototype.setUTCMonth should be an integer. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.setUTCSeconds
+        // Syntax: dateObj.setUTCSeconds(secondsValue[, msValue])
+        addEntry('Date.prototype.setUTCSeconds', Date.prototype.setUTCSeconds,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length < 1 || args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.setUTCSeconds should take only 1~2 arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (!Utils.isInteger(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Date.prototype.setUTCSeconds should be an integer. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isInteger(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of Date.prototype.setUTCSeconds should be an integer. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.toDateString
+        // Syntax: dateObj.toDateString()
+        addEntry('Date.prototype.toDateString', Date.prototype.toDateString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.toDateString should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.toISOString
+        // Syntax: dateObj.toISOString()
+        addEntry('Date.prototype.toISOString', Date.prototype.toISOString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.toISOString should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.toJSON
+        // Syntax: dateObj.toJSON()
+        addEntry('Date.prototype.toJSON', Date.prototype.toJSON,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.toJSON should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.toLocaleDateString
+        // Syntax: dateObj.toLocaleDateString([locales [, options]])
+        addEntry('Date.prototype.toLocaleDateString', Date.prototype.toLocaleDateString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.toLocaleDateString should take at most two arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0]) && !Utils.isStringArray(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of function Date.prototype.toLocaleDateString should be either a string or an array of strings. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && (typeof args[1] !== 'object')) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of function Date.prototype.toLocaleDateString should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.toLocaleString
+        // Syntax: dateObj.toLocaleString([locales[, options]])
+        addEntry('Date.prototype.toLocaleString', Date.prototype.toLocaleString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.toLocaleString should take at most two arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0]) && !Utils.isStringArray(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of function Date.prototype.toLocaleString should be either a string or an array of strings. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && (typeof args[1] !== 'object')) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of function Date.prototype.toLocaleString should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.toLocaleTimeString
+        // Syntax: dateObj.toLocaleTimeString([locales[, options]])
+        addEntry('Date.prototype.toLocaleTimeString', Date.prototype.toLocaleTimeString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length > 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.toLocaleTimeString should take at most two arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0]) && !Utils.isStringArray(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of function Date.prototype.toLocaleTimeString should be either a string or an array of strings. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && (typeof args[1] !== 'object')) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of function Date.prototype.toLocaleTimeString should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.toString
+        // dateObj.toString()
+        addEntry('Date.prototype.toString', Date.prototype.toString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.toString should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.toTimeString
+        // Syntax: dateObj.toTimeString()
+        addEntry('Date.prototype.toTimeString', Date.prototype.toTimeString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.toTimeString should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Date.prototype.toUTCString
+        // Syntax: dateObj.toUTCString()
+        addEntry('Date.prototype.toUTCString', Date.prototype.toUTCString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.toUTCString should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Date.prototype.valueOf()
+        // Syntax: dateObj.valueOf()
+        addEntry('Date.prototype.valueOf', Date.prototype.valueOf,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Date.prototype.valueOf should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
 
         this.invokeFun = function(iid, f, base, args, result, isConstructor, isMethod) {
             checkFunction(f, arguments);

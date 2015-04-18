@@ -61,9 +61,21 @@
             }
             return false;
         },
+        isStringArray: function(array) {
+            if (Array.isArray(array)) {
+                for (var i = 0; i < array.length; i++) {
+                    if (!this.isString(array[i]))
+                        return false;
+                }
+                return true;
+            }
+            return false;
+        },
         isInteger: function (num) {
             if (typeof num === 'number' && !this.ISNAN(num)) {
                 if(num === parseInt(num)) return true;
+            } else if (num instanceof NumberFct) {
+                return this.isInteger(num.valueOf());
             }
             return false;
         },
