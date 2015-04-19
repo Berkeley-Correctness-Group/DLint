@@ -22,6 +22,7 @@
     var StringFct = String;
     var BooleanFct = Boolean;
     var STRING = String;
+    var OBJECT = Object;
 
     function HOP(obj, prop) {
         return HOP1.call(obj, prop);
@@ -51,6 +52,12 @@
             if (typeof num === 'number' && !this.ISNAN(num)) {
                 return true;
             } else if (typeof num === 'string' && (this.PARSEINT(num) + "" === num)) {
+                return true;
+            }
+            return false;
+        },
+        isObject: function (obj) {
+            if(typeof obj === 'object' || obj instanceof OBJECT) {
                 return true;
             }
             return false;

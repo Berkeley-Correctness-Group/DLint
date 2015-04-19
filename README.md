@@ -245,6 +245,8 @@ MissRadixArgInParseNum.js
 FloatNumberEqualityComparison.js
 jsBuiltinFunctionChecker/StringFunctionsMisuse.js
 jsBuiltinFunctionChecker/RegExpFunctionsMisuse.js
+jsBuiltinFunctionChecker/NumberFunctionsMisuse.js
+jsBuiltinFunctionChecker/ObjectFunctionsMisuse.js
 jsBuiltinFunctionChecker/ArrayFunctionsMisuse.js
 jsBuiltinFunctionChecker/DateFunctionsMisuse.js
 ExeStat.js
