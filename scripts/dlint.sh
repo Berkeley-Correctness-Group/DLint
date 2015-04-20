@@ -24,3 +24,4 @@ bm="http://"$1
   mkdir websites/${bm_short}/src
   mv instrumentFF_tmp/*.js websites/${bm_short}/src/
   echo "All executed files and analysis result will be dumped in websites\<URL> directory, in which analysis.json contains all DLint warnings."
+  

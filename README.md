@@ -89,6 +89,31 @@ javac -d thirdparty -cp thirdparty/selenium-server-standalone-2.41.0.jar `pwd`/s
 javac -d thirdparty -cp thirdparty/selenium-server-standalone-2.41.0.jar `pwd`/src/java/evaluation/OctaneExperimentRunner.java
 ```
 
+**Step 4:**
+
+Intall the warning viewer for DLint:
+```
+cd ..
+git clone https://github.com/JacksonGL/noide.git
+cd noide
+npm install ncp
+npm install less
+npm install vash
+npm install rimraf
+npm install express
+npm install morgan
+npm install chokidar
+npm install socket.io
+npm install browserify
+npm install js-beautify
+npm install body-parser
+npm install cookie-parser
+npm install static-favicon
+npm install emitter-component
+npm run build
+cd ../DLint
+```
+
 Now you are good to go, have fun with DLint!
 
 ### Usage
@@ -116,6 +141,16 @@ More examples:
 ./scripts/dlint.sh www.apple.com/macbook
 ```
 Please do not interact with the DLint-started browser, DLint will automatically close the browser after analysis. When it is done, all executed files and analysis result will be dumped in ```websites\<URL>``` directory, in which ```analysis.json``` contains all DLint warnings.
+
+
+To view the DLint results in GUI, open a new terminal (under DLint repository dir) and type the following command:
+```
+node ../noide/bin/noide.js websites/
+```
+Open a browser and goto the following url:
+```
+http://localhost:3000/editor
+```
 
 ---
 
