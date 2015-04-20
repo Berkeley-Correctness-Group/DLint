@@ -55,7 +55,7 @@ If you have a fresh installation of Ubuntu, you can install all the requirements
     sudo apt-get install chromium-browser
 
 
-### Install in 3 Simple Steps
+### Install in 4 Simple Steps
 
 **Step 1:**
 execute the following commands to install everything you need to run DLint:
