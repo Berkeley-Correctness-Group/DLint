@@ -90,7 +90,6 @@ javac -d thirdparty -cp thirdparty/selenium-server-standalone-2.41.0.jar `pwd`/s
 ```
 
 **Step 4:**
-
 Intall the warning viewer for DLint:
 ```
 cd ..
