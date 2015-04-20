@@ -151,6 +151,8 @@ Open a browser and goto the following url:
 http://localhost:3000/editor
 ```
 
+![](https://raw.githubusercontent.com/Berkeley-Correctness-Group/DLint/master/doc/image/view_warning.PNG)
+
 ---
 
 
