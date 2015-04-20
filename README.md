@@ -141,8 +141,10 @@ More examples:
 ```
 Please do not interact with the DLint-started browser, DLint will automatically close the browser after analysis. When it is done, all executed files and analysis result will be dumped in ```websites\<URL>``` directory, in which ```analysis.json``` contains all DLint warnings.
 
+A [step-by-step guide](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Try-DLint-on-a-Virtual-Machine#step-3-use-dlint-in-the-vm) is available.
 
-To view the DLint results in GUI, open a new terminal (under DLint repository dir) and type the following command:
+
+To view the DLint results in GUI (modified [noide](https://github.com/davidjamesstone/noide) file viewer), open a new terminal (under DLint repository dir) and type the following command:
 ```
 node ../noide/bin/noide.js websites/
 ```
