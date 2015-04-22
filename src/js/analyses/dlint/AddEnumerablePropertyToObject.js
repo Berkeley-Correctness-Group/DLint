@@ -28,6 +28,7 @@
  */
 
 // Author: Michael Pradel (michael@binaervarianz.de)
+//         Liang Gong (gongliang13@cs.berkeley.edu)
 
 /**
  * @dlintShort{Find code that adds an enumerable property to Object.}
@@ -49,7 +50,7 @@
         var iidToCount = {};  // iid: number --> count: number
 
         this.invokeFunPre = function(iid, f, base, args, isConstructor, isMethod) {
-            if (f.name === "defineProperty" && base === Object &&
+            if (f.name === "defineProperty" && base === Object && args[0] === Object.prototype &&
                   args.length === 3 && args[2].enumerable === true) {
                 iidToCount[iid] = (iidToCount[iid] | 0) + 1;
             }

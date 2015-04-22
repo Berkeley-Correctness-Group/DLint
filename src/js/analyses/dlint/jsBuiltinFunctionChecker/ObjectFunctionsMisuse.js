@@ -136,22 +136,245 @@
         );
 
         // Object.defineProperty
+        // Syntax: Object.defineProperty(obj, prop, descriptor)
+        addEntry('Object.defineProperty', Object.defineProperty,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 3) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.defineProperty should take three arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.defineProperty should be an object. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isString(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of Object.defineProperty should be a string. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 3 && !Utils.isObject(args[2])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the third argument of Object.defineProperty should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Object.freeze
+        // Syntax: Object.freeze(obj)
+        addEntry('Object.freeze', Object.freeze,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.freeze should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.freeze should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Object.getOwnPropertyDescriptor
+        // Syntax: Object.getOwnPropertyDescriptor(obj, prop)
+        addEntry('Object.getOwnPropertyDescriptor', Object.getOwnPropertyDescriptor,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.getOwnPropertyDescriptor should take only two arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.getOwnPropertyDescriptor should be an object. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isString(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of Object.getOwnPropertyDescriptor should be a string. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Object.getOwnPropertyNames
+        // Syntax: Object.getOwnPropertyNames(obj)
+        addEntry('Object.getOwnPropertyNames', Object.getOwnPropertyNames,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.getOwnPropertyNames should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.getOwnPropertyNames should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Object.getPrototypeOf
+        // Syntax: Object.getPrototypeOf(obj)
+        addEntry('Object.getPrototypeOf', Object.getPrototypeOf,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.getPrototypeOf should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.getPrototypeOf should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Object.isExtensible
+        // Syntax: Object.isExtensible(obj)
+        addEntry('Object.isExtensible', Object.isExtensible,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.isExtensible should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.isExtensible should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Object.isFrozen
+        // Syntax: Object.isFrozen(obj)
+        addEntry('Object.isFrozen', Object.isFrozen,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.isFrozen should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.isFrozen should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Object.isSealed
-        // Object.keys
-        // Object.preventExtensions
-        // Object.prototype.hasOwnProperty
-        // Object.prototype.isPrototypeOf
-        // Object.prototype.propertyIsEnumerable
-        // Object.prototype.toLocaleString
-        // Object.prototype.toString
-        // Object.prototype.valueOf
+        // Syntax: Object.isSealed(obj)
+        addEntry('Object.isSealed', Object.isSealed,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.isSealed should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.isSealed should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // Object.seal
+        // Syntax: Object.seal(obj)
+        addEntry('Object.seal', Object.seal,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.seal should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.seal should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+
+        // Object.keys
+        // Syntax: Object.keys(obj)
+        addEntry('Object.keys', Object.keys,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.keys should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.keys should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Object.preventExtensions
+        // Syntax: Object.preventExtensions(obj)
+        addEntry('Object.preventExtensions', Object.preventExtensions,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.preventExtensions should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.preventExtensions should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Object.prototype.hasOwnProperty
+        // Syntax: obj.hasOwnProperty(prop)
+        addEntry('Object.prototype.hasOwnProperty', Object.prototype.hasOwnProperty,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.prototype.hasOwnProperty should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.prototype.hasOwnProperty should be a string. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Object.prototype.isPrototypeOf
+        // Syntax: prototypeObj.isPrototypeOf(obj)
+        addEntry('Object.prototype.isPrototypeOf', Object.prototype.isPrototypeOf,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.prototype.isPrototypeOfshould take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isObject(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.prototype.isPrototypeOf should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+
+        // Object.prototype.propertyIsEnumerable
+        // Syntax: obj.propertyIsEnumerable(prop)
+        addEntry('Object.prototype.propertyIsEnumerable', Object.prototype.propertyIsEnumerable,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.prototype.propertyIsEnumerable should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of Object.prototype.propertyIsEnumerable should be a string. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Object.prototype.toLocaleString
+        // Syntax: obj.toLocaleString()
+        addEntry('Object.prototype.toLocaleString', Object.prototype.toLocaleString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.prototype.toLocaleString should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+        // Object.prototype.toString
+        // Syntax: obj.toString()
+        addEntry('Object.prototype.toString', Object.prototype.toString,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.prototype.toString should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
+
+        // Object.prototype.valueOf
+        // Syntax: object.valueOf()
+        addEntry('Object.prototype.valueOf', Object.prototype.valueOf,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function Object.prototype.valueOf should not take any argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
 
         this.invokeFun = function(iid, f, base, args, result, isConstructor, isMethod) {
             checkFunction(f, arguments);
