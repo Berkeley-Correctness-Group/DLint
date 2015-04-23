@@ -12,40 +12,16 @@ All following instructions assume that the current working directory is the root
 **Note:** This project currently only supports Mac OS 10+ (64bit).
 
 ### Requirements
+Make sure that you have the following software installed ([More details](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually#requirements)).
 
-This project is built upon [jalangi](http://github.com/SRA-SiliconValley/jalangi).
-If you already have Jalangi executed on your machine, you can skip this section and go to the ```Install``` section.
-
-
-Jalangi is tested on Mac OS X 10.8 with Chromium browser.  Jalangi should work on Mac OS
-10.7, Ubuntu 11.0 and higher and Windows 7 or higher. Jalangi will NOT work with IE.
-
-  * Latest version of Node.js available at http://nodejs.org/.  We have tested Jalangi with Node v0.10.25.
-  * Sun's JDK 1.6 or higher.  We have tested Jalangi with Java 1.6.0_43.
-  * Command-line git.
+  * Latest version of [Node.js](http://nodejs.org/).
+  * Sun's JDK 1.6 or higher.
+  * Command-line git.  
+<!---  
   * libgmp (http://gmplib.org/) is required by cvc3.  Concolic testing uses cvc3 and automaton.jar for constraint solving. The installation script checks if cvc3 and automaton.jar are installed properly.
+-->
   * Chrome browser if you need to test web apps.
   * Python (http://python.org) version 2.7 or higher
-  
-On Windows you need the following extra dependencies:
-
-  * Install Microsoft Visual Studio 2010 (Free express version is fine).
-  * If on 64bit also install Windows 7 64-bit SDK.
-
-If you have a fresh installation of Ubuntu, you can install all the requirements by invoking the following commands from a terminal.
-
-    sudo apt-get update
-    sudo apt-get install python-software-properties python g++ make
-    sudo add-apt-repository ppa:chris-lea/node.js
-    sudo apt-get update
-    sudo apt-get install nodejs
-    sudo add-apt-repository ppa:webupd8team/java
-    sudo apt-get update
-    sudo apt-get install oracle-java7-installer
-    sudo update-java-alternatives -s java-7-oracle
-    sudo apt-get install git
-    sudo apt-get install libgmp10
-    sudo apt-get install chromium-browser
 
 
 ### Install DLint on 64-bit Mac OS
