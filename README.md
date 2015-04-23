@@ -43,7 +43,7 @@ export PATH="`pwd`/scripts/path_unix":$PATH
 ```
 -->
 
-All following instructions assume that the current working directory is the root direcotry of DLint git local repository.
+All following instructions assume that the cmd directory is the ```DLint``` git local repository.
 <!---
 and that both the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory and [noide](https://github.com/JacksonGL/noide) directory are sibling directories of DLint.
 -->
@@ -57,6 +57,7 @@ For example:
 ./scripts/dlint.sh www.sencha.com
 ```
 
+<!---
 More examples:
 ```
 ./scripts/dlint.sh rallyinteractive.com
@@ -64,6 +65,7 @@ More examples:
 ./scripts/dlint.sh inspectelement.com/theme/expressive
 ./scripts/dlint.sh www.apple.com/macbook
 ```
+-->
 Please do not interact with the DLint-started browser, DLint will automatically close the browser after analysis. When it is done, all executed files and analysis result will be dumped in ```websites\<URL>``` directory, in which ```analysis.json``` contains all DLint warnings.  
 (A [step-by-step guide](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Try-DLint-on-a-Virtual-Machine#step-3-use-dlint-in-the-vm) is available.)
 
