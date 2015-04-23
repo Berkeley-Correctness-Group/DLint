@@ -285,6 +285,7 @@ jsBuiltinFunctionChecker/StringFunctionsMisuse.js
 jsBuiltinFunctionChecker/RegExpFunctionsMisuse.js
 jsBuiltinFunctionChecker/NumberFunctionsMisuse.js
 jsBuiltinFunctionChecker/ObjectFunctionsMisuse.js
+jsBuiltinFunctionChecker/GlobalFunctionsMisuse.js
 jsBuiltinFunctionChecker/ArrayFunctionsMisuse.js
 jsBuiltinFunctionChecker/DateFunctionsMisuse.js
 ExeStat.js

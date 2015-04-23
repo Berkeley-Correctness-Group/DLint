@@ -76,8 +76,10 @@
         if (verbose)
           console.log(cmd);
         if (error) {
-          if (verbose)
+          if (verbose || isDebug) {
+            console.log('\r\n' + cmd);
             console.log(stderr);
+          }
           testsToDo--;
           process.stdout.write(".");
           output.push("  " + file + " crashes, will not analyze it.");
@@ -129,6 +131,9 @@
               verbose = true;
               console.log();
             }
+          } else if (stdout.indexOf('^') >=0 || stdout.indexOf('Error:') >= 0) {
+            verbose = true;
+            console.log();
           }
           if (verbose)
             console.log(stdout);
@@ -152,7 +157,7 @@
           }
         } else {
           console.log("Error: Couldn't execute test!");
-          if (verbose)
+          if (verbose || isDebug)
             console.log(stderr);
           failedTotal++;
         }
