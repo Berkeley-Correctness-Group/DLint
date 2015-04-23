@@ -1,18 +1,7 @@
 # DLint
 
-Dynamically Checking Bad Coding Practices for JavaScript
-
-
-### Introduction
-
-JavaScript is becoming one of the most popular languages, yet it is known for its suboptimal design. To effectively use JavaScript despite its design flaws, developers try to follow informal code quality rules that help avoiding correctness, maintainability, performance, and security problems. Lightweight static analyses, implemented in "lint-like" tools, are widely used to find violations of these rules, but are of limited use because of the language's dynamic nature. This paper presents DLint, a dynamic analysis approach to check code quality rules in JavaScript. DLint consists of a generic framework and an extensible set of checkers that each address a particular rule. We formally describe and implement 28 checkers that address problems missed by state-of-the-art static approaches. Applying the approach in a comprehensive empirical study on over 200 popular web sites shows that static and dynamic checking complement each other. On average per web site, DLint detects 49 problems that are missed statically, including visible bugs on the web sites of IKEA, Hilton, eBay, and CNBC.
-
-### Authors
-Liang Gong, Michael Pradel, Manu Sridharan and Koushik Sen
-
-A technical report is available at (to appear in [ISSTA'15](http://issta2015.cs.uoregon.edu/) soon):
-
-http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf
+Dynamically Checking Bad Coding Practices for JavaScript.  
+If you are interested in more technical details, a [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf) is available (to appear in [ISSTA'15](http://issta2015.cs.uoregon.edu/) soon).
 
 ### Before any actions
 
