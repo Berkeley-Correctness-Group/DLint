@@ -16,7 +16,8 @@ http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf
 
 ### Before any actions
 
-All following instructions assume that the current working directory is the root direcotry of DLint and that the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory is a sibling directory of DLint (do not worry about it: commands in ```Install``` section will make sure this happens). This project currently supports Mac OS and Linux.
+All following instructions assume that the current working directory is the root direcotry of DLint and that the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory is a sibling directory of DLint (do not worry about it: commands in ```Install``` section will make sure this happens).   
+**Note:** This project currently only supports Mac OS 10+ (64bit).
 
 ### Requirements
 
