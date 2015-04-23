@@ -6,9 +6,6 @@ Briefly speaking, [JSHint](http://jshint.com/), [JSLint](http://www.jslint.com/)
 
 For more details, a [Wiki page](https://github.com/Berkeley-Correctness-Group/DLint/wiki) and a [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf) is available (to appear in [ISSTA'15](http://issta2015.cs.uoregon.edu/) soon).
 
-### Before any actions
-
-All following instructions assume that the current working directory is the root direcotry of DLint and that the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory is a sibling directory of DLint (do not worry about it: commands in ```Install``` section will make sure this happens).   
 **Note:** This project currently only supports Mac OS 10+ (64bit).
 
 ### Requirements
@@ -47,6 +44,8 @@ remember to) set the path:
 export PATH="`pwd`/scripts/path_unix":$PATH
 ```
 -->
+
+All following instructions assume that the current working directory is the root direcotry of DLint git local repository and that both the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory and [noide](https://github.com/JacksonGL/noide) directory are sibling directories of DLint.
 
 Apply Dlint to a real-world website:
 ```
