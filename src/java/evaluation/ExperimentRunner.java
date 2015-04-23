@@ -72,7 +72,7 @@ public class ExperimentRunner {
 		}catch(Exception ex) {
 			System.out.println(ex);
 		}
-		firefoxBinary = curDIR + "/Nightly.app/Contents/MacOS/firefox-bin";
+		firefoxBinary = curDIR + "/thirdparty/Nightly.app/Contents/MacOS/firefox-bin";
 	}
 
 	public static void main(String[] args) throws Exception {

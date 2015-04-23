@@ -55,65 +55,19 @@ If you have a fresh installation of Ubuntu, you can install all the requirements
     sudo apt-get install chromium-browser
 
 
-### Install in 4 Simple Steps
+### Install DLint on 64-bit Mac OS
 
-**Step 1:**
-execute the following commands to install everything you need to run DLint:
+Use the following command to install DLint:
 ```
-node src/js/install.js
-npm install cli
-npm install stats
-npm install jshint
-npm install doctrine
-npm install jsdom@3.1.2
-npm install node-js-beautify
-npm install google-search-scraper
-export PATH="`pwd`/scripts/path_unix":$PATH
-```
-**Step 2:** 
-
-  * Install our custom version of Firefox: [Linux (64 bit)](http://mp.binaervarianz.de/jalangi/firefox-jalangi-27.0a1.en-US.linux-x86_64_20140815.tar.bz2), [(Mirror-1)](https://www.eecs.berkeley.edu/~gongliang13/files/firefox-jalangi-27.0a1.en-US.linux-x86_64_20140815.tar.bz2), [Mac OS (64 bit)](http://mp.binaervarianz.de/jalangi/firefox-jalangi-27.0a1.en-US.mac64_20140520.dmg), [(Mirror-1)](https://www.eecs.berkeley.edu/~gongliang13/files/firefox-jalangi-27.0a1.en-US.mac64_20140520.dmg). More details [here](https://github.com/Berkeley-Correctness-Group/Jalangi-Berkeley#in-browser-instrumentation-instrumentff).
-  * In file, ```src/java/evaluation/ExperimentRunner.java``` and
-  ```src/java/evaluation/OctaneExperimentRunner.java```: Make sure the variable ```firefoxBinary``` points to the location where you installed the custom version of Firefox.
-  
-  ```java
-  // modify the following assignment with the correct value.
-  final String firefoxBinary = "/Applications/Nightly.app/Contents/MacOS/firefox-bin";
-  ```
-
-
-**Step3:**
-execute the following commands to compile the Java code:
-```
-javac -d thirdparty -cp thirdparty/selenium-server-standalone-2.41.0.jar `pwd`/src/java/evaluation/ExperimentRunner.java
-javac -d thirdparty -cp thirdparty/selenium-server-standalone-2.41.0.jar `pwd`/src/java/evaluation/OctaneExperimentRunner.java
-```
-
-**Step 4:**
-Intall the warning viewer for DLint:
-```
-cd ..
-git clone https://github.com/JacksonGL/noide.git
-cd noide
-npm install ncp
-npm install less
-npm install vash
-npm install rimraf
-npm install express
-npm install morgan
-npm install chokidar
-npm install socket.io
-npm install browserify
-npm install js-beautify
-npm install body-parser
-npm install cookie-parser
-npm install static-favicon
-npm install emitter-component
-npm run build
-cd ../DLint
+mkdir dlint
+cd dlint
+git clone https://github.com/Berkeley-Correctness-Group/DLint.git
+cd DLint
+./scripts/install.sh
 ```
 
 Now you are good to go, have fun with DLint!
+(if it does not work, please [manually install DLint](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually).)
 
 ### Usage
 

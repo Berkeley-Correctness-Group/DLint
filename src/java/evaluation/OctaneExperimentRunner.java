@@ -65,7 +65,7 @@ public class OctaneExperimentRunner {
 		}catch(Exception ex) {
 			System.out.println(ex);
 		}
-		firefoxBinary = curDIR + "/Nightly.app/Contents/MacOS/firefox-bin";
+		firefoxBinary = curDIR + "/thirdparty/Nightly.app/Contents/MacOS/firefox-bin";
 	}
 
 	private void run(String benchmark) throws Exception {
