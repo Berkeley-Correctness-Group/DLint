@@ -54,7 +54,7 @@
 # author: Liang Gong (gongliang13@cs.berkeley.edu)
 #
 
-if [ "$(uname)" == "Darwin1" ]; then
+if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform
     if [ "$(uname -m)" == "x86_64" ]; then
 		echo 'Platform: Mac OS 64bit. Proceeding...'
@@ -62,8 +62,7 @@ if [ "$(uname)" == "Darwin1" ]; then
 		echo 'Sorry, currently DLint does not fully support Linux. Please use Mac OS 10+ (64bit).'
 		exit
 	fi
-
-    echo '[Step-1]: Start installing jalangi...' 
+	echo '[Step-1]: Start installing jalangi...' 
     # install jalangi
 	node src/js/install.js
 	npm install cli
