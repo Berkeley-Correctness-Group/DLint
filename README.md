@@ -43,7 +43,10 @@ export PATH="`pwd`/scripts/path_unix":$PATH
 ```
 -->
 
-All following instructions assume that the current working directory is the root direcotry of DLint git local repository and that both the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory and [noide](https://github.com/JacksonGL/noide) directory are sibling directories of DLint.
+All following instructions assume that the current working directory is the root direcotry of DLint git local repository.
+<!---
+and that both the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory and [noide](https://github.com/JacksonGL/noide) directory are sibling directories of DLint.
+-->
 
 Apply Dlint to a real-world website:
 ```
