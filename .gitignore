@@ -1,4 +1,6 @@
 jalangi_tmp/*
+Nightly.app
+*.dmg
 instrumentFF_tmp/*
 instrumentFF_tmp_instr.js
 instrumentFF_tmp_orig.js

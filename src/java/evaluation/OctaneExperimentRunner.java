@@ -39,7 +39,8 @@ public class OctaneExperimentRunner {
 
   // location of Firefox modified for in-browser instrumentation
 //	final String firefoxBinary = "thirdparty/instrumenting_firefox";
-	final String firefoxBinary = "/Applications/Nightly.app/Contents/MacOS/firefox-bin";
+	private static String curDIR;
+	private static String firefoxBinary;
   
   // location of the jalangiFF Firefox plugin
 	final String jalangiFFxpi = "thirdparty/jalangiff.xpi";
@@ -53,8 +54,18 @@ public class OctaneExperimentRunner {
 	int maxWaitTime = 30*60;
 
 	public static void main(String[] args) throws Exception {
+		init();
 		assert(args.length == 1);
 		new OctaneExperimentRunner().run(args[0]);
+	}
+
+	private static void init() {
+		try{
+			curDIR = new java.io.File( "." ).getCanonicalPath();
+		}catch(Exception ex) {
+			System.out.println(ex);
+		}
+		firefoxBinary = curDIR + "/Nightly.app/Contents/MacOS/firefox-bin";
 	}
 
 	private void run(String benchmark) throws Exception {

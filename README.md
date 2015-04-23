@@ -281,6 +281,7 @@ EmptyClassInRegexp.js
 UseArrObjConstrWithoutArg.js
 MissRadixArgInParseNum.js
 FloatNumberEqualityComparison.js
+jsBuiltinFunctionChecker/DocumentFunctionsMisuse.js
 jsBuiltinFunctionChecker/StringFunctionsMisuse.js
 jsBuiltinFunctionChecker/RegExpFunctionsMisuse.js
 jsBuiltinFunctionChecker/NumberFunctionsMisuse.js

@@ -51,7 +51,8 @@ public class ExperimentRunner {
 
   // location of Firefox modified for in-browser instrumentation
 	//final String firefoxBinary = "thirdparty/instrumenting_firefox";
-	final String firefoxBinary = "/Applications/Nightly.app/Contents/MacOS/firefox-bin";
+	private static String curDIR;
+	private static String firefoxBinary;
   
   // location of the jalangiFF Firefox plugin
 	final String jalangiFFxpi = "thirdparty/jalangiff.xpi";
@@ -65,7 +66,17 @@ public class ExperimentRunner {
 	WebDriver driver;
 	int maxWaitTime = 5 * 60;
 
+	private static void init() {
+		try{
+			curDIR = new java.io.File( "." ).getCanonicalPath();
+		}catch(Exception ex) {
+			System.out.println(ex);
+		}
+		firefoxBinary = curDIR + "/Nightly.app/Contents/MacOS/firefox-bin";
+	}
+
 	public static void main(String[] args) throws Exception {
+		init();
 		ExperimentRunner runner = new ExperimentRunner();
 		runner.setup();
 		if (args.length == 1) {

@@ -51,7 +51,8 @@ public class JalangiFirefoxRunner {
 
   // location of Firefox modified for in-browser instrumentation
 	//final String firefoxBinary = "thirdparty/instrumenting_firefox";
-	final String firefoxBinary = "/Applications/Nightly.app/Contents/MacOS/firefox-bin";
+	private static String curDIR;
+	private static String firefoxBinary;
 
 	final String firefoxLogFile = "/tmp/firefox.out";
 	final String javascriptLogFile = "/tmp/firefox_javascript.out";
@@ -59,11 +60,21 @@ public class JalangiFirefoxRunner {
 	int maxWaitTime = 5 * 60;
 
 	public static void main(String[] args) throws Exception {
+		init();
 		JalangiFirefoxRunner runner = new JalangiFirefoxRunner();
 		runner.setup();
 		runner.runUrl();
 
 		// runner.runAll();
+	}
+
+	private static void init() {
+		try{
+			curDIR = new java.io.File( "." ).getCanonicalPath();
+		}catch(Exception ex) {
+			System.out.println(ex);
+		}
+		firefoxBinary = curDIR + "/Nightly.app/Contents/MacOS/firefox-bin";
 	}
 
 	private void setup() throws Exception {
