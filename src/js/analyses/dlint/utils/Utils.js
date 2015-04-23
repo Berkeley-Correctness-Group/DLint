@@ -56,13 +56,13 @@
             }
             return false;
         },
-        isObject: function (obj) {
-            if(typeof obj === 'object' || obj instanceof OBJECT) {
+        isObject: function(obj) {
+            if (typeof obj === 'object' || obj instanceof OBJECT) {
                 return true;
             }
             return false;
         },
-        isString: function (str) {
+        isString: function(str) {
             if (typeof str === 'string' || (str instanceof STRING)) {
                 return true;
             }
@@ -78,17 +78,17 @@
             }
             return false;
         },
-        isInteger: function (num) {
+        isInteger: function(num) {
             if (typeof num === 'number' && !this.ISNAN(num)) {
-                if(num === parseInt(num)) return true;
+                if (num === parseInt(num)) return true;
             } else if (num instanceof NumberFct) {
                 return this.isInteger(num.valueOf());
             }
             return false;
         },
-        isFloat: function (num) {
+        isFloat: function(num) {
             if (typeof num === 'number' && !this.ISNAN(num)) {
-                if(num !== (num | 0)) return true;
+                if (num !== (num | 0)) return true;
             }
             return false;
         },
@@ -131,6 +131,20 @@
                 }
             }
             return false;
+        },
+        isNode: function(o) {
+            //Returns true if it is a DOM node
+            return (
+                typeof Node === "object" ? o instanceof Node :
+                o && typeof o === "object" && typeof o.nodeType === "number" && typeof o.nodeName === "string"
+            );
+        },
+        isElement: function(o) {
+            //Returns true if it is a DOM element    
+            return (
+                typeof HTMLElement === "object" ? o instanceof HTMLElement : //DOM2
+                o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName === "string"
+            );
         },
         getConstructorName: function(obj) {
             if (obj && obj.constructor) {
