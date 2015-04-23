@@ -6,11 +6,8 @@ Briefly speaking, [JSHint](http://jshint.com/), [JSLint](http://www.jslint.com/)
 
 For more details, a [Wiki page](https://github.com/Berkeley-Correctness-Group/DLint/wiki) and a [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf) is available (to appear in [ISSTA'15](http://issta2015.cs.uoregon.edu/) soon).
 
-**Note:** This project currently only supports Mac OS 10+ (64bit).
-
 ### Requirements
-Make sure that you have the following software installed ([More details](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually#requirements)).
-
+Make sure that you have the following software installed ([More details](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually#requirements)).  
   * Latest version of [Node.js](http://nodejs.org/).
   * Sun's JDK 1.6 or higher.
   * Command-line git.  
@@ -20,6 +17,7 @@ Make sure that you have the following software installed ([More details](https:/
 <!--- 
   * libgmp (http://gmplib.org/) is required by cvc3.  Concolic testing uses cvc3 and automaton.jar for constraint solving. The installation script checks if cvc3 and automaton.jar are installed properly.
 -->
+**Note:** This project currently only supports Mac OS 10+ (64bit).
 
 ### Install DLint on 64-bit Mac OS
 
@@ -63,9 +61,8 @@ More examples:
 ./scripts/dlint.sh inspectelement.com/theme/expressive
 ./scripts/dlint.sh www.apple.com/macbook
 ```
-Please do not interact with the DLint-started browser, DLint will automatically close the browser after analysis. When it is done, all executed files and analysis result will be dumped in ```websites\<URL>``` directory, in which ```analysis.json``` contains all DLint warnings.
-
-A [step-by-step guide](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Try-DLint-on-a-Virtual-Machine#step-3-use-dlint-in-the-vm) is available.
+Please do not interact with the DLint-started browser, DLint will automatically close the browser after analysis. When it is done, all executed files and analysis result will be dumped in ```websites\<URL>``` directory, in which ```analysis.json``` contains all DLint warnings.  
+(A [step-by-step guide](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Try-DLint-on-a-Virtual-Machine#step-3-use-dlint-in-the-vm) is available.)
 
 
 To view the DLint results in GUI (modified [noide](https://github.com/davidjamesstone/noide) file viewer), open a new terminal (under DLint repository dir) and type the following command:
