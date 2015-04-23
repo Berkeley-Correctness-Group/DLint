@@ -21,7 +21,6 @@ Make sure that you have the following software installed ([More details](https:/
 
 Install DLint
 --------------
-
 Use the following command to install DLint:
 ```
 mkdir dlint
@@ -36,7 +35,6 @@ Now you are good to go, have fun with DLint!
 
 Use DLint
 ----------
-
 <!---  
 Everytime when you open a new cmd window, go to DLint dir first, then (always
 remember to) set the path:
@@ -95,14 +93,14 @@ python scripts/dlint.py tests/dlint/buggy_CheckNaN
 ```
 Warnings are written to console and ```jalangi_tmp/analysisResults.json```.
 
-### Adding New Analyses
+Configure and Extend DLint
+------------------------------
 DLint framework is designed to easily add new dynamic analysis by
 adding a new file and overriding a few functions. ([More details](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide)).
 
 
 Try DLint on VirtualBox
 ------------------------------
-
 If you do not have a Mac or Linux OS or a 64bit machine (or if you just want to try DLint without going through those installation steps), one option would be using DLint on a virtual machine. A step-by-step guide is [available](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Try-DLint-on-a-Virtual-Machine).
 
 Download [VirtualBox](https://www.VirtualBox.org/) and [DLint VirtualBox image](https://berkeley.box.com/s/m6eys03sihdfm030hqdhaqy05smgjpcb) (1.28GB, MD5: ```1429e4a3bda83169b6ea195952c25c4e```)
