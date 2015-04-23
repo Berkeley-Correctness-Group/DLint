@@ -17,12 +17,12 @@ Make sure that you have the following software installed ([More details](https:/
   * Latest version of [Node.js](http://nodejs.org/).
   * Sun's JDK 1.6 or higher.
   * Command-line git.  
-<!---  
-  * libgmp (http://gmplib.org/) is required by cvc3.  Concolic testing uses cvc3 and automaton.jar for constraint solving. The installation script checks if cvc3 and automaton.jar are installed properly.
--->
   * Chrome browser if you need to test web apps.
   * Python (http://python.org) version 2.7 or higher
 
+<!--- 
+  * libgmp (http://gmplib.org/) is required by cvc3.  Concolic testing uses cvc3 and automaton.jar for constraint solving. The installation script checks if cvc3 and automaton.jar are installed properly.
+-->
 
 ### Install DLint on 64-bit Mac OS
 
