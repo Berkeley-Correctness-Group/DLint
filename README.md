@@ -81,7 +81,7 @@ To view the DLint results in GUI (modified [noide](https://github.com/davidjames
 ```
 node ../noide/bin/noide.js websites/
 ```
-Goto the following url in your browser:  
+In browser, view the page with this URL: 
 [http://localhost:3000/editor](http://localhost:3000/editor)
 
 ![](https://raw.githubusercontent.com/Berkeley-Correctness-Group/DLint/master/doc/image/view_warning.PNG)
