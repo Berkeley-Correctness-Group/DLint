@@ -19,7 +19,8 @@ Make sure that you have the following software installed ([More details](https:/
 -->
 **Note:** This project currently only supports Mac OS 10+ (64bit).
 
-### Install DLint on 64-bit Mac OS
+Install DLint
+--------------
 
 Use the following command to install DLint:
 ```
@@ -33,7 +34,8 @@ cd DLint
 Now you are good to go, have fun with DLint!  
 (A backup option is to [manually install DLint](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually).)
 
-### Usage
+Use DLint
+----------
 
 <!---  
 Everytime when you open a new cmd window, go to DLint dir first, then (always
@@ -47,6 +49,8 @@ All following instructions assume that the cmd directory is the ```DLint``` git 
 <!---
 and that both the main [jalangi](http://github.com/SRA-SiliconValley/jalangi) directory and [noide](https://github.com/JacksonGL/noide) directory are sibling directories of DLint.
 -->
+
+#### Use DLint on Websites
 
 Apply Dlint to a real-world website:
 ```
@@ -83,6 +87,7 @@ http://localhost:3000/editor
 
 ---
 
+#### Use DLint on a Single File
 
 Apply DLint to a single JavaScript file:
 ```
@@ -95,7 +100,8 @@ DLint framework is designed to easily add new dynamic analysis by
 adding a new file and overriding a few functions. ([More details](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide)).
 
 
-### Try DLint on VirtualBox
+Try DLint on VirtualBox
+------------------------------
 
 If you do not have a Mac or Linux OS or a 64bit machine (or if you just want to try DLint without going through those installation steps), one option would be using DLint on a virtual machine. A step-by-step guide is [available](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Try-DLint-on-a-Virtual-Machine).
 
