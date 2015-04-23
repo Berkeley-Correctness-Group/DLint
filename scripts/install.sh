@@ -62,7 +62,7 @@ if [ "$(uname)" == "Darwin" ]; then
 		echo 'Sorry, currently DLint does not fully support Linux. Please use Mac OS 10+ (64bit).'
 		exit
 	fi
-	echo '[Step-1]: Start installing jalangi...' 
+	echo '[Step-1]: Start downloading jalangi...' 
     # install jalangi
 	node src/js/install.js
 	npm install cli
@@ -71,12 +71,18 @@ if [ "$(uname)" == "Darwin" ]; then
 	npm install doctrine
 	npm install jsdom@3.1.2
 	npm install node-js-beautify
-	npm install google-search-scraper
+	# npm install google-search-scraper
 	export PATH="`pwd`/scripts/path_unix":$PATH
 
 	# download firefox binary
 	echo '[Step-2]: Start downloading instrumented Firefox...' 
-	curl -O https://www.eecs.berkeley.edu/~gongliang13/files/firefox-jalangi-27.0a1.en-US.mac64_20140520.dmg
+	curl -O https://www.eecs.berkeley.edu/~gongliang13/files/Nightly.app.mac.64.zip
+	eho 'Start installing instrumented Firefox...'
+	# decompress the file
+	unzip Nightly.app.mac.64.zip -d thirdparty
+	# remove the zip file
+	rm Nightly.app.mac.64.zip
+	rm -rf thirdparty/__MACOSX
 
 	# compile java code
 	echo '[Step-3]: Start compiling Java code...' 
