@@ -1,7 +1,7 @@
 # DLint
 
 Dynamically Checking Bad Coding Practices for JavaScript.  
-If you are interested in more technical details, a [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf) is available (to appear in [ISSTA'15](http://issta2015.cs.uoregon.edu/) soon).
+For more technical details, a [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf) is available (to appear in [ISSTA'15](http://issta2015.cs.uoregon.edu/) soon).
 
 ### Before any actions
 
