@@ -1,13 +1,18 @@
 # DLint
 
-Dynamically Checking Bad Coding Practices for JavaScript.   
 
-Briefly speaking, [JSHint](http://jshint.com/), [JSLint](http://www.jslint.com/) and [ESLint](http://eslint.org/) uses static analysis (scan the code) to find bad coding practices, while DLint uses dynamic analysis (by analysing runtime behavior) to do the detection. By analyzing runtime information, DLint is capable of capturing violations of coding practices missed by those static analysis tools.
+[Wiki](https://github.com/Berkeley-Correctness-Group/DLint/wiki) | [Configuring](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide#how-to-configure-dlint-checkers) | [Checkers](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Checkers) | [Develop](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide) | [Mailing List](https://groups.google.com/forum/#!forum/dlint)
+
+
+DLint is a tool for dynamically checking JavaScript coding practices.   
+
+Briefly speaking, [JSHint](http://jshint.com/), [JSLint](http://www.jslint.com/) and [ESLint](http://eslint.org/) uses static analysis (scan the code) to find bad coding practices, while DLint uses dynamic analysis (by analysing runtime behavior) to do the detection. By analyzing runtime information, DLint is capable of capturing violations of coding practices missed by those static analysis tools.  
+(For more technical details, see an [online demo](https://www.eecs.berkeley.edu/~gongliang13/jalangi_ff/demo_integrated.htm) of dynamic analysis.)
 
 For more details, a [Wiki page](https://github.com/Berkeley-Correctness-Group/DLint/wiki) and a [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf) is available (to appear in [ISSTA'15](http://issta2015.cs.uoregon.edu/) soon).
 
 ### Requirements
-Make sure that you have the following software installed ([More details](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually#requirements)).  
+Make sure that you have the following software installed ([See more](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually#requirements)).  
   * Latest version of [Node.js](http://nodejs.org/).
   * Sun's JDK 1.6 or higher.
   * Command-line git.  
@@ -96,7 +101,7 @@ Warnings are written to console and ```jalangi_tmp/analysisResults.json```.
 Configure and Extend DLint
 ------------------------------
 DLint framework is designed to easily add new dynamic analysis by
-adding a new file and overriding a few functions. ([More details](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide)).
+adding a new file and overriding a few functions. ([See More](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide)).
 
 
 Try DLint on VirtualBox
