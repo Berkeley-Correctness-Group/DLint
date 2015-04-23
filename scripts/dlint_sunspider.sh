@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# check path
+if [! "$PATH"|grep -q "`pwd`/scripts/path_unix"]; then
+  export PATH="`pwd`/scripts/path_unix":$PATH  
+fi
+
 rm -rf sunspider
 mkdir sunspider
 for bm in `ls ../jalangi/tests/sunspider1/*.js | grep -v "_jalangi_" | xargs`

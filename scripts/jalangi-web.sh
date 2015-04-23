@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# check path
+if [! "$PATH"|grep -q "`pwd`/scripts/path_unix"]; then
+  export PATH="`pwd`/scripts/path_unix":$PATH  
+fi
+
 touch scripts/doNotUseDlint.txt
 rm -rf instrumentFF_tmp
 rm -rf websites

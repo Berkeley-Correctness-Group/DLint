@@ -72,11 +72,13 @@ Now you are good to go, have fun with DLint!
 
 ### Usage
 
+<!---  
 Everytime when you open a new cmd window, go to DLint dir first, then (always
 remember to) set the path:
 ```
 export PATH="`pwd`/scripts/path_unix":$PATH
 ```
+-->
 
 Apply Dlint to a real-world website:
 ```
