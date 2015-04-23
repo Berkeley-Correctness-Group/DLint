@@ -36,8 +36,6 @@ git clone https://github.com/Berkeley-Correctness-Group/DLint.git
 cd DLint
 ./scripts/install.sh
 ```
-
-Now you are good to go, have fun with DLint!  
 (A backup option is to [manually install DLint](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually).)
 
 Use DLint
@@ -94,7 +92,7 @@ http://localhost:3000/editor
 
 #### Use DLint on a Single File
 
-Apply DLint to a single JavaScript file:
+Suppose there is a JS file ```tests/dlint/buggy_CheckNaN.js```:
 ```
 python scripts/dlint.py tests/dlint/buggy_CheckNaN
 ```
