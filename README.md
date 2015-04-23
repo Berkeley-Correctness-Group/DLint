@@ -30,8 +30,8 @@ cd DLint
 ./scripts/install.sh
 ```
 
-Now you are good to go, have fun with DLint!
-(if it does not work, please [manually install DLint](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually).)
+Now you are good to go, have fun with DLint!  
+(A backup option is to [manually install DLint](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually).)
 
 ### Usage
 
