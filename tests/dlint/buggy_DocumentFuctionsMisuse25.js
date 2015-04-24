@@ -66,6 +66,6 @@
     	document.getSelection = function () {};
     }
     // --- end loading pseudo DOM ---
-    // there should be only one argument
-    var node = document.createTextNode('test', true);
+    // there should be only 5 arguments
+    var headings = document.evaluate("/html/body//h2", document, null, 0, null, true);
 })();

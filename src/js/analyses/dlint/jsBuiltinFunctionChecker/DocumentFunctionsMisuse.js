@@ -329,15 +329,121 @@
         );
 
         // document.evaluate
+        // Syntax: var xpathResult = document.evaluate(xpathExpression, contextNode, namespaceResolver, resultType, result);
+        // xpathExpression is a string
+        // contextNode is a HTML node
+        // namespaceResolver is a function or null
+        // resultType is an integer
+        // result is an object
+        addEntry('document.evaluate', document.evaluate,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 5) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.evaluate should take only 5 arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of document.evaluate should be a string. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isNode(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of document.evaluate should be a HTML node. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 3 && typeof args[2] !== 'function' && args[2] !== null) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the third argument of document.evaluate should be either a function or null. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 4 && !Utils.isInteger(args[3])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of document.evaluate should be a long number. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 5 && typeof args[4] !== 'object') {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the third argument of document.evaluate should be an object. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.execCommand
-        // document.exitPointerLock
-        // document.getBoxObjectFor
+        // Syntax: execCommand(aCommandName, aShowDefaultUI, aValueArgument)
+
         // document.getElementsByClassName
+        // Syntax: var elements = document.getElementsByClassName(names); // or:
+        // Syntax: var elements = rootElement.getElementsByClassName(names);
+        addEntry('document.getElementsByClassName', document.getElementsByClassName,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.getElementsByClassName should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of document.getElementsByClassName should be a string. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.getElementsByName
+        // Syntax: elements = document.getElementsByName(name) 
+        addEntry('document.getElementsByName', document.getElementsByName,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.getElementsByName should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of document.getElementsByName should be a string. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.getElementsByTagName
+        // Syntax: var elements = document.getElementsByTagName(name);
+        addEntry('document.getElementsByTagName', document.getElementsByTagName,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.getElementsByTagName should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of document.getElementsByTagName should be a string. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.getElementsByTagNameNS
+        // Syntax: elements = document.getElementsByTagNameNS(namespace, name)
+        addEntry('document.getElementsByTagNameNS', document.getElementsByTagNameNS,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 2) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.getElementsByTagNameNS should take two arguments. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of document.getElementsByTagNameNS should be a string. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 2 && !Utils.isString(args[1])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the second argument of document.getElementsByTagNameNS should be a string. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.getSelection
+        // Syntax: selection = window.getSelection();
+        addEntry('document.getSelection', document.getSelection,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.getSelection should take no argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.hasFocus
+        // Syntax: focused = document.hasFocus();
+        addEntry('document.hasFocus', document.hasFocus,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.hasFocus should take no argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.importNode
         // document.loadOverlay
         // document.mozCancelFullScreen

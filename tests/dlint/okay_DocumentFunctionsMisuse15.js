@@ -38,14 +38,15 @@
     	document.getSelection = function () {};
     }
     // --- end loading pseudo DOM ---
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-    // create a new div element 
-    // and give it some content 
-    var newDiv = document.createElement("div");
-    var newContent = document.createTextNode("Hi there and greetings!");
-    newDiv.appendChild(newContent); //add the text node to the newly created div. 
-    
-    // add the newly created element and its content into the DOM 
-    var currentDiv = document.getElementById("div1");
-    document.body.insertBefore(newDiv, currentDiv);
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/evaluate
+    var headings = document.evaluate("/html/body//h2", document, null, 0, null); 
+    /* Search the document for all h2 elements.  
+     * The result will likely be an unordered node iterator. */
+    var thisHeading = headings.iterateNext(); 
+    var alertText = "Level 2 headings in this document are:\n";
+    while (thisHeading) {
+      alertText += thisHeading.textContent + "\n";
+      thisHeading = headings.iterateNext();
+    }
+    console.log(alertText); // Alerts the text of all h2 elements
 })();

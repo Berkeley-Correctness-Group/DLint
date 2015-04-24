@@ -67,5 +67,5 @@
     }
     // --- end loading pseudo DOM ---
     // there should be only one argument
-    var node = document.createTextNode('test', true);
+    document.getElementsByName('test', true);
 })();

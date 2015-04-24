@@ -66,6 +66,6 @@
     	document.getSelection = function () {};
     }
     // --- end loading pseudo DOM ---
-    // there should be only one argument
-    var node = document.createTextNode('test', true);
+    // there should be only two arguments
+    document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "p", true);
 })();

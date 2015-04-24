@@ -38,14 +38,16 @@
     	document.getSelection = function () {};
     }
     // --- end loading pseudo DOM ---
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-    // create a new div element 
-    // and give it some content 
-    var newDiv = document.createElement("div");
-    var newContent = document.createTextNode("Hi there and greetings!");
-    newDiv.appendChild(newContent); //add the text node to the newly created div. 
-    
-    // add the newly created element and its content into the DOM 
-    var currentDiv = document.getElementById("div1");
-    document.body.insertBefore(newDiv, currentDiv);
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
+    // Get all elements that have a class of 'test'
+    document.getElementsByClassName('test');
+    // Get all elements that have both the 'red' and 'test' classes
+    document.getElementsByClassName('red test');
+    // Get all elements that have a class of 'test', inside of an element that has the ID of 'main'
+    document.getElementById('para1').getElementsByClassName('test');
+    // We can also use methods of Array.prototype on any HTMLCollection by passing the HTMLCollection as the method's this value. Here we'll find all div elements that have a class of 'test':
+    var testElements = document.getElementsByClassName('test');
+    var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+        return testElement.nodeName === 'DIV';
+    });
 })();

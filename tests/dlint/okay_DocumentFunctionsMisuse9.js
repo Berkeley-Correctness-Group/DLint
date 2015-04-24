@@ -4,7 +4,8 @@
     // --- start loading pseudo DOM ---
     if (typeof window === 'undefined' && typeof document === 'undefined') {
     	var jsdom = require('jsdom');
-    	var docStr = "\
+    	var docStr = 
+    "\
     <!DOCTYPE html>\
     <html>\
     <head>\
@@ -28,22 +29,13 @@
     	window = document.defaultView;
     	DOMParser = require('xmldom').DOMParser;
     	alert = function(msg) {}
-    
-    	document.adoptNode = function(node) {
-    		return node;
-    	};
-    
-    	document.createCDATASection = function(str) {
-    		return {};
-    	};
-    
-    	document.createNodeIterator = function(a, b, c) {
-    		return {};
-    	};
-    
+    	document.adoptNode = function(node) {return node;};
+    	document.createCDATASection = function(str) {return {};};
+    	document.createNodeIterator = function(a, b, c) {return {};};
     	document.enableStyleSheetsForSet = function (name) {};
-    
     	document.createRange = function() {};
+    	document.hasFocus = function() {};
+    	document.getSelection = function () {};
     }
     // --- end loading pseudo DOM ---
     // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS

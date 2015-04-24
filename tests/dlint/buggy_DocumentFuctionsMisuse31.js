@@ -66,6 +66,6 @@
     	document.getSelection = function () {};
     }
     // --- end loading pseudo DOM ---
-    // there should be only one argument
-    var node = document.createTextNode('test', true);
+    // there should be no argument
+    document.hasFocus(true);
 })();

@@ -66,6 +66,5 @@
     	document.getSelection = function () {};
     }
     // --- end loading pseudo DOM ---
-    // there should be only one argument
-    var node = document.createTextNode('test', true);
+    document.getSelection();
 })();

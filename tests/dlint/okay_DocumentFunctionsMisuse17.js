@@ -38,14 +38,6 @@
     	document.getSelection = function () {};
     }
     // --- end loading pseudo DOM ---
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-    // create a new div element 
-    // and give it some content 
-    var newDiv = document.createElement("div");
-    var newContent = document.createTextNode("Hi there and greetings!");
-    newDiv.appendChild(newContent); //add the text node to the newly created div. 
-    
-    // add the newly created element and its content into the DOM 
-    var currentDiv = document.getElementById("div1");
-    document.body.insertBefore(newDiv, currentDiv);
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByName
+    var up_forms = document.getElementsByName("up");
 })();

@@ -29,7 +29,8 @@
 	if (typeof document === 'undefined' && typeof window === 'undefined') {
 		// --- start loading pseudo DOM ---
 		var jsdom = require('jsdom');
-		var docStr = "\
+		var docStr =
+"\
 <!DOCTYPE html>\
 <html>\
 <head>\
@@ -53,22 +54,13 @@
 		window = document.defaultView;
 		DOMParser = require('xmldom').DOMParser;
 		alert = function(msg) {}
-
-		document.adoptNode = function(node) {
-			return node;
-		};
-
-		document.createCDATASection = function(str) {
-			return {};
-		};
-
-		document.createNodeIterator = function(a, b, c) {
-			return {};
-		};
-
+		document.adoptNode = function(node) {return node;};
+		document.createCDATASection = function(str) {return {};};
+		document.createNodeIterator = function(a, b, c) {return {};};
+		document.enableStyleSheetsForSet = function(name) {};
 		document.createRange = function() {};
-
-		document.enableStyleSheetsForSet = function (name) {};
+		document.hasFocus = function() {};
+		document.getSelection = function () {};
 		sandbox.isPseudoDOM = true;
 		// --- end loading pseudo DOM ---
 	}
