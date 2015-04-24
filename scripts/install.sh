@@ -68,6 +68,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	npm install cli
 	npm install stats
 	npm install jshint
+	npm install xmldom
 	npm install doctrine
 	npm install jsdom@3.1.2
 	npm install node-js-beautify

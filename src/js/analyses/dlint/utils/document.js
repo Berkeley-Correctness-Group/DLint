@@ -51,10 +51,21 @@
 		//Create the document
 		document = jsdom.jsdom(docStr);
 		window = document.defaultView;
+		DOMParser = require('xmldom').DOMParser;
+		alert = function (msg) {}
 
-		document.adoptNode = function (node) {
+		document.adoptNode = function(node) {
 			return node;
 		}
+
+		document.createCDATASection = function(str) {
+			return {};
+		}
+
+		document.createNodeIterator = function (a, b, c) {
+			return {};
+		}
+		sandbox.isPseudoDOM = true;
 		// --- end loading pseudo DOM ---
 	}
 })(J$));
