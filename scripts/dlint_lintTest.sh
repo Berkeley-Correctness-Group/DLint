@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # check path
-if [! "$PATH"|grep -q "`pwd`/scripts/path_unix"]; then
+if [ ! "$PATH"|grep -q "`pwd`/scripts/path_unix"]; then
   export PATH="`pwd`/scripts/path_unix":$PATH  
 fi
 
