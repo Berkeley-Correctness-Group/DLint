@@ -47,7 +47,7 @@
 
         var iidToCount = {};  // iid: number --> count: number
 
-        var globalObject = (typeof window === "undefined") ? global : window;
+        var globalObject = (typeof window === "undefined" || sandbox.isPseudoDOM) ? global : window;
 
         this.read = function(iid, name, val, isGlobal, isPseudoGlobal) {
             if (name === "this" && val === globalObject) {

@@ -117,6 +117,7 @@
                 ret.debugInfo = iidToInfo[iid] + '\r\n ' + additionalInfo;
                 return ret;
             });
+            /*
             if (!(((typeof window) !== 'undefined') && ((typeof document) !== 'undefined'))) {
                 sandbox.DLint.addWarnings(warnings); // not in browser environment
             } else if (additionalInfo !== '') {
@@ -125,6 +126,8 @@
             } else {
                 sandbox.DLint.addWarnings([]);
             }
+            */
+            sandbox.DLint.addWarnings(warnings);
         };
     }
     sandbox.analysis = new MyAnalysis();
