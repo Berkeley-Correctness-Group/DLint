@@ -46,12 +46,14 @@
     	document.createRange = function() {};
     }
     // --- end loading pseudo DOM ---
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/open
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/close
-    // open a document to write to it.
-    // write the content of the document.
-    // close the document.
-    document.open();
-    // document.write("<p>The one and only content.</p>");
-    document.close();
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+    // create a new div element 
+    // and give it some content 
+    var newDiv = document.createElement("div");
+    var newContent = document.createTextNode("Hi there and greetings!");
+    newDiv.appendChild(newContent); //add the text node to the newly created div. 
+    
+    // add the newly created element and its content into the DOM 
+    var currentDiv = document.getElementById("div1");
+    document.body.insertBefore(newDiv, currentDiv);
 })();

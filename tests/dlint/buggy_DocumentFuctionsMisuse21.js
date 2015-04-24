@@ -74,7 +74,13 @@
     	document.createRange = function() {};
     }
     // --- end loading pseudo DOM ---
-    var element = document.createElement("div");
-    element.id = 'testqq';
-    var el = document.getElementById('testqq'); // el will be null!
+    // there should be only three arguments
+    var nodeIterator = document.createNodeIterator(
+    	document.body,
+    	1, // NodeFilter.SHOW_ELEMENT,
+    	function(node) {
+    		return node.nodeName.toLowerCase() === 'p' ? /*NodeFilter.FILTER_ACCEPT*/ 1 : /*NodeFilter.FILTER_REJECT*/ 2;
+    	},
+    	false
+    );
 })();

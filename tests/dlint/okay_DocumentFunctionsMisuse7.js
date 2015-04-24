@@ -46,12 +46,17 @@
     	document.createRange = function() {};
     }
     // --- end loading pseudo DOM ---
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/open
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/close
-    // open a document to write to it.
-    // write the content of the document.
-    // close the document.
-    document.open();
-    // document.write("<p>The one and only content.</p>");
-    document.close();
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment
+    var ul = document.createElement("ul");
+    var docfrag = document.createDocumentFragment();
+    var browserList = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"];
+    
+    browserList.forEach(function(e) {
+    	var li = document.createElement("li");
+    	li.textContent = e;
+    	docfrag.appendChild(li);
+    });
+    
+    ul.appendChild(docfrag);
+    // a list with well-known web browsers
 })();

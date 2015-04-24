@@ -74,7 +74,6 @@
     	document.createRange = function() {};
     }
     // --- end loading pseudo DOM ---
-    var element = document.createElement("div");
-    element.id = 'testqq';
-    var el = document.getElementById('testqq'); // el will be null!
+    // there should be only two arguments
+    var newdiv = document.createElementNS("http://www.w3.org/1999/xhtml", "div", true);
 })();

@@ -52,19 +52,23 @@
 		document = jsdom.jsdom(docStr);
 		window = document.defaultView;
 		DOMParser = require('xmldom').DOMParser;
-		alert = function (msg) {}
+		alert = function(msg) {}
 
 		document.adoptNode = function(node) {
 			return node;
-		}
+		};
 
 		document.createCDATASection = function(str) {
 			return {};
-		}
+		};
 
-		document.createNodeIterator = function (a, b, c) {
+		document.createNodeIterator = function(a, b, c) {
 			return {};
-		}
+		};
+
+		document.createRange = function() {};
+
+		document.enableStyleSheetsForSet = function (name) {};
 		sandbox.isPseudoDOM = true;
 		// --- end loading pseudo DOM ---
 	}

@@ -46,12 +46,9 @@
     	document.createRange = function() {};
     }
     // --- end loading pseudo DOM ---
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/open
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/close
-    // open a document to write to it.
-    // write the content of the document.
-    // close the document.
-    document.open();
-    // document.write("<p>The one and only content.</p>");
-    document.close();
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/createRange
+    var range = document.createRange();
+    
+    // range.setStart(startNode, startOffset);
+    // range.setEnd(endNode, endOffset);
 })();

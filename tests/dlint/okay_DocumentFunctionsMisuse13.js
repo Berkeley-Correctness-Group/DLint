@@ -74,7 +74,5 @@
     	document.createRange = function() {};
     }
     // --- end loading pseudo DOM ---
-    var element = document.createElement("div");
-    element.id = 'testqq';
-    var el = document.getElementById('testqq'); // el will be null!
+    var node = document.createTextNode('test')
 })();

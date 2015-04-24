@@ -278,13 +278,56 @@
         );
 
         // document.createNSResolver
+        // Syntax: nsResolver = document.createNSResolver(node);
+
         // document.createProcessingInstruction
+        // Syntax: Processing instruction node = document.createProcessingInstruction(target, data)
+
         // document.createRange
+        // Syntax: range = document.createRange();
+        addEntry('document.createRange', document.createRange,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 0) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.createRange should take no argument. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.createTextNode
+        // Syntax: var text = document.createTextNode(data);
+        addEntry('document.createTextNode', document.createTextNode,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.createTextNode should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of document.createTextNode should be a string. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.createTouchList
+        // Syntax: var list = DocumentTouch.createTouchList(touches);
+
         // document.createTreeWalker
-        // document.elementFromPoint
+        // treeWalker = document.createTreeWalker(root, whatToShow, filter, entityReferenceExpansion);
+
         // document.enableStyleSheetsForSet
+        // Syntax: document.enableStyleSheetsForSet(name)
+        addEntry('document.enableStyleSheetsForSet', document.enableStyleSheetsForSet,
+            function(iid, f, base, args, result, isConstructor, isMethod) {
+                if (args.length !== 1) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'function document.enableStyleSheetsForSet should take only one argument. \n Runtime Args: ' + argsToString(args));
+                } else if (args.length >= 1 && !Utils.isString(args[0])) {
+                    iidToCount[iid] = (iidToCount[iid] | 0) + 1;
+                    addDebugInfo(iid, 'the first argument of document.enableStyleSheetsForSet should be a string. \n Runtime Args: ' + argsToString(args));
+                }
+            }
+        );
+
         // document.evaluate
         // document.execCommand
         // document.exitPointerLock

@@ -74,7 +74,6 @@
     	document.createRange = function() {};
     }
     // --- end loading pseudo DOM ---
-    var element = document.createElement("div");
-    element.id = 'testqq';
-    var el = document.getElementById('testqq'); // el will be null!
+    // the first argument should be a string
+    var cdata = document.createCDATASection(true);
 })();

@@ -46,12 +46,14 @@
     	document.createRange = function() {};
     }
     // --- end loading pseudo DOM ---
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/open
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document/close
-    // open a document to write to it.
-    // write the content of the document.
-    // close the document.
-    document.open();
-    // document.write("<p>The one and only content.</p>");
-    document.close();
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
+    var container;
+    var newdiv;
+    var txtnode;
+    
+    // container = document.getElementById("ContainerBox");
+    newdiv = document.createElementNS("http://www.w3.org/1999/xhtml", "div");
+    txtnode = document.createTextNode("This is text that was constructed dynamically with createElementNS and createTextNode then inserted into the document using appendChild.");
+    newdiv.appendChild(txtnode);
+    // container.appendChild(newdiv);
 })();
