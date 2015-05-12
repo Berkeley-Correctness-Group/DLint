@@ -34,7 +34,7 @@
  * @dlintLong{Checks for the number of formal parameters of a function and
  * for whether the function accesses the 'arguments' variable.}
  * @dlintRule{Pass at most as many arguments to a function as it expects.}
- * @dlintPattern{call(*,*,args,*,*) WHERE |args| > |\mbox{formal params. of callee}| AND \nexists~ varRead(arguments,*)~\mbox{during the call}}
+ * @dlintPattern{call(*,f,args,*,*) WHERE |args| > f.length AND \nexists~ varRead(arguments,*)~\mbox{during the call}}
  * @dlintShortName{TooManyArguments}
  * @dlintGroup{TypeError}
  * @dlintNeedDynamic

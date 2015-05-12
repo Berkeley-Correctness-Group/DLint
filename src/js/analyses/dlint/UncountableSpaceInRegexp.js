@@ -35,8 +35,9 @@
  * which makes the code hard to read.}
  * @dlintLong{It raises a warning when a regular expression literal
  *   contains two or more consecutive space characters.}
- * @dlintPattern{(lit(val) OR call(*,RegExp,*,*,*)) WHERE isRegExp(val) AND val~\mbox{contains "~ ~"}}
- * @dlintRule{Prefer "\code{ \{N\}}"2 over multiple consecutive empty spaces in regular expressions for readability.}
+ * @dlintPattern{lit(val) WHERE isRegExp(val) AND val~\mbox{contains ``~ ~''} ORR
+ * call(builtin,RegExp,args,*,*) WHERE args[0]~\mbox{contains ``~ ~''}}
+ * @dlintRule{Prefer ``\code{ \{N\}}''2 over multiple consecutive empty spaces in regular expressions for readability.}
  * @dlintShortName{SpacesInRegexp}
  * @dlintGroup{APIMisuse}
  * @dlintMayNeedDynamic

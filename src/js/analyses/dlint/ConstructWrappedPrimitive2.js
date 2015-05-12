@@ -34,7 +34,7 @@
  * @dlintShort{Finds calls of constructors that wrap a primitive into an Object, such as 'new Number()'.}
  * @dlintLong{Warns only if the wrapped primitive leads to result of a binary operation that
  * is different from what the non-wrapped primitive would yield.}
- * @dlintPattern{cond(val) WHERE isBool(val) AND val.valueOf() = false}
+ * @dlintPattern{cond(val) WHERE isBooleanObj(val) AND val.valueOf() = false}
  * @dlintShortName{WrappedPrimitives}
  * @dlintRule{Beware that all wrapped primitives coerce to \code{true}.}
  * @dlintGroup{APIMisuse}

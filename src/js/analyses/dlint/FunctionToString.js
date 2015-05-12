@@ -34,7 +34,7 @@
  * @dlintLong{The value returned by Function.toString() is only vaguely
  * defined in the language specification and depends on the JavaScript engine.}
  * @dlintRule{Avoid calling \code{Function.toString()}, whose behavior is platform-dependent.}
- * @dlintPattern(call(base,toString,*,*,*) WHERE isFct(base)}
+ * @dlintPattern(call(base,f,*,*,*) WHERE f.name = ``toString" AND isFct(base)}
  * @dlintShortName{FunctionToString}
  * @dlintGroup{APIMisuse}
  * @dlintNeedDynamic

@@ -33,7 +33,7 @@
 /**
  * @dlintShort{Find code that sets the 'prototype' property to a non-object.}
  * @dlintLong{Prototypes must always be objects.}
- * @dlintPattern{propWrite(*,name,val) WHERE name \in \{prototype, \_\_proto\_\_\} AND !isObject(val)}
+ * @dlintPattern{propWrite(*,name,val) WHERE name \in \{``prototype", ``\_\_proto\_\_"\} AND !isObject(val)}
  * @dlintRule{The prototype of an object must be an object.}
  * @dlintShortName{NonObjectPrototype}
  * @dlintGroup{Inheritance}

@@ -32,7 +32,7 @@
 /**
  * @dlintShort{Find code that overwrites in existing prototype object.}
  * @dlintLong{Instead, the code may want to extend the existing prototype.}
- * @dlintPattern{propWrite(base,name,*) WHERE name \in \{prototype, \_\_proto\_\_\} AND base.name~\mbox{is a user-defined prototype before the write}}
+ * @dlintPattern{propWrite(base,name,*) WHERE name \in \{``prototype", ``\_\_proto\_\_"\} AND base.name~\mbox{is a user-defined prototype before the write}}
  * @dlintRule{Avoid overwriting an existing prototype, as it may break the assumptions of other code.}
  * @dlintShortName{OverwritePrototype}
  * @dlintGroup{Inheritance}

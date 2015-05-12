@@ -37,7 +37,7 @@
  *  * set NaN as property value, as NaN !== NaN
  *  * set property to CSS objects, as the browser engine will automatically reformat the content
  *  }
- *  @dlintPattern{propWrite(base,name,val) WHERE base.name \neq val~\mbox{after the write}}
+ *  @dlintPattern{propWrite(base,name,val) WHERE base[name] \neq val~\mbox{after the write}}
  *  @dlintRule{Writing a property should change the property's value.}
  *  @dlintShortName{FutileWrite}
  *  @dlintGroup{APIMisuse}

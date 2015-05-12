@@ -32,7 +32,7 @@
 /**
  * @dlintShort{Find calls of 'toString()' that return a non-string.}
  * @dlintLong{'toString()' should always return a string.}
- * @dlintPattern{call(*,toString,*,ret,*) WHERE !isString(ret)}
+ * @dlintPattern{call(*,f,*,ret,*) WHERE f.name = ``toString" AND !isString(ret)}
  * @dlintRule{\code{toString} must return a string.}
  * @dlintShortName{ToString}
  * @dlintGroup{TypeError}
