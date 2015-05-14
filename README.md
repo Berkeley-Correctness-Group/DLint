@@ -1,7 +1,7 @@
 # DLint
 
 
-[Wiki](https://github.com/Berkeley-Correctness-Group/DLint/wiki) | [Configuring](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide#how-to-configure-dlint-checkers) | [Checkers](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Checkers) | [Develop](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide) | [Mailing List](https://groups.google.com/forum/#!forum/dlint)
+[Wiki](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Wiki-Page) | [Configuring](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide#how-to-configure-dlint-checkers) | [Checkers](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Checkers) | [Develop](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide) | [Mailing List](https://groups.google.com/forum/#!forum/dlint)
 
 
 DLint is a tool for dynamically checking JavaScript coding practices.   
@@ -24,6 +24,7 @@ Make sure that you have the following software installed ([See more](https://git
 <!--- 
   * libgmp (http://gmplib.org/) is required by cvc3.  Concolic testing uses cvc3 and automaton.jar for constraint solving. The installation script checks if cvc3 and automaton.jar are installed properly.
 -->
+
 **Note:** This project currently only supports Mac OS 10+ (64bit).
 
 Install DLint
