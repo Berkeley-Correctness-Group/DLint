@@ -14,3 +14,4 @@ websites/*
 tests/jslint/JSLint
 tests/dlint/*_jalangi_.js
 scripts/doNotUseDlint.txt
+.idea

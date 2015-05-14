@@ -36,7 +36,7 @@
  * @dlintShortName{EnumerableObjProps}
  * @dlintRule{Avoid adding enumerable properties to \code{Object}. Doing so affects every for-in loop.}
  * @dlintPattern{propWrite(Object,*,*) ORR
- * call(Object,defineProperty,args,*,*) WHERE args.length = 3 AND args[2].enumerable = true}
+ * call(Object,f,args,*,*) WHERE f.name = ``defineProperty" AND args.length = 3 AND args[2].enumerable = true}
  * @dlintGroup{Inheritance}
  * @dlintMayNeedDynamic
  * @dlintSingleEventPattern

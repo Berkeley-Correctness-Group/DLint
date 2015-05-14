@@ -40,7 +40,7 @@
  * @dlintShort{Find code that accesses non-existing properties of the 'arguments' variable.}
  * @dlintPattern{propRead(arguments,name,*) WHERE name \notin argumentProps ORR
  * propWrite(arguments,*,*) ORR
- * call(arguments,concat,*,*,*)}
+ * call(arguments,f,*,*,*) WHERE f.name = ``concat"}
  * @dlintRule{Avoid accessing non-existing properties of \code{arguments}.}
  * @dlintShortName{ArgumentsVariable}
  * @dlintGroup{LanguageMisuse}

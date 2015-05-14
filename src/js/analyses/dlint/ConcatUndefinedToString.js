@@ -32,9 +32,9 @@
 
 /**
  * @dlintShort{Find code that concatenates a string and undefined.}
- * @dlintRule{Avoid concatenating a string and \code{undefined}, which leads to a string containing "undefined".}
+ * @dlintRule{Avoid concatenating a string and \code{undefined}, which leads to a string containing ``undefined''.}
  * @dlintShortName{StringAndUndefined}
- * @dlintPattern{binOp(+,left,right,res) WHERE (left = undefined OR right = undefined) AND isString(res)}
+ * @dlintPattern{binOp(+,left,right,res) WHERE (left = ``undefined" OR right = ``undefined") AND isString(res)}
  * @dlintGroup{TypeError}
  * @dlintNeedDynamic
  * @dlintSingleEventPattern

@@ -42,7 +42,7 @@
  * call(builtin,Function,*,*,*) ORR
  * call(builtin,setTimeout,args,*,*) WHERE isString(args[0]) ORR
  * call(builtin,setInterval,args,*,*) WHERE isString(args[0]) ORR
- * call(document,write,*,*,*)}
+ * call(document,f,*,*,*) WHERE f.name = ``write"}
  * @dlintRule{Avoid \code{eval} and other ways of runtime code injection.}
  * @dlintShortName{DoubleEvaluation}
  * @dlintGroup{APIMisuse}

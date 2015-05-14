@@ -54,8 +54,8 @@
  * ```
  * }
  * @dlintRule{Avoid using an empty character class, \code{[]}, in regular expressions, as it does not match anything.}
- * @dlintPattern{lit(val) WHERE isRegExp(val) AND val~\mbox{contains "[]"} ORR
- * call(builtin,RegExp,args,*,*) WHERE isString(args[0]) AND args[0]~\mbox{contains "[]"}}
+ * @dlintPattern{lit(val) WHERE isRegExp(val) AND val~\mbox{contains ``[]''} ORR
+ * call(builtin,RegExp,args,*,*) WHERE isString(args[0]) AND args[0]~\mbox{contains ``[]''}}
  * @dlintShortName{EmptyCharClass}
  * @dlintGroup{APIMisuse}
  * @dlintMayNeedDynamic

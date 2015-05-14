@@ -31,9 +31,9 @@
 
 /**
  * @dlintShort{Find code that attempts to access the 'undefined' property.}
- * @dlintPattern{propWrite(*,"undefined",*) ORR
- * propRead(*,"undefined",*)}
- * @dlintRule{Avoid accessing the "undefined" property.}
+ * @dlintPattern{propWrite(*,``undefined",*) ORR
+ * propRead(*,``undefined",*)}
+ * @dlintRule{Avoid accessing the ``undefined'' property.}
  * @dlintShortName{UndefinedProp}
  * @dlintGroup{TypeError}
  * @dlintNeedDynamic

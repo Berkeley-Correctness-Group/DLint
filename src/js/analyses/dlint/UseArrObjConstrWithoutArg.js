@@ -64,7 +64,7 @@
  * static analysis due to the limitation of alias analysis.
  * }
  * @dlintRule{Use literals instead of \code{new Object()} and \code{new Array()}\tnote{Note that it is legitimate for performance reasons to call these constructors with arguments~\cite{jitprof_tr_aug3_2014}.}}
- * @dlintPattern{call(builtin,f,args,*,*) WHERE (isArray(f) OR isObject(f)) AND args.length = 0}
+ * @dlintPattern{call(builtin,f,args,*,*) WHERE (f = Array OR f = Object) AND args.length = 0}
  * @dlintShortName{Literals}
  * @dlintGroup{LanguageMisuse}
  * @dlintMayNeedDynamic
