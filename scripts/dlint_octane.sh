@@ -1,8 +1,13 @@
 #!/bin/bash
 
 # check path
-if [ ! "$PATH"|grep -q "`pwd`/scripts/path_unix"]; then
-  export PATH="`pwd`/scripts/path_unix":$PATH  
+path_unix=`pwd`/scripts/path_unix
+
+if [[ $PATH == *"$path_unix"* ]]
+then
+  echo ""
+else
+  export PATH="`pwd`/scripts/path_unix":$PATH
 fi
 
 rm -rf instrumentFF_tmp

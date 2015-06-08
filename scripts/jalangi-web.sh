@@ -1,8 +1,13 @@
 #!/bin/bash
 
 # check path
-if [ ! "$PATH"|grep -q "`pwd`/scripts/path_unix"]; then
-  export PATH="`pwd`/scripts/path_unix":$PATH  
+path_unix=`pwd`/scripts/path_unix
+
+if [[ $PATH == *"$path_unix"* ]]
+then
+  echo ""
+else
+  export PATH="`pwd`/scripts/path_unix":$PATH
 fi
 
 touch scripts/doNotUseDlint.txt
@@ -13,3 +18,13 @@ javac -d thirdparty -cp thirdparty/selenium-server-standalone-2.41.0.jar ./src/j
 
 echo "####################################"
 java -cp thirdparty/selenium-server-standalone-2.41.0.jar:thirdparty/ evaluation.JalangiFirefoxRunner --url ${bm}
+
+
+window.count = 0;
+J$.analysis = {};
+J$.analysis.read = function(iid, name, value) {
+	if((window.count++)%1000 ===1) {
+		console.log(name);
+	}
+	return value;
+};
