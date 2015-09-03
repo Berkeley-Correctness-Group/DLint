@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Dlint : Runtime checker for JS coding practices">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Dlint</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Berkeley-Correctness-Group/DLint">View on GitHub</a>
+
+          <h1 id="project_title">Dlint</h1>
+          <h2 id="project_tagline">Runtime checker for JS coding practices</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Berkeley-Correctness-Group/DLint/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Berkeley-Correctness-Group/DLint/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="dlint" class="anchor" href="#dlint" aria-hidden="true"><span class="octicon octicon-link"></span></a>DLint</h1>
+
+<p><a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Wiki-Page">Wiki</a> | <a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide#how-to-configure-dlint-checkers">Configuring</a> | <a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Checkers">Checkers</a> | <a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide">Develop</a> | <a href="https://groups.google.com/forum/#!forum/dlint">Mailing List</a></p>
+
+<p>DLint is a tool for dynamically checking JavaScript coding practices.   </p>
+
+<p>Briefly speaking, <a href="http://jshint.com/">JSHint</a>, <a href="http://www.jslint.com/">JSLint</a> and <a href="http://eslint.org/">ESLint</a> uses static analysis (scan the code) to find bad coding practices, while DLint uses dynamic analysis (by analysing runtime behavior) to do the detection. </p>
+
+<p>By analyzing runtime information, DLint is capable of capturing violations of coding practices missed by those static analysis tools.
+(See an <a href="https://www.eecs.berkeley.edu/%7Egongliang13/jalangi_ff/demo_integrated.htm">online demo</a> of dynamic analysis.)</p>
+
+<p>For more details, a <a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki">Wiki page</a> and a <a href="http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf">technical report</a> is available (to appear in <a href="http://issta2015.cs.uoregon.edu/">ISSTA'15</a> soon).</p>
+
+<h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
+
+<p>Make sure that you have the following software installed (<a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually#requirements">See more</a>).  </p>
+
+<ul>
+<li>Latest version of <a href="http://nodejs.org/">Node.js</a>.</li>
+<li>Sun's JDK 1.6 or higher.</li>
+<li>Command-line git.<br>
+</li>
+<li>Chrome browser if you need to test web apps.</li>
+<li>Python (<a href="http://python.org">http://python.org</a>) version 2.7 or higher</li>
+</ul>
+
+
+
+<p><strong>Note:</strong> This project currently only supports Mac OS 10+ (64bit).</p>
+
+<h2>
+<a id="install-dlint" class="anchor" href="#install-dlint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install DLint</h2>
+
+<p>Use the following command to install DLint:</p>
+
+<pre><code>mkdir dlint
+cd dlint
+git clone https://github.com/Berkeley-Correctness-Group/DLint.git
+cd DLint
+./scripts/install.sh
+</code></pre>
+
+<p>(A backup option is to <a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually">manually install DLint</a>.)</p>
+
+<h2>
+<a id="use-dlint" class="anchor" href="#use-dlint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use DLint</h2>
+
+
+
+<p>All following instructions assume that the cmd directory is the <code>DLint</code> git local repository.</p>
+
+
+
+<h4>
+<a id="use-dlint-on-websites" class="anchor" href="#use-dlint-on-websites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use DLint on Websites</h4>
+
+<p>Apply Dlint to a real-world website:</p>
+
+<pre><code>./scripts/dlint.sh &lt;URL&gt;
+</code></pre>
+
+<p>For example:</p>
+
+<pre><code>./scripts/dlint.sh www.sencha.com
+</code></pre>
+
+
+
+<p>Please do not interact with the DLint-started browser, DLint will automatically close the browser after analysis. When it is done, all executed files and analysis result will be dumped in <code>websites\&lt;URL&gt;</code> directory, in which <code>analysis.json</code> contains all DLint warnings.<br>
+(A <a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki/Try-DLint-on-a-Virtual-Machine#step-3-use-dlint-in-the-vm">step-by-step guide</a> is available.)</p>
+
+<p>To view the DLint results in GUI (modified <a href="https://github.com/davidjamesstone/noide">noide</a> file viewer), open a new terminal (under DLint repository dir) and type the following command:</p>
+
+<pre><code>node ../noide/bin/noide.js websites/
+</code></pre>
+
+<p>In browser, view the page with this URL: 
+<a href="http://localhost:3000/editor">http://localhost:3000/editor</a></p>
+
+<p><img src="https://raw.githubusercontent.com/Berkeley-Correctness-Group/DLint/master/doc/image/view_warning.PNG" alt=""></p>
+
+<hr>
+
+<h4>
+<a id="use-dlint-on-a-single-file" class="anchor" href="#use-dlint-on-a-single-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use DLint on a Single File</h4>
+
+<p>Suppose there is a JS file <code>tests/dlint/buggy_CheckNaN.js</code>:</p>
+
+<pre><code>python scripts/dlint.py tests/dlint/buggy_CheckNaN
+</code></pre>
+
+<p>Warnings are written to console and <code>jalangi_tmp/analysisResults.json</code>.</p>
+
+<h2>
+<a id="configure-and-extend-dlint" class="anchor" href="#configure-and-extend-dlint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure and Extend DLint</h2>
+
+<p>DLint framework is designed to easily add new dynamic analysis by
+adding a new file and overriding a few functions. (<a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide">See More</a>).</p>
+
+<h2>
+<a id="try-dlint-on-virtualbox" class="anchor" href="#try-dlint-on-virtualbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>Try DLint on VirtualBox</h2>
+
+<p>If you do not have a Mac or Linux OS or a 64bit machine (or if you just want to try DLint without going through those installation steps), one option would be using DLint on a virtual machine. A step-by-step guide is <a href="https://github.com/Berkeley-Correctness-Group/DLint/wiki/Try-DLint-on-a-Virtual-Machine">available</a>.</p>
+
+<p>Download <a href="https://www.VirtualBox.org/">VirtualBox</a> and <a href="https://berkeley.box.com/s/m6eys03sihdfm030hqdhaqy05smgjpcb">DLint VirtualBox image</a> (1.28GB, MD5: <code>1429e4a3bda83169b6ea195952c25c4e</code>)</p>
+
+<p>In the guest OS, open a terminal and type the following commands (or double click the bash script on the desktop):</p>
+
+<pre><code>cd ~/dlint/DLint
+export PATH="`pwd`/scripts/path_unix":$PATH
+</code></pre>
+
+<p>Root password: <code>123</code><br>
+Guest OS: 64-bit Linux Ubuntu 12.04<br>
+VM Memory: 512M<br>
+VM Video Memory: 128M<br>
+Image Size: 4.7 GB<br>
+Maximal VM Virtual Disk Size: 20.30 GB  </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Dlint maintained by <a href="https://github.com/Berkeley-Correctness-Group">Berkeley-Correctness-Group</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
