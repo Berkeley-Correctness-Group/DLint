@@ -11,7 +11,9 @@ Briefly speaking, [JSHint](http://jshint.com/), [JSLint](http://www.jslint.com/)
 By analyzing runtime information, DLint is capable of capturing violations of coding practices missed by those static analysis tools.
 (See an [online demo](https://www.eecs.berkeley.edu/~gongliang13/jalangi_ff/demo_integrated.htm) of dynamic analysis.)
 
-For more details, a [Wiki page](https://github.com/Berkeley-Correctness-Group/DLint/wiki) and a [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf) is available (to appear in [ISSTA'15](http://issta2015.cs.uoregon.edu/) soon).
+For more details, a [Wiki page](https://github.com/Berkeley-Correctness-Group/DLint/wiki) is available
+
+**Academic Resources:** [Preprint](http://mp.binaervarianz.de/issta2015.pdf) in [ISSTA'15](http://issta2015.cs.uoregon.edu/) | [Presentation Slides](http://www.slideshare.net/JacksonGL/issta15-d-lintv3finalpublic) | [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf)
 
 ### Requirements
 Make sure that you have the following software installed ([See more](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually#requirements)).  
