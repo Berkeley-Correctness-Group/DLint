@@ -1,7 +1,7 @@
 # DLint
 
 
-[Wiki](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Wiki-Page) | [Configuring](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide#how-to-configure-dlint-checkers) | [Checkers](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Checkers) | [Develop](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide) | [Mailing List](https://groups.google.com/forum/#!forum/dlint)
+[Wiki](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Wiki-Page) | [Configuring](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide#how-to-configure-dlint-checkers) | [Checkers](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Checkers) | [Develop](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Developer-Guide) | [Mailing List](https://groups.google.com/forum/#!forum/dlint) | [Homepage](http://berkeley-correctness-group.github.io/DLint/)
 
 
 DLint is a tool for dynamically checking JavaScript coding practices.   
@@ -11,7 +11,7 @@ Briefly speaking, [JSHint](http://jshint.com/), [JSLint](http://www.jslint.com/)
 By analyzing runtime information, DLint is capable of capturing violations of coding practices missed by those static analysis tools.
 (See an [online demo](https://www.eecs.berkeley.edu/~gongliang13/jalangi_ff/demo_integrated.htm) of dynamic analysis.)
 
-For more details, a [Wiki page](https://github.com/Berkeley-Correctness-Group/DLint/wiki) is available
+For more details, a [Wiki page](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Wiki-Page) is available
 
 **Academic Resources:** [Preprint](http://mp.binaervarianz.de/issta2015.pdf) in [ISSTA'15](http://issta2015.cs.uoregon.edu/) | [Presentation Slides](http://www.slideshare.net/JacksonGL/issta15-d-lintv3finalpublic) | [technical report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf)
 
