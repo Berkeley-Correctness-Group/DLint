@@ -13,7 +13,7 @@ By analyzing runtime information, DLint is capable of capturing violations of co
 
 For more details, a [Wiki page](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Wiki-Page) is available
 
-**Academic Resources:** [Preprint](http://mp.binaervarianz.de/issta2015.pdf) in [ISSTA'15](http://issta2015.cs.uoregon.edu/) | [Presentation Slides](http://www.slideshare.net/JacksonGL/issta15-d-lintv3finalpublic) | [Technical Report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf)
+**Academic Resources:** [Preprint](http://mp.binaervarianz.de/issta2015.pdf) in [ISSTA'15](http://issta2015.cs.uoregon.edu/) | [Presentation Slides](http://www.slideshare.net/JacksonGL/issta15-d-lintv3finalpublic) | [Technical Report](http://www.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-5.pdf) | [Bibtex](http://mp.binaervarianz.de/issta2015.html)
 
 ### Requirements
 Make sure that you have the following software installed ([See more](https://github.com/Berkeley-Correctness-Group/DLint/wiki/Install-DLint-Manually#requirements)).  
