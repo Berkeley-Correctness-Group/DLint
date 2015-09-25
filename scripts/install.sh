@@ -77,7 +77,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
 	# download firefox binary
 	echo '[Step-2]: Start downloading instrumented Firefox...' 
-	curl -O https://www.eecs.berkeley.edu/~gongliang13/files/Nightly.app.mac.64.zip
+	curl -O http://www.eecs.berkeley.edu/~gongliang13/files/Nightly.app.mac.64.zip
 	eho 'Start installing instrumented Firefox...'
 	# decompress the file
 	unzip Nightly.app.mac.64.zip -d thirdparty
