@@ -123,3 +123,17 @@ VM Memory: 512M
 VM Video Memory: 128M  
 Image Size: 4.7 GB  
 Maximal VM Virtual Disk Size: 20.30 GB  
+
+
+Citation
+------------------------------
+
+Please cite DLint in your publications if it helps your research:
+
+    @inproceedings{Gong:2015:DDC:2771783.2771809,
+     author = {Gong, Liang and Pradel, Michael and Sridharan, Manu and Sen, Koushik},
+     title = {DLint: Dynamically Checking Bad Coding Practices in JavaScript},
+     booktitle = {Proceedings of the 2015 International Symposium on Software Testing and Analysis},
+     series = {ISSTA 2015},
+     year = {2015}
+    } 
