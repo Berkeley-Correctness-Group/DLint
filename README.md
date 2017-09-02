@@ -130,7 +130,7 @@ Citation
 
 Please cite DLint in your publications if it helps your research:
 
-    @inproceedings{Gong:2015:DDC:2771783.2771809,
+    @inproceedings{gong2015dlint,
      author = {Gong, Liang and Pradel, Michael and Sridharan, Manu and Sen, Koushik},
      title = {DLint: Dynamically Checking Bad Coding Practices in JavaScript},
      booktitle = {Proceedings of the 2015 International Symposium on Software Testing and Analysis},
