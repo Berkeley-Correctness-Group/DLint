@@ -9,7 +9,7 @@ DLint is a tool for dynamically checking JavaScript coding practices.
 Briefly speaking, [JSHint](http://jshint.com/), [JSLint](http://www.jslint.com/) and [ESLint](http://eslint.org/) uses static analysis (scan the code) to find bad coding practices, while DLint uses dynamic analysis (by analysing runtime behavior) to do the detection. 
 
 By analyzing runtime information, DLint is capable of capturing violations of coding practices missed by those static analysis tools.
-(See an [online demo](https://www.eecs.berkeley.edu/~gongliang13/jalangi_ff/demo_integrated.htm) of dynamic analysis.)
+(See an [online demo](https://jacksongl.github.io/files/demo/jalangiff/demo_integrated.htm) of dynamic analysis.)
 
 For more details, a [Wiki page](https://github.com/Berkeley-Correctness-Group/DLint/wiki/DLint-Wiki-Page) is available
 
